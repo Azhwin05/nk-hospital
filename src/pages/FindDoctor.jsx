@@ -4,15 +4,12 @@ import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
 const doctors = [
-  { name: 'Dr. Duvvur Nageshwar Reddy', specialty: 'Medical Gastroenterology', location: 'Main Branch', exp: '20+', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=200&auto=format&fit=crop' },
-  { name: 'Dr. G V Rao', specialty: 'Surgical Gastroenterology', location: 'Main Branch', exp: '36+', img: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=200&auto=format&fit=crop' },
-  { name: 'Dr. P N Rao', specialty: 'Hepatology', location: 'Main Branch', exp: '26+', img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&auto=format&fit=crop', filled: true },
-  { name: 'Dr. Balachandran Palat', specialty: 'Liver Transplant & Hepatobiliary Surgery', location: 'Main Branch', exp: '20+', img: 'https://images.unsplash.com/photo-1594824436951-7f1262d082d3?q=80&w=200&auto=format&fit=crop' },
-  { name: 'Dr. Shaik Afshan Jabeen', specialty: 'Neurology', location: 'Main Branch', exp: '20+', img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop' },
-  { name: 'Dr. D. Sridhar', specialty: 'Surgical Oncology', location: 'Main Branch', exp: '9+', img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&auto=format&fit=crop', filled: true },
-  { name: 'Dr. Kausik Bhattacharya', specialty: 'Radiation Oncology', location: 'Main Branch', exp: '26+', img: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=200&auto=format&fit=crop' },
-  { name: 'Dr. Vamshi Krishna', specialty: 'Medical Oncology', location: 'Main Branch', exp: '13+', img: 'https://images.unsplash.com/photo-1594824436951-7f1262d082d3?q=80&w=200&auto=format&fit=crop', filled: true },
-  { name: 'Dr. Subodh Raju', specialty: 'Neurosurgery', location: 'Main Branch', exp: '28+', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=200&auto=format&fit=crop', filled: true },
+  { name: 'Dr. Arif Raza Ahmed', specialty: 'General Medicine', location: 'NK Hospital, Kalaburagi', exp: '15+', img: '/doctors/Dr arif raza ahmed.JPG', filled: true },
+  { name: 'Dr. Numan Ali', specialty: 'Internal Medicine', location: 'NK Hospital, Kalaburagi', exp: '12+', img: '/doctors/Dr numan ali.JPG', filled: true },
+  { name: 'Dr. Sohail', specialty: 'Cardiology', location: 'NK Hospital, Kalaburagi', exp: '10+', img: '/doctors/Dr sohail.JPG' },
+  { name: 'Dr. Veeresh Godi', specialty: 'Orthopedics', location: 'NK Hospital, Kalaburagi', exp: '14+', img: '/doctors/Dr veeresh godi.JPG' },
+  { name: 'Dr. Zeeshan Ali', specialty: 'Neurology', location: 'NK Hospital, Kalaburagi', exp: '11+', img: '/doctors/Dr zeeshan ali.JPG', filled: true },
+  { name: 'Dr. Mahalingam', specialty: 'Surgical Gastroenterology', location: 'NK Hospital, Kalaburagi', exp: '18+', img: '/doctors/Dr Mahaligam.JPG' },
 ]
 
 export default function FindDoctor() {

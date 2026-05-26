@@ -4,6 +4,8 @@ import About from './pages/About'
 import Specialities from './pages/Specialities'
 import FindDoctor from './pages/FindDoctor'
 import Book from './pages/Book'
+import DoctorLogin from './pages/doctor/Login'
+import DoctorDashboard from './pages/doctor/Dashboard'
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
         <Route path="/specialities" element={<Specialities />} />
         <Route path="/find-doctor" element={<FindDoctor />} />
         <Route path="/book" element={<Book />} />
+        <Route path="/doctor" element={<DoctorLogin />} />
+        <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
       </Routes>
     </BrowserRouter>
   )

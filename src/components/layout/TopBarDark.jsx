@@ -7,14 +7,9 @@ export default function TopBarDark() {
       </div>
       <div className="hidden md:flex items-center gap-4">
         <a href="#" className="hover:text-gray-300">Careers</a>
-        <a href="#" className="hover:text-gray-300">Research</a>
         <a href="#" className="hover:text-gray-300">Conferences / Events</a>
         <a href="#" className="hover:text-gray-300">Contact Us</a>
         <a href="#" className="hover:text-gray-300">Blogs</a>
-        <span className="text-gray-500">|</span>
-        <div className="flex items-center gap-1 cursor-pointer">
-          <i className="ph ph-map-pin"></i> All Locations <i className="ph ph-caret-down"></i>
-        </div>
       </div>
     </div>
   )

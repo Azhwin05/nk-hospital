@@ -97,7 +97,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center text-[9px] text-gray-500 pt-3 border-t border-white/5 gap-1">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-[9px] text-gray-500 pt-3 border-t border-white/5 gap-1 pr-0 sm:pr-44">
           <p>&copy; 2026 NK Hospital, Kalaburagi. All Rights Reserved.</p>
           <p className="text-gray-600">Designed and developed by <a href="https://digitaltrionix.in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 font-semibold hover:text-white transition-colors">Digitaltrionix Pvt Ltd</a></p>
         </div>

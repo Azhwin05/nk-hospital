@@ -49,8 +49,14 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[10px]">Follow Us</h4>
             <div className="flex gap-2 flex-wrap">
-              {['ph-facebook-logo','ph-twitter-logo','ph-linkedin-logo','ph-youtube-logo','ph-instagram-logo'].map(icon => (
-                <a key={icon} href="#" className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0f4c81] transition-colors">
+              {[
+                { icon: 'ph-facebook-logo',  href: 'https://www.facebook.com/NKHospitalKalburagi' },
+                { icon: 'ph-twitter-logo',   href: 'https://x.com/NKhospital_KAL' },
+                { icon: 'ph-linkedin-logo',  href: 'https://www.linkedin.com/company/nk-hospital-kalaburagi/' },
+                { icon: 'ph-youtube-logo',   href: 'https://www.youtube.com/@NKhospital_Kalaburagi' },
+                { icon: 'ph-instagram-logo', href: 'https://www.instagram.com/nk_hospital_/' },
+              ].map(({ icon, href }) => (
+                <a key={icon} href={href} target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0f4c81] transition-colors">
                   <i className={`ph-fill ${icon} text-xs`}></i>
                 </a>
               ))}
@@ -93,7 +99,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center text-[9px] text-gray-500 pt-3 border-t border-white/5 gap-1">
           <p>&copy; 2026 NK Hospital, Kalaburagi. All Rights Reserved.</p>
-          <p className="text-gray-600">Designed and developed by <span className="text-gray-400 font-semibold">Digitaltrionix Pvt Ltd</span></p>
+          <p className="text-gray-600">Designed and developed by <a href="https://digitaltrionix.in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 font-semibold hover:text-white transition-colors">Digitaltrionix Pvt Ltd</a></p>
         </div>
       </div>
     </footer>

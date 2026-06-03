@@ -21,22 +21,16 @@ const coreValues = [
 
 const leadership = [
   {
-    name: 'Dr. Arif Raza Ahmed',
-    role: 'Founder & Chairman',
+    name: 'Dr. Numan Ali',
+    role: 'Executive Director',
     img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop',
-    bio: 'A visionary healthcare leader with decades of experience, Dr. Arif Raza Ahmed founded NK Hospital with a commitment to delivering world-class healthcare to the people of Kalaburagi and beyond.',
+    bio: 'Dr. Numan Ali oversees clinical programs and strategic growth, bringing deep expertise in hospital management and a strong focus on building NK Hospital into a regional centre of excellence.',
   },
   {
-    name: 'Dr. Amera Neelam',
+    name: 'Dr. Amera',
     role: 'Managing Director',
     img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop',
-    bio: 'Dr. Amera Neelam leads day-to-day hospital operations with a patient-first philosophy, ensuring quality, safety, and excellence are embedded at every level of care delivery.',
-  },
-  {
-    name: 'Dr. Numan',
-    role: 'Executive Director',
-    img: 'https://images.unsplash.com/photo-1594824436951-7f1262d082d3?q=80&w=400&auto=format&fit=crop',
-    bio: 'Dr. Numan oversees clinical programs and strategic growth, bringing deep expertise in hospital management and a strong focus on building NK Hospital into a regional centre of excellence.',
+    bio: 'Dr. Amera leads day-to-day hospital operations with a patient-first philosophy, ensuring quality, safety, and excellence are embedded at every level of care delivery.',
   },
 ]
 

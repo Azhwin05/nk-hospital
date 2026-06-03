@@ -4,16 +4,31 @@ import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
+const CLOUD = 'dmhonzqrm'
+const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_webp,q_80/${id}.jpg`
+const full  = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_1400,f_webp,q_85/${id}.jpg`
+
 const images = [
-  { src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop', caption: 'Main Building' },
-  { src: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=800&auto=format&fit=crop', caption: 'Operation Theatre' },
-  { src: 'https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=800&auto=format&fit=crop', caption: 'ICU & Critical Care' },
-  { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop', caption: 'Diagnostic Lab' },
-  { src: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=800&auto=format&fit=crop', caption: 'Patient Rooms' },
-  { src: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=800&auto=format&fit=crop', caption: 'Pharmacy' },
-  { src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800&auto=format&fit=crop', caption: 'Radiology Centre' },
-  { src: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop', caption: 'Emergency Department' },
-  { src: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800&auto=format&fit=crop', caption: 'Consultation Room' },
+  { id: '_KS00761_rdn9d1', caption: 'NK Hospital' },
+  { id: '_KS00760_ckoqg9', caption: 'NK Hospital' },
+  { id: '_KS00759_karoml', caption: 'NK Hospital' },
+  { id: '_KS00758_dyth5a', caption: 'NK Hospital' },
+  { id: '_KS00757_rrt51j', caption: 'NK Hospital' },
+  { id: '_KS00756_hxkbhw', caption: 'NK Hospital' },
+  { id: '_KS00753_crqsce', caption: 'NK Hospital' },
+  { id: '_KS00752_efdcig', caption: 'NK Hospital' },
+  { id: '_KS00750_feo4wy', caption: 'NK Hospital' },
+  { id: '_KS00751_kigpsn', caption: 'NK Hospital' },
+  { id: '_KS00748_ygkquc', caption: 'NK Hospital' },
+  { id: '_KS00747_ckvwyp', caption: 'NK Hospital' },
+  { id: '_KS00746_relhiy', caption: 'NK Hospital' },
+  { id: '_KS00745_cwktcn', caption: 'NK Hospital' },
+  { id: '_KS00744_aaztcx', caption: 'NK Hospital' },
+  { id: '_KS00743_ybd7e2', caption: 'NK Hospital' },
+  { id: '_KS00742_m1uuck', caption: 'NK Hospital' },
+  { id: '_KS00740_idnmi9', caption: 'NK Hospital' },
+  { id: '_KS00741_e4ug1i', caption: 'NK Hospital' },
+  { id: '_KS00735_jjip8s', caption: 'NK Hospital' },
 ]
 
 export default function Gallery() {
@@ -41,26 +56,53 @@ export default function Gallery() {
       </div>
 
       <main className="max-w-[1920px] mx-auto px-4 lg:px-16 py-12 w-full flex-1">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {images.map(({ src, caption }, i) => (
-            <div key={i} className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer aspect-video bg-gray-100"
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {images.map(({ id, caption }, i) => (
+            <div key={id}
+              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer aspect-video bg-gray-100"
               onClick={() => setLightbox(i)}>
-              <img src={src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={caption} />
+              <img
+                src={thumb(id)}
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                alt={caption}
+              />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end">
-                <span className="text-white text-xs font-bold px-4 py-3 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">{caption}</span>
+                <span className="text-white text-xs font-bold px-4 py-3 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <i className="ph ph-magnifying-glass-plus mr-1"></i> View
+                </span>
               </div>
             </div>
           ))}
         </div>
       </main>
 
+      {/* Lightbox */}
       {lightbox !== null && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
-          <button className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300"><i className="ph ph-x"></i></button>
-          <button className="absolute left-4 text-white text-3xl hover:text-gray-300" onClick={e => { e.stopPropagation(); setLightbox(l => (l - 1 + images.length) % images.length) }}><i className="ph ph-caret-left"></i></button>
-          <img src={images[lightbox].src} className="max-h-[85vh] max-w-full rounded-xl shadow-2xl" alt={images[lightbox].caption} onClick={e => e.stopPropagation()} />
-          <button className="absolute right-4 text-white text-3xl hover:text-gray-300" onClick={e => { e.stopPropagation(); setLightbox(l => (l + 1) % images.length) }}><i className="ph ph-caret-right"></i></button>
-          <p className="absolute bottom-6 text-white text-sm font-semibold">{images[lightbox].caption}</p>
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setLightbox(null)}>
+          <button className="absolute top-4 right-4 text-white/70 hover:text-white text-3xl z-10">
+            <i className="ph ph-x"></i>
+          </button>
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10"
+            onClick={e => { e.stopPropagation(); setLightbox(l => (l - 1 + images.length) % images.length) }}>
+            <i className="ph ph-caret-left"></i>
+          </button>
+          <img
+            src={full(images[lightbox].id)}
+            className="max-h-[88vh] max-w-[90vw] rounded-xl shadow-2xl object-contain"
+            alt={images[lightbox].caption}
+            onClick={e => e.stopPropagation()}
+          />
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10"
+            onClick={e => { e.stopPropagation(); setLightbox(l => (l + 1) % images.length) }}>
+            <i className="ph ph-caret-right"></i>
+          </button>
+          <p className="absolute bottom-5 text-white/70 text-xs font-semibold">
+            {lightbox + 1} / {images.length}
+          </p>
         </div>
       )}
 

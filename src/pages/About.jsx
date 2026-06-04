@@ -180,12 +180,12 @@ function Overview() {
 
       {/* Milestones */}
       <section className="py-20" style={{ backgroundColor: '#f0f4f9' }}>
-        <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
-          <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#0f4c81' }}>Our Growth</p>
-            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Journey</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="text-center mb-12 px-4">
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#0f4c81' }}>Our Growth</p>
+          <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Journey</h2>
+        </div>
+        <div className="max-w-5xl mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {milestones.map(({ icon, title, desc }, i) => (
               <div key={title} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-100 group flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
@@ -207,6 +207,7 @@ function Overview() {
       </section>
 
       {/* CTA */}
+
       <section className="py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #0f4c81)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 text-center relative z-10">

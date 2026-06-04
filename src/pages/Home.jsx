@@ -26,11 +26,14 @@ const expertiseItems = [
 ]
 
 const testimonials = [
-  { quote: 'The care I received at NK Hospital was exceptional. The doctors were compassionate and the facilities are truly world-class.', name: 'Aisha Sharma', role: 'Recovered Patient', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop' },
-  { quote: 'From diagnosis to treatment, the entire process was seamless. I am deeply grateful to the oncology team for saving my life.', name: 'Rahul Verma', role: 'Oncology Patient', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop' },
-  { quote: 'The neurosurgery team saved my father\'s life. The nurses were incredibly supportive and attentive throughout our entire stay.', name: 'Priya Patel', role: 'Patient Family Member', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop' },
-  { quote: 'NK Hospital sets the gold standard for clinical excellence and patient safety in the region. Truly an institution of trust.', name: 'Dr. Vikram Singh', role: 'Visiting Specialist', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop' },
-  { quote: 'A truly patient-centric hospital. The surgical department is phenomenal and my recovery was incredibly fast.', name: 'Ananya Desai', role: 'Surgical Patient', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop' },
+  { quote: 'Good infrastructure with clean premises, modern equipment, and well-maintained facilities. Overall, a comfortable and organized hospital environment.', name: 'Varun More', gender: 'male' },
+  { quote: 'Best Hospital in the city with its infrastructure and hygiene. Dr Arif Raza (gastroenterologist) consultant provides safe, precise and patient-friendly surgical care.', name: 'Waseem Akram', gender: 'male' },
+  { quote: 'Thanks to Dr Arif Raza and the surgical team at NK Hospital, my mother\'s surgery was a complete success. The pre-op explanation reduced our anxiety, and the post-op care was diligent and efficient. I felt my mother was in safe hands throughout the entire process.', name: 'Sameer Patel', gender: 'male' },
+  { quote: 'Had a very good experience at NK Hospital. The doctors are knowledgeable and the staff is very polite and helpful. They treat patients with care and responsibility. I would definitely recommend this hospital to others.', name: 'Ashraf Ali Patel', gender: 'male' },
+  { quote: 'I would like to appreciate the excellent service provided by your hospital. The staff were professional, caring, and attentive, ensuring great patient care. Thank you for your dedication and commitment to quality healthcare.', name: 'Syed Abdulla', gender: 'male' },
+  { quote: 'Best Hospital in Gulbarga! with highly experienced and talented doctors dedicated to provide exceptional patient care! NK multispeciality Hospital is a well equipped facility with modern technology offering advanced medical care.', name: 'Ayesha Nazneen', gender: 'female' },
+  { quote: 'Had a very good experience here. Doctors and staff are very supportive and professional. The service and care provided are excellent.', name: 'Saima Taskeen', gender: 'female' },
+  { quote: 'The services and treatment are affordable and genuine. Expert doctors with good treatment. I recommend people to avail this facility.', name: 'Faraha Naaz', gender: 'female' },
 ]
 
 const whyChooseUs = [
@@ -309,10 +312,15 @@ function Testimonials() {
                   <p className="text-base md:text-lg font-medium text-gray-700 leading-relaxed italic">"{t.quote}"</p>
                 </div>
                 <div className="border-t border-gray-100 flex gap-4 items-center px-7 py-5 mt-auto bg-gray-50/50 rounded-b-2xl">
-                  <img src={t.img} className="w-11 h-11 rounded-full object-cover shadow-sm" alt={t.name} />
+                  <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 shadow-sm text-white text-xl"
+                    style={{ backgroundColor: t.gender === 'female' ? '#e91e8c' : '#0f4c81' }}>
+                    <i className={t.gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}></i>
+                  </div>
                   <div>
                     <h5 className="text-sm font-bold" style={{ color: '#0f4c81' }}>{t.name}</h5>
-                    <p className="text-xs text-gray-500">{t.role}</p>
+                    <div className="flex gap-0.5 mt-0.5">
+                      {[...Array(5)].map((_, s) => <i key={s} className="ph-fill ph-star text-amber-400 text-xs"></i>)}
+                    </div>
                   </div>
                 </div>
               </div>

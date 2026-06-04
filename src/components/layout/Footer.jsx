@@ -5,32 +5,40 @@ export default function Footer() {
     <footer style={{ backgroundColor: '#0c1b33' }} className="text-white pt-8 pb-4">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
 
-        {/* Top bar: Logo + info on left, buttons on right */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 mb-6">
-          <div className="flex items-start gap-4">
-            <img src="/logo.png" alt="NK Hospital" className="h-12 w-auto object-contain shrink-0"
-              style={{ filter: 'brightness(0) invert(1)' }} />
-            <div>
-              <h3 className="font-bold text-base text-white leading-tight">NK Hospital</h3>
-              <div className="flex items-start gap-1 text-[10px] text-gray-400 mt-1">
-                <i className="ph-fill ph-map-pin text-[#4a8fd4] mt-0.5 shrink-0"></i>
-                <span>NK Nagar, opposite Shor Gumbad, Jaferabad,<br />Kalaburagi, Karnataka 585103</span>
-              </div>
-              <div className="flex flex-wrap gap-3 mt-2">
-                <a href="mailto:info@nkhospital.in" className="flex items-center gap-1 text-[10px] text-gray-400 hover:text-white transition-colors">
-                  <i className="ph-fill ph-envelope text-gray-500 text-xs"></i> info@nkhospital.in
-                </a>
-                <a href="tel:08040-123456" className="flex items-center gap-1 text-[10px] text-gray-400 hover:text-white transition-colors">
-                  <i className="ph-fill ph-phone text-gray-500 text-xs"></i> 08040-123456
-                </a>
-              </div>
-            </div>
+        {/* Top bar: Logo | Address | Contact | Buttons */}
+        <div className="flex flex-col lg:flex-row items-center gap-5 mb-6 pb-5 border-b border-white/5">
+          {/* Logo */}
+          <img src="/logo.png" alt="NK Hospital" className="h-16 w-auto object-contain shrink-0"
+            style={{ filter: 'brightness(0) invert(1)' }} />
+
+          {/* Divider */}
+          <div className="hidden lg:block w-px h-10 bg-white/10 shrink-0"></div>
+
+          {/* Address */}
+          <div className="flex items-start gap-1.5 text-[11px] text-gray-400 shrink-0">
+            <i className="ph-fill ph-map-pin text-[#4a8fd4] mt-0.5 shrink-0 text-sm"></i>
+            <span className="leading-relaxed">NK Nagar, opposite Shor Gumbad, Jaferabad,<br />Kalaburagi, Karnataka 585103</span>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-            <a href="tel:08040-123456" className="bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full text-[10px] font-semibold flex items-center gap-2 border border-white/10 transition-colors">
+
+          {/* Divider */}
+          <div className="hidden lg:block w-px h-10 bg-white/10 shrink-0"></div>
+
+          {/* Mail + Phone */}
+          <div className="flex flex-col gap-1.5 shrink-0">
+            <a href="mailto:info@nkhospital.in" className="flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-white transition-colors">
+              <i className="ph-fill ph-envelope text-gray-500 text-sm"></i> info@nkhospital.in
+            </a>
+            <a href="tel:08040-123456" className="flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-white transition-colors">
+              <i className="ph-fill ph-phone text-gray-500 text-sm"></i> 08040-123456
+            </a>
+          </div>
+
+          {/* Buttons pushed to right */}
+          <div className="flex flex-col sm:flex-row gap-3 lg:ml-auto shrink-0">
+            <a href="tel:08040-123456" className="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full text-[10px] font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> Ambulance: 08040-123456
             </a>
-            <Link to="/book" className="px-4 py-1.5 rounded-full text-[10px] font-semibold transition-colors text-center shadow-sm flex items-center justify-center" style={{ backgroundColor: '#0f4c81' }}>
+            <Link to="/book" className="px-5 py-2 rounded-full text-[10px] font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap" style={{ backgroundColor: '#0f4c81' }}>
               Book Appointment
             </Link>
           </div>

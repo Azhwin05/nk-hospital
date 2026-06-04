@@ -8,7 +8,7 @@ const TABS = [
   { key: 'overview', label: 'Overview' },
   { key: 'chairman', label: "Chairman's Message" },
   { key: 'board', label: 'Board Of Directors' },
-  { key: 'accreditations', label: 'Accr & Cert' },
+  { key: 'accreditations', label: 'Certifications' },
 ]
 
 const coreValues = [

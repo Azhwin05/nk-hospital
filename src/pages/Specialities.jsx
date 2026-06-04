@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
 import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { slugMap } from '../data/specialitiesData'
 
 const specialities = [
   { icon: 'ph ph-heartbeat', name: 'Cardiology' },
@@ -26,6 +28,7 @@ const specialities = [
   { icon: 'ph ph-hand', name: 'Rheumatology' },
   { icon: 'ph ph-users', name: 'Psychiatry' },
   { icon: 'ph ph-gender-female', name: 'Obstetrics & Gynecology' },
+  { icon: 'ph ph-first-aid-kit', name: 'General Medicine' },
   { icon: 'ph ph-first-aid-kit', name: 'General Surgery' },
   { icon: 'ph ph-mask-happy', name: 'Plastic Surgery' },
   { icon: 'ph ph-drop', name: 'Vascular Surgery' },
@@ -39,27 +42,49 @@ export default function Specialities() {
       <TopBarDark />
       <Navbar />
 
-      <div className="text-white py-12 text-center relative overflow-hidden" style={{ backgroundColor: '#0f4c81' }}>
-        <h1 className="text-3xl font-bold mb-2">Our Specialities</h1>
-        <div className="text-xs text-blue-200">Home / <span className="text-white">Specialities</span></div>
+      <div className="text-white py-12 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #0f4c81)' }}>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+        <div className="relative z-10">
+          <h1 className="text-3xl font-bold mb-2">Our Specialties</h1>
+          <div className="text-xs text-blue-200">
+            <Link to="/" className="hover:text-white">Home</Link> / <span className="text-white">Specialties</span>
+          </div>
+        </div>
       </div>
 
       <main className="py-16 bg-gray-50 min-h-screen">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#0f4c81' }}>30+ Health Domains</h2>
-            <p className="text-gray-600 text-sm max-w-2xl mx-auto">NK Hospitals provides comprehensive, world-class care across a vast spectrum of medical and surgical disciplines. Explore our specialized departments below.</p>
+            <p className="text-gray-600 text-sm max-w-2xl mx-auto">NK Hospital provides comprehensive care across a wide spectrum of medical and surgical specialties. Click on a specialty to learn more.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            {specialities.map(({ icon, name }) => (
-              <a key={name} href="#" className="bg-white border border-gray-200 rounded-lg p-4 flex items-center gap-4 hover:border-[#0f4c81] hover:shadow-md transition-all group">
-                <div className="w-10 h-10 rounded bg-blue-50 flex items-center justify-center text-[#0f4c81] group-hover:bg-[#0f4c81] group-hover:text-white transition-colors">
-                  <i className={`${icon} text-xl`}></i>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {specialities.map(({ icon, name }) => {
+              const slug = slugMap[name]
+              const hasPage = !!slug
+              const content = (
+                <>
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-[#0f4c81] transition-colors shrink-0 ${hasPage ? 'bg-blue-50 group-hover:bg-[#0f4c81] group-hover:text-white' : 'bg-gray-50'}`}>
+                    <i className={`${icon} text-xl`}></i>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-sm font-semibold text-gray-800 leading-snug block">{name}</span>
+                    {hasPage && <span className="text-[10px] text-[#0f4c81] font-semibold">View Details →</span>}
+                  </div>
+                </>
+              )
+              return hasPage ? (
+                <Link key={name} to={`/specialities/${slug}`}
+                  className="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-[#0f4c81] hover:shadow-md transition-all group">
+                  {content}
+                </Link>
+              ) : (
+                <div key={name} className="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3">
+                  {content}
                 </div>
-                <span className="text-sm font-semibold text-gray-800">{name}</span>
-              </a>
-            ))}
+              )
+            })}
           </div>
         </div>
       </main>

@@ -5,6 +5,7 @@ import Specialities from './pages/Specialities'
 import FindDoctor from './pages/FindDoctor'
 import Book from './pages/Book'
 import HealthPackages from './pages/HealthPackages'
+import SpecialityDetail from './pages/SpecialityDetail'
 import Gallery from './pages/Gallery'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/specialities" element={<Specialities />} />
+        <Route path="/specialities/:slug" element={<SpecialityDetail />} />
         <Route path="/find-doctor" element={<FindDoctor />} />
         <Route path="/book" element={<Book />} />
         <Route path="/health-packages" element={<HealthPackages />} />

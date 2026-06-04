@@ -274,7 +274,7 @@ function WhyChooseUs() {
                 <i className={`${icon} text-2xl text-[#0f4c81] group-hover:text-white transition-colors`}></i>
               </div>
               {value && (
-                <div className="text-4xl font-black text-[#0f4c81] group-hover:text-white mb-1 transition-colors">{value}+</div>
+                <div className="text-4xl font-black text-[#0f4c81] group-hover:text-white mb-1 transition-colors">{value}</div>
               )}
               <h3 className="text-base font-bold text-gray-900 group-hover:text-white mb-2 transition-colors leading-tight">{label}</h3>
               <p className="text-xs text-gray-500 group-hover:text-blue-100 leading-relaxed transition-colors">{desc}</p>

@@ -8,8 +8,6 @@ const navLinks = [
   { label: 'Doctors', to: '/find-doctor' },
   { label: 'Health Package', to: '/health-packages' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Blog', to: '/blog' },
-  { label: 'Contact Us', to: '/contact' },
 ]
 
 export default function Navbar({ transparent = false }) {

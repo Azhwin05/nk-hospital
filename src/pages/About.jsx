@@ -60,10 +60,11 @@ const board = [
 ]
 
 const milestones = [
-  { icon: 'ph ph-users', title: 'Thousands of Patients Served', desc: 'Through outpatient consultations, inpatient care, emergency treatment, and specialized healthcare services.' },
-  { icon: 'ph ph-scissors', title: 'Advanced Laparoscopic Surgery', desc: 'Strong focus on minimally invasive procedures enabling faster recovery, reduced hospital stay, and improved patient outcomes.' },
-  { icon: 'ph ph-first-aid-kit', title: 'Specialized GI Oncology Services', desc: 'Expert evaluation, surgical management, and multidisciplinary care for gastrointestinal cancers.' },
-  { icon: 'ph ph-activity', title: 'HPB Surgery Expertise', desc: 'Advanced treatment approaches for liver, pancreas, gallbladder, and biliary tract diseases.' },
+  { year: '2015', icon: 'ph ph-plant', title: 'Foundation', desc: 'NK Hospital was established in Kalaburagi with a clear vision: to bring advanced multi-specialty healthcare closer to the people of North Karnataka.' },
+  { year: '2017', icon: 'ph ph-buildings', title: 'Capacity Expansion', desc: 'The hospital expanded to 200+ beds and added new critical care units, surgical theatres, and a fully equipped emergency department.' },
+  { year: '2019', icon: 'ph ph-microscope', title: 'Diagnostic Centre Launch', desc: 'A state-of-the-art diagnostic centre was opened, offering advanced imaging (MRI, CT, PET), pathology, and molecular diagnostics under one roof.' },
+  { year: '2021', icon: 'ph ph-certificate', title: 'NABH Accreditation', desc: 'NK Hospital achieved NABH accreditation, reinforcing its commitment to maintaining national standards of patient care, safety, and quality management systems.' },
+  { year: '2023', icon: 'ph ph-globe-hemisphere-east', title: 'Specialty Expansion', desc: 'New centres of excellence were launched for Oncology, Neurosciences, Cardiology, and Organ Transplant — bringing tertiary care to the region.' },
 ]
 
 function Overview() {
@@ -179,26 +180,25 @@ function Overview() {
       </section>
 
       {/* Milestones */}
-      <section className="py-20" style={{ backgroundColor: '#f0f4f9' }}>
-        <div className="text-center mb-12 px-4">
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="text-center mb-14 px-4">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#0f4c81' }}>Our Growth</p>
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Journey</h2>
         </div>
-        <div className="max-w-5xl mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {milestones.map(({ icon, title, desc }, i) => (
-              <div key={title} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-100 group flex flex-col">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl text-white shrink-0 group-hover:scale-110 transition-transform"
-                    style={{ backgroundColor: '#0f4c81' }}>
-                    <i className={icon}></i>
-                  </div>
-                  <span className="text-3xl font-black opacity-10 select-none" style={{ color: '#0f4c81' }}>0{i + 1}</span>
+        <div className="overflow-x-auto">
+          <div className="relative flex px-16 min-w-max mx-auto justify-center">
+            {/* Connecting line */}
+            <div className="absolute top-[38px] left-24 right-24 h-px bg-blue-100"></div>
+            {milestones.map(({ year, icon, title, desc }) => (
+              <div key={year} className="w-[240px] flex flex-col items-center text-center shrink-0 group px-4">
+                <div className="relative z-10 w-[52px] h-[52px] rounded-full border border-gray-200 bg-white flex items-center justify-center text-lg mb-1.5 group-hover:border-[#0f4c81] transition-all shadow-sm" style={{ color: '#93b4d4' }}>
+                  <i className={icon}></i>
                 </div>
-                <h3 className="text-sm font-bold mb-2 leading-snug" style={{ color: '#0c1b33' }}>{title}</h3>
-                <p className="text-[12px] text-gray-500 leading-relaxed flex-1">{desc}</p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="w-8 h-1 rounded-full group-hover:w-14 transition-all duration-300" style={{ backgroundColor: '#0f4c81' }}></div>
+                <div className="w-2 h-2 rounded-full mb-5 z-10" style={{ backgroundColor: '#0f4c81' }}></div>
+                <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm group-hover:shadow-md group-hover:border-blue-100 transition-all text-left w-full">
+                  <span className="text-[10px] font-bold block mb-1.5" style={{ color: '#0f4c81' }}>{year}</span>
+                  <h3 className="text-sm font-bold mb-2" style={{ color: '#0c1b33' }}>{title}</h3>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">{desc}</p>
                 </div>
               </div>
             ))}

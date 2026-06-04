@@ -33,26 +33,29 @@ const board = [
   {
     name: 'Dr. Arif Raza Ahmed',
     role: 'Founder & Chairman',
+    initials: 'AR',
+    gender: 'male',
     experience: 'Clinical Practice & Healthcare Entrepreneurship',
     expertise: 'Strategic Healthcare Development, Patient-Centered Care, Healthcare Innovation, Clinical Operations',
     bio: 'Dr. Arif leads NK Hospital with a vision to build a modern, ethical, and patient-focused healthcare institution for North Karnataka. His focus lies in integrating advanced healthcare infrastructure, specialist-driven care, operational excellence, and long-term institutional growth while ensuring compassionate and accessible healthcare delivery.',
-    img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop',
   },
   {
     name: 'Dr. Amera Neelam',
     role: 'Managing Director',
+    initials: 'AN',
+    gender: 'female',
     experience: 'Healthcare Management',
     expertise: 'Medical Quality Standards, Multidisciplinary Coordination, Hospital Operations',
     bio: 'Dr. Amera contributes to strengthening hospital systems, medical coordination, and quality-driven patient care across departments. Her involvement supports the hospital\'s commitment toward ethical practice, patient safety, and evidence-based treatment approaches.',
-    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop',
   },
   {
     name: 'Dr. Numan',
     role: 'Executive Director',
+    initials: 'NU',
+    gender: 'male',
     experience: 'Healthcare Operations & Administration',
     expertise: 'Hospital Strategy, Operational Leadership, Clinical Coordination, Institutional Growth, Hospital Systems, Operational Efficiency, Compliance, Service Delivery',
     bio: 'Dr. Numan plays a key leadership role in driving the hospital\'s operational excellence, strategic expansion, and clinical coordination. His focus lies in strengthening systems, ensuring quality-driven healthcare delivery, infrastructure management and building a patient-centric institution aligned with global healthcare standards.',
-    img: 'https://images.unsplash.com/photo-1594824436951-7f1262d082d3?q=80&w=400&auto=format&fit=crop',
   },
 ]
 
@@ -201,9 +204,11 @@ function Chairman() {
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="w-full lg:w-[28%] shrink-0">
-            <div className="rounded-2xl overflow-hidden h-[400px] shadow-xl mb-5">
-              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop"
-                className="w-full h-full object-cover object-top" alt="Chairman Dr. Arif Raza Ahmed" />
+            <div className="rounded-2xl overflow-hidden h-[400px] shadow-xl mb-5 flex flex-col items-center justify-center gap-4" style={{ backgroundColor: '#122543' }}>
+              <div className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ backgroundColor: '#0f4c81' }}>
+                AR
+              </div>
+              <i className="ph-fill ph-user-circle text-white/10 text-8xl"></i>
             </div>
             <div className="text-white">
               <h3 className="text-xl font-bold mb-1">Dr. Arif Raza Ahmed</h3>
@@ -238,10 +243,17 @@ function Board() {
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Leadership Team</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {board.map(({ name, role, experience, expertise, bio, img }) => (
+          {board.map(({ name, role, initials, gender, experience, expertise, bio }) => (
             <div key={name} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="h-64 overflow-hidden bg-gray-100">
-                <img src={img} className="w-full h-full object-cover object-top" alt={name} />
+              <div className="h-48 flex items-center justify-center" style={{ backgroundColor: gender === 'female' ? '#fce7f3' : '#eaf1fb' }}>
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-md"
+                    style={{ backgroundColor: gender === 'female' ? '#e91e8c' : '#0f4c81' }}>
+                    {initials}
+                  </div>
+                  <i className={`text-4xl ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
+                    style={{ color: gender === 'female' ? '#e91e8c' : '#0f4c81', opacity: 0.2 }}></i>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-base font-bold mb-0.5" style={{ color: '#0f4c81' }}>{name}</h3>

@@ -332,7 +332,7 @@ export default function About() {
 
       {/* Tab bar */}
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[49px] z-40">
-        <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto">
+        <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto justify-center">
           {TABS.map(({ key, label }) => (
             <button key={key} onClick={() => setActiveTab(key)}
               className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#0f4c81] text-[#0f4c81]' : 'border-transparent text-gray-500 hover:text-[#0f4c81]'}`}>

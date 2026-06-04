@@ -5,36 +5,11 @@ export default function Footer() {
     <footer style={{ backgroundColor: '#0c1b33' }} className="text-white pt-8 pb-4">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
 
-        {/* Top bar: Logo | Address | Contact | Buttons */}
-        <div className="flex flex-col lg:flex-row items-center gap-5 mb-6 pb-5 border-b border-white/5">
-          {/* Logo */}
+        {/* Top bar: Logo | Buttons */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-5 mb-6 pb-5 border-b border-white/5">
           <img src="/logo.png" alt="NK Hospital" className="h-16 w-auto object-contain shrink-0"
             style={{ filter: 'brightness(0) invert(1)' }} />
-
-          {/* Divider */}
-          <div className="hidden lg:block w-px h-10 bg-white/10 shrink-0"></div>
-
-          {/* Address */}
-          <div className="flex items-start gap-1.5 text-[11px] text-gray-400 shrink-0">
-            <i className="ph-fill ph-map-pin text-[#4a8fd4] mt-0.5 shrink-0 text-sm"></i>
-            <span className="leading-relaxed">NK Nagar, opposite Shor Gumbad, Jaferabad,<br />Kalaburagi, Karnataka 585103</span>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden lg:block w-px h-10 bg-white/10 shrink-0"></div>
-
-          {/* Mail + Phone */}
-          <div className="flex flex-col gap-1.5 shrink-0">
-            <a href="mailto:info@nkhospital.in" className="flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-white transition-colors">
-              <i className="ph-fill ph-envelope text-gray-500 text-sm"></i> info@nkhospital.in
-            </a>
-            <a href="tel:08040-123456" className="flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-white transition-colors">
-              <i className="ph-fill ph-phone text-gray-500 text-sm"></i> 08040-123456
-            </a>
-          </div>
-
-          {/* Buttons pushed to right */}
-          <div className="flex flex-col sm:flex-row gap-3 lg:ml-auto shrink-0">
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <a href="tel:08040-123456" className="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full text-[10px] font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> Ambulance: 08040-123456
             </a>
@@ -45,7 +20,7 @@ export default function Footer() {
         </div>
 
         {/* Nav links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6 text-[11px] border-t border-b border-white/5 py-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6 text-[11px] border-b border-white/5 pb-6">
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[10px]">Patient Care</h4>
             <ul className="space-y-2 text-gray-400">
@@ -73,7 +48,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[10px]">Follow Us</h4>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex gap-2 flex-wrap mb-4">
               {[
                 { icon: 'ph-facebook-logo',  href: 'https://www.facebook.com/NKHospitalKalburagi' },
                 { icon: 'ph-twitter-logo',   href: 'https://x.com/NKhospital_KAL' },
@@ -86,6 +61,19 @@ export default function Footer() {
                   <i className={`ph-fill ${icon} text-xs`}></i>
                 </a>
               ))}
+            </div>
+            {/* Address + contact under Follow Us */}
+            <div className="space-y-2 text-[10px] text-gray-400 border-t border-white/5 pt-3">
+              <div className="flex items-start gap-1.5">
+                <i className="ph-fill ph-map-pin text-[#4a8fd4] shrink-0 mt-0.5"></i>
+                <span className="leading-relaxed">NK Nagar, opposite Shor Gumbad, Jaferabad, Kalaburagi, Karnataka 585103</span>
+              </div>
+              <a href="mailto:info@nkhospital.in" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                <i className="ph-fill ph-envelope text-gray-500 shrink-0"></i> info@nkhospital.in
+              </a>
+              <a href="tel:08040-123456" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                <i className="ph-fill ph-phone text-gray-500 shrink-0"></i> 08040-123456
+              </a>
             </div>
           </div>
         </div>

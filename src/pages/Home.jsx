@@ -137,12 +137,15 @@ function AboutSection() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
         <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
-          {/* Left: Hospital Photo */}
-          <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-2xl min-h-[480px]">
-            <img
-              src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop"
+          {/* Left: Hospital Video */}
+          <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-2xl min-h-[480px] bg-black">
+            <video
+              src="https://res.cloudinary.com/dmhonzqrm/video/upload/a_-90,f_mp4,q_auto/v1780563841/IMG_8788_nejnfg.mp4"
               className="w-full h-full object-cover"
-              alt="NK Hospital Building"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
           </div>
 

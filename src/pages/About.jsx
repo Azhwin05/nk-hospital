@@ -178,33 +178,30 @@ function Overview() {
         </div>
       </section>
 
-      {/* Milestones Timeline */}
-      <section className="py-20 bg-slate-50 overflow-hidden">
+      {/* Milestones */}
+      <section className="py-20" style={{ backgroundColor: '#f0f4f9' }}>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
-          <div className="text-center mb-14">
+          <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#0f4c81' }}>Our Growth</p>
             <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Journey</h2>
           </div>
-          <div className="overflow-x-auto pb-4">
-            <div className="relative min-w-max flex gap-0 px-8">
-              <div className="absolute top-[44px] left-16 right-16 h-[2px]" style={{ background: 'linear-gradient(to right, #0f4c81, #c7d8ed)' }}></div>
-              {milestones.map(({ icon, title, desc }, i) => (
-                <div key={title} className="w-[280px] flex flex-col items-center text-center shrink-0 group px-4">
-                  <div className="relative z-10 w-[52px] h-[52px] rounded-full border-2 flex items-center justify-center text-lg shadow-md bg-white transition-all duration-300 mb-1"
-                    style={{ borderColor: '#0f4c81', color: '#0f4c81' }}
-                    onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#0f4c81'; e.currentTarget.style.color = 'white' }}
-                    onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = '#0f4c81' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {milestones.map(({ icon, title, desc }, i) => (
+              <div key={title} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-100 group flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl text-white shrink-0 group-hover:scale-110 transition-transform"
+                    style={{ backgroundColor: '#0f4c81' }}>
                     <i className={icon}></i>
                   </div>
-                  <div className="w-3 h-3 rounded-full border-2 border-white shadow mb-4 z-10" style={{ backgroundColor: '#0f4c81' }}></div>
-                  <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm group-hover:shadow-md hover:border-blue-100 transition-all text-left w-full">
-                    <span className="text-[10px] font-bold mb-1 block" style={{ color: '#0f4c81' }}>0{i + 1}</span>
-                    <h3 className="text-sm font-bold mb-2 tracking-tight" style={{ color: '#0c1b33' }}>{title}</h3>
-                    <p className="text-[11px] text-gray-500 leading-relaxed">{desc}</p>
-                  </div>
+                  <span className="text-3xl font-black opacity-10 select-none" style={{ color: '#0f4c81' }}>0{i + 1}</span>
                 </div>
-              ))}
-            </div>
+                <h3 className="text-sm font-bold mb-2 leading-snug" style={{ color: '#0c1b33' }}>{title}</h3>
+                <p className="text-[12px] text-gray-500 leading-relaxed flex-1">{desc}</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="w-8 h-1 rounded-full group-hover:w-14 transition-all duration-300" style={{ backgroundColor: '#0f4c81' }}></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

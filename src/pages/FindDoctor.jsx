@@ -1,18 +1,47 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
 const doctors = [
-  { name: 'Dr. Arif Raza Ahmed', specialty: 'Surgical Gastroenterology', exp: '15+', img: '/doctors/Dr arif raza ahmed.JPG', filled: true },
-  { name: 'Dr. Numan Ali', specialty: 'Internal Medicine', exp: '12+', img: '/doctors/Dr numan ali.JPG', filled: true },
-  { name: 'Dr. Sohail', specialty: 'Cardiology', exp: '10+', img: '/doctors/Dr sohail.JPG' },
-  { name: 'Dr. Veeresh Godi', specialty: 'General Physician', exp: '14+', img: '/doctors/Dr veeresh godi.JPG' },
-  { name: 'Dr. Zeeshan Ali', specialty: 'Neurology', exp: '11+', img: '/doctors/Dr zeeshan ali.JPG', filled: true },
-  { name: 'Dr. Mahalingam', specialty: 'Orthopedics', exp: '18+', img: '/doctors/Dr Mahaligam.JPG' },
+  { name: 'Dr. Arif Raza Ahmed',  specialty: 'Surgical Gastroenterology', exp: '14+', img: '/doctors/Dr arif raza ahmed.JPG',  initials: 'AR', gender: 'male',   filled: true },
+  { name: 'Dr. Zeeshan Ali',      specialty: 'Medical Gastroenterology',  exp: '13+', img: '/doctors/Dr zeeshan ali.JPG',      initials: 'ZA', gender: 'male',   filled: true },
+  { name: 'Dr. Vivek Patil',      specialty: 'Specialist',                exp: '',    img: null,                               initials: 'VP', gender: 'male',   filled: false },
+  { name: 'Dr. Taif',             specialty: 'Specialist',                exp: '',    img: null,                               initials: 'TF', gender: 'male',   filled: false },
+  { name: 'Dr. Veeresh Godi',     specialty: 'General Physician',         exp: '3+',  img: '/doctors/Dr veeresh godi.JPG',     initials: 'VG', gender: 'male',   filled: false },
+  { name: 'Dr. Mahalingam',       specialty: 'Orthopedics',               exp: '5+',  img: '/doctors/Dr Mahaligam.JPG',        initials: 'MH', gender: 'male',   filled: false },
+  { name: 'Dr. Shrutika',         specialty: 'Specialist',                exp: '',    img: null,                               initials: 'SH', gender: 'female', filled: false },
+  { name: 'Dr. Haider & Critical Care Team', specialty: 'Critical Care',  exp: '',    img: null,                               initials: 'CC', gender: 'team',   filled: true  },
+  { name: 'Dr. Uday & ED Team',   specialty: 'Emergency Medicine',        exp: '',    img: null,                               initials: 'ED', gender: 'team',   filled: true  },
+  { name: 'Dr. Iftekhar',         specialty: 'Specialist',                exp: '',    img: null,                               initials: 'IF', gender: 'male',   filled: false },
+  { name: 'Radiology Team',       specialty: 'Radiology',                 exp: '',    img: null,                               initials: 'RD', gender: 'team',   filled: false,
+    members: 'Shamir · Sohail · Laxminarayan · Lokesh' },
+  { name: 'Dr. Nikhil',           specialty: 'Pathology',                 exp: '',    img: null,                               initials: 'NK', gender: 'male',   filled: false },
 ]
 
+function Avatar({ img, initials, gender, name }) {
+  if (img) {
+    return <img src={img} className="w-20 h-[5.5rem] object-cover object-top rounded-xl bg-gray-100 shrink-0" alt={name} />
+  }
+  const bg = gender === 'female' ? '#e91e8c' : gender === 'team' ? '#0c1b33' : '#0f4c81'
+  return (
+    <div className="w-20 h-[5.5rem] rounded-xl shrink-0 flex flex-col items-center justify-center gap-1"
+      style={{ backgroundColor: bg + '15', border: `1.5px solid ${bg}30` }}>
+      <span className="text-xl font-extrabold" style={{ color: bg }}>{initials}</span>
+      <i className={`text-lg ${gender === 'female' ? 'ph-fill ph-gender-female' : gender === 'team' ? 'ph-fill ph-users' : 'ph-fill ph-gender-male'}`}
+        style={{ color: bg, opacity: 0.4 }}></i>
+    </div>
+  )
+}
+
 export default function FindDoctor() {
+  const [search, setSearch] = useState('')
+  const filtered = doctors.filter(d =>
+    d.name.toLowerCase().includes(search.toLowerCase()) ||
+    d.specialty.toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <div className="antialiased text-gray-800 bg-gray-50/50">
       <TopBarDark />
@@ -31,7 +60,11 @@ export default function FindDoctor() {
             </div>
             <div className="flex-[1.5] p-3.5 flex items-center gap-2 text-[13px] text-gray-500">
               <i className="ph ph-user text-lg"></i>
-              <input type="text" placeholder="Search Doctor" className="w-full outline-none bg-transparent text-gray-800 placeholder-gray-400" />
+              <input
+                type="text" value={search} onChange={e => setSearch(e.target.value)}
+                placeholder="Search Doctor or Specialty"
+                className="w-full outline-none bg-transparent text-gray-800 placeholder-gray-400"
+              />
             </div>
           </div>
         </div>
@@ -40,19 +73,25 @@ export default function FindDoctor() {
       <main className="py-10 min-h-screen">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {doctors.map(({ name, specialty, exp, img, filled }) => (
+            {filtered.map(({ name, specialty, exp, img, initials, gender, filled, members }) => (
               <div key={name} className="bg-white border border-gray-200 rounded-2xl p-4 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between">
                 <div className="flex gap-4 mb-5">
-                  <img src={img} className="w-20 h-[5.5rem] object-cover rounded-xl bg-gray-100 shrink-0" alt={name} />
-                  <div>
+                  <Avatar img={img} initials={initials} gender={gender} name={name} />
+                  <div className="min-w-0">
                     <h3 className="font-bold text-sm mb-0.5 leading-tight" style={{ color: '#0f4c81' }}>{name}</h3>
-                    <p className="text-[11px] text-blue-600 font-semibold mb-2 tracking-wide">{specialty}</p>
-                    <div className="flex items-center gap-1.5 text-[10px] text-gray-500">
-                      <i className="ph ph-clock text-gray-400 text-xs"></i> {exp} years experience
-                    </div>
+                    <p className="text-[11px] text-blue-600 font-semibold mb-1.5 tracking-wide">{specialty}</p>
+                    {exp && (
+                      <div className="flex items-center gap-1.5 text-[10px] text-gray-500 mb-1">
+                        <i className="ph ph-clock text-gray-400 text-xs"></i> {exp} yrs experience
+                      </div>
+                    )}
+                    {members && (
+                      <p className="text-[10px] text-gray-400 leading-snug">{members}</p>
+                    )}
                   </div>
                 </div>
-                <Link to="/book" className={`w-full py-2.5 rounded-lg text-[11px] font-bold text-center transition-colors ${filled ? 'text-white hover:opacity-90' : 'border border-[#0f4c81] text-[#0f4c81] hover:bg-blue-50'}`}
+                <Link to="/book"
+                  className={`w-full py-2.5 rounded-lg text-[11px] font-bold text-center transition-colors ${filled ? 'text-white hover:opacity-90' : 'border border-[#0f4c81] text-[#0f4c81] hover:bg-blue-50'}`}
                   style={filled ? { backgroundColor: '#0f4c81' } : {}}>
                   {filled ? 'Book Appointment' : <><i className="ph ph-calendar-plus mr-1"></i> Request Appointment</>}
                 </Link>

@@ -11,10 +11,12 @@ import Contact from './pages/Contact'
 import DoctorLogin from './pages/doctor/Login'
 import DoctorDashboard from './pages/doctor/Dashboard'
 import FloatingBookButton from './components/FloatingBookButton'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <FloatingBookButton />
       <Routes>
         <Route path="/" element={<Home />} />

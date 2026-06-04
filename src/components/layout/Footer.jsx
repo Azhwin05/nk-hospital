@@ -5,12 +5,28 @@ export default function Footer() {
     <footer style={{ backgroundColor: '#0c1b33' }} className="text-white pt-8 pb-4">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-5">
-          <div>
-            <h3 className="font-bold text-lg mb-0.5 text-white">NK Hospital</h3>
-            <p className="text-[10px] text-gray-400">NK Nagar, Kalaburagi, Karnataka</p>
+        {/* Top bar: Logo + info on left, buttons on right */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 mb-6">
+          <div className="flex items-start gap-4">
+            <img src="/logo.png" alt="NK Hospital" className="h-12 w-auto object-contain shrink-0"
+              style={{ filter: 'brightness(0) invert(1)' }} />
+            <div>
+              <h3 className="font-bold text-base text-white leading-tight">NK Hospital</h3>
+              <div className="flex items-start gap-1 text-[10px] text-gray-400 mt-1">
+                <i className="ph-fill ph-map-pin text-[#4a8fd4] mt-0.5 shrink-0"></i>
+                <span>NK Nagar, opposite Shor Gumbad, Jaferabad,<br />Kalaburagi, Karnataka 585103</span>
+              </div>
+              <div className="flex flex-wrap gap-3 mt-2">
+                <a href="mailto:info@nkhospital.in" className="flex items-center gap-1 text-[10px] text-gray-400 hover:text-white transition-colors">
+                  <i className="ph-fill ph-envelope text-gray-500 text-xs"></i> info@nkhospital.in
+                </a>
+                <a href="tel:08040-123456" className="flex items-center gap-1 text-[10px] text-gray-400 hover:text-white transition-colors">
+                  <i className="ph-fill ph-phone text-gray-500 text-xs"></i> 08040-123456
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <a href="tel:08040-123456" className="bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full text-[10px] font-semibold flex items-center gap-2 border border-white/10 transition-colors">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> Ambulance: 08040-123456
             </a>
@@ -20,7 +36,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-5 text-[11px] border-t border-b border-white/5 py-5">
+        {/* Nav links */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6 text-[11px] border-t border-b border-white/5 py-5">
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[10px]">Patient Care</h4>
             <ul className="space-y-2 text-gray-400">
@@ -56,7 +73,8 @@ export default function Footer() {
                 { icon: 'ph-youtube-logo',   href: 'https://www.youtube.com/@NKhospital_Kalaburagi' },
                 { icon: 'ph-instagram-logo', href: 'https://www.instagram.com/nk_hospital_/' },
               ].map(({ icon, href }) => (
-                <a key={icon} href={href} target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0f4c81] transition-colors">
+                <a key={icon} href={href} target="_blank" rel="noopener noreferrer"
+                  className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0f4c81] transition-colors">
                   <i className={`ph-fill ${icon} text-xs`}></i>
                 </a>
               ))}
@@ -64,24 +82,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#122543' }} className="rounded-lg p-5 mb-5 border border-white/5">
-          <h4 className="text-[10px] font-bold uppercase tracking-widest mb-4 border-b border-white/10 pb-1.5 inline-block text-gray-300">Our Location</h4>
-          <div className="text-[11px] text-gray-400">
-            <div className="font-bold text-gray-200 mb-1.5 flex items-center gap-1.5">
-              <i className="ph-fill ph-map-pin" style={{ color: '#0f4c81' }}></i> NK Hospital, Kalaburagi
-            </div>
-            <p className="leading-relaxed pl-5">NK Nagar, opposite Shor Gumbad, Jaferabad,<br />Kalaburagi, Karnataka 585103</p>
-          </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center mt-5 pt-4 border-t border-white/10 gap-3">
-            <div className="text-[10px] text-gray-400 flex items-center gap-1.5">
-              <i className="ph-fill ph-envelope text-sm text-gray-500"></i> info@nkhospital.in
-            </div>
-            <div className="text-[10px] text-gray-400 flex items-center gap-1.5">
-              <i className="ph-fill ph-phone text-sm text-gray-500"></i> 08040-123456
-            </div>
-          </div>
-        </div>
-
+        {/* Accreditations */}
         <div className="flex flex-wrap justify-center gap-3 mb-4">
           {[
             { label: 'NABH Certified', bg: 'bg-blue-600', icon: 'ph-fill ph-certificate' },
@@ -97,6 +98,7 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-[9px] text-gray-500 pt-3 border-t border-white/5 gap-1 pr-0 sm:pr-44">
           <p>&copy; 2026 NK Hospital, Kalaburagi. All Rights Reserved.</p>
           <p className="text-gray-600">Designed and developed by <a href="https://digitaltrionix.in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 font-semibold hover:text-white transition-colors">Digitaltrionix Pvt Ltd</a></p>

@@ -15,8 +15,10 @@ const doctors = [
   { name: 'Dr. Haider & Critical Care Team', specialty: 'Critical Care',  exp: '',    img: null,                               initials: 'CC', gender: 'team',   filled: true  },
   { name: 'Dr. Uday & ED Team',   specialty: 'Emergency Medicine',        exp: '',    img: null,                               initials: 'ED', gender: 'team',   filled: true  },
   { name: 'Dr. Iftekhar',         specialty: 'Specialist',                exp: '',    img: null,                               initials: 'IF', gender: 'male',   filled: false },
-  { name: 'Radiology Team',       specialty: 'Radiology',                 exp: '',    img: null,                               initials: 'RD', gender: 'team',   filled: false,
-    members: 'Shamir · Sohail · Laxminarayan · Lokesh' },
+  { name: 'Shamir',               specialty: 'Radiology',                 exp: '',    img: null,                               initials: 'SH', gender: 'male',   filled: false },
+  { name: 'Sohail',               specialty: 'Radiology',                 exp: '',    img: '/doctors/Dr sohail.JPG',           initials: 'SO', gender: 'male',   filled: false },
+  { name: 'Laxminarayan',         specialty: 'Radiology',                 exp: '',    img: null,                               initials: 'LN', gender: 'male',   filled: false },
+  { name: 'Lokesh',               specialty: 'Radiology',                 exp: '',    img: null,                               initials: 'LK', gender: 'male',   filled: false },
   { name: 'Dr. Nikhil',           specialty: 'Pathology',                 exp: '',    img: null,                               initials: 'NK', gender: 'male',   filled: false },
 ]
 

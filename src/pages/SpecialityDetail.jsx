@@ -17,7 +17,7 @@ export default function SpecialityDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
         <p className="text-gray-500 mb-4">Specialty not found.</p>
-        <Link to="/specialities" className="text-[#0f4c81] font-bold hover:underline">← Back to Specialties</Link>
+        <Link to="/specialities" className="text-[#0c1b33] font-bold hover:underline">← Back to Specialties</Link>
       </div>
     )
   }
@@ -33,7 +33,7 @@ export default function SpecialityDetail() {
       <Navbar />
 
       {/* Hero */}
-      <div className="text-white py-14 relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #0f4c81)' }}>
+      <div className="text-white py-14 relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 relative z-10">
           <div className="flex items-center gap-2 text-xs text-blue-300 mb-4">
@@ -60,7 +60,7 @@ export default function SpecialityDetail() {
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex overflow-x-auto">
           {visibleTabs.map(t => (
             <button key={t} onClick={() => setTab(t)}
-              className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === t ? 'border-[#0f4c81] text-[#0f4c81]' : 'border-transparent text-gray-500 hover:text-[#0f4c81]'}`}>
+              className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === t ? 'border-[#0c1b33] text-[#0c1b33]' : 'border-transparent text-gray-500 hover:text-[#0c1b33]'}`}>
               {t}
             </button>
           ))}
@@ -83,7 +83,7 @@ export default function SpecialityDetail() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {data.subspecialties.map(({ title, desc }) => (
                       <div key={title} className="bg-slate-50 rounded-xl p-4 border border-gray-100">
-                        <h4 className="text-sm font-bold mb-1" style={{ color: '#0f4c81' }}>{title}</h4>
+                        <h4 className="text-sm font-bold mb-1" style={{ color: '#0c1b33' }}>{title}</h4>
                         <p className="text-[12px] text-gray-500 leading-relaxed">{desc}</p>
                       </div>
                     ))}
@@ -102,7 +102,7 @@ export default function SpecialityDetail() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {data.conditions.map((c, i) => (
                   <div key={i} className="flex items-start gap-3 bg-white border border-gray-100 rounded-xl px-5 py-4 shadow-sm">
-                    <i className="ph-bold ph-check-circle text-[#0f4c81] text-lg mt-0.5 shrink-0"></i>
+                    <i className="ph-bold ph-check-circle text-[#0c1b33] text-lg mt-0.5 shrink-0"></i>
                     <span className="text-sm text-gray-700 leading-snug">{c}</span>
                   </div>
                 ))}
@@ -124,7 +124,7 @@ export default function SpecialityDetail() {
                 <p className="text-[14px] text-gray-600 leading-relaxed">{data.approach}</p>
               </div>
               <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
-                <h3 className="text-lg font-bold mb-4" style={{ color: '#0f4c81' }}>When Should a Patient Consult?</h3>
+                <h3 className="text-lg font-bold mb-4" style={{ color: '#0c1b33' }}>When Should a Patient Consult?</h3>
                 <p className="text-[14px] text-gray-700 leading-relaxed">{data.whenToConsult}</p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function SpecialityDetail() {
                     <img src={img} className="w-full h-full object-cover object-top" alt={name} />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-base font-bold mb-0.5" style={{ color: '#0f4c81' }}>{name}</h3>
+                    <h3 className="text-base font-bold mb-0.5" style={{ color: '#0c1b33' }}>{name}</h3>
                     <p className="text-[11px] text-gray-400 font-semibold mb-1">{qualification}</p>
                     <p className="text-[11px] text-gray-500 mb-4"><i className="ph ph-clock mr-1"></i>{experience} experience</p>
                     <div className="mb-4">
@@ -150,7 +150,7 @@ export default function SpecialityDetail() {
                       <ul className="space-y-1.5">
                         {expertise.map((e, i) => (
                           <li key={i} className="flex items-start gap-2 text-[12px] text-gray-600">
-                            <i className="ph-bold ph-caret-right text-[#0f4c81] text-xs mt-0.5 shrink-0"></i>{e}
+                            <i className="ph-bold ph-caret-right text-[#0c1b33] text-xs mt-0.5 shrink-0"></i>{e}
                           </li>
                         ))}
                       </ul>
@@ -159,7 +159,7 @@ export default function SpecialityDetail() {
                       <p className="text-[11px] text-gray-400 italic border-t border-gray-100 pt-3 leading-relaxed">{note}</p>
                     )}
                     <Link to="/book" className="mt-4 flex items-center justify-center gap-2 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full hover:opacity-90 transition-opacity"
-                      style={{ backgroundColor: '#0f4c81' }}>
+                      style={{ backgroundColor: '#0c1b33' }}>
                       <i className="ph ph-calendar-plus"></i> Book Appointment
                     </Link>
                   </div>
@@ -177,7 +177,7 @@ export default function SpecialityDetail() {
               <div className="space-y-4">
                 {data.faqs.map(({ q, a }, i) => (
                   <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-                    <h4 className="text-sm font-bold mb-2" style={{ color: '#0f4c81' }}>Q{i + 1}. {q}</h4>
+                    <h4 className="text-sm font-bold mb-2" style={{ color: '#0c1b33' }}>Q{i + 1}. {q}</h4>
                     <p className="text-[13px] text-gray-600 leading-relaxed">{a}</p>
                   </div>
                 ))}

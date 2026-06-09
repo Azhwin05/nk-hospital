@@ -45,7 +45,7 @@ export default function DoctorLogin() {
               <input required type="email" value={form.email}
                 onChange={e => setForm({ ...form, email: e.target.value })}
                 className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none transition-colors"
-                onFocus={e => e.target.style.borderColor = '#0f4c81'}
+                onFocus={e => e.target.style.borderColor = '#0c1b33'}
                 onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                 placeholder="doctor@nkhospital.in" />
             </div>
@@ -54,7 +54,7 @@ export default function DoctorLogin() {
               <input required type="password" value={form.password}
                 onChange={e => setForm({ ...form, password: e.target.value })}
                 className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none transition-colors"
-                onFocus={e => e.target.style.borderColor = '#0f4c81'}
+                onFocus={e => e.target.style.borderColor = '#0c1b33'}
                 onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                 placeholder="••••••••" />
             </div>
@@ -67,7 +67,7 @@ export default function DoctorLogin() {
 
             <button type="submit" disabled={loading}
               className="w-full text-white py-3 rounded-lg text-sm font-bold hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2 transition-opacity"
-              style={{ backgroundColor: '#0f4c81' }}>
+              style={{ backgroundColor: '#0c1b33' }}>
               {loading
                 ? <><i className="ph ph-circle-notch animate-spin"></i> Signing in...</>
                 : <><i className="ph ph-sign-in"></i> Sign In</>}

@@ -13,7 +13,7 @@ export default function Footer() {
             <a href="tel:08040-123456" className="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full text-[10px] font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> Ambulance: 08040-123456
             </a>
-            <Link to="/book" className="px-5 py-2 rounded-full text-[10px] font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap" style={{ backgroundColor: '#0f4c81' }}>
+            <Link to="/book" className="px-5 py-2 rounded-full text-[10px] font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap" style={{ backgroundColor: '#0c1b33' }}>
               Book Appointment
             </Link>
           </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                 { icon: 'ph-instagram-logo', href: 'https://www.instagram.com/nk_hospital_/' },
               ].map(({ icon, href }) => (
                 <a key={icon} href={href} target="_blank" rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0f4c81] transition-colors">
+                  className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0c1b33] transition-colors">
                   <i className={`ph-fill ${icon} text-xs`}></i>
                 </a>
               ))}
@@ -65,7 +65,7 @@ export default function Footer() {
             {/* Address + contact under Follow Us */}
             <div className="space-y-2 text-[10px] text-gray-400 border-t border-white/5 pt-3">
               <div className="flex items-start gap-1.5">
-                <i className="ph-fill ph-map-pin text-[#4a8fd4] shrink-0 mt-0.5"></i>
+                <i className="ph-fill ph-map-pin text-[#c9a227] shrink-0 mt-0.5"></i>
                 <span className="leading-relaxed">NK Nagar, opposite Shor Gumbad, Jaferabad, Kalaburagi, Karnataka 585103</span>
               </div>
               <a href="mailto:info@nkhospital.in" className="flex items-center gap-1.5 hover:text-white transition-colors">

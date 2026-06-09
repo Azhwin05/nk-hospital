@@ -39,7 +39,7 @@ export default function Gallery() {
       <TopBarDark />
       <Navbar />
 
-      <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1e3a5f, #0f4c81)' }}>
+      <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Gallery</h1>
@@ -49,9 +49,9 @@ export default function Gallery() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#0f4c81] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
+          <Link to="/" className="flex items-center gap-1.5 hover:text-[#0c1b33] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
           <span className="mx-2 text-gray-300">/</span>
-          <span style={{ color: '#0f4c81' }}>Gallery</span>
+          <span style={{ color: '#0c1b33' }}>Gallery</span>
         </div>
       </div>
 

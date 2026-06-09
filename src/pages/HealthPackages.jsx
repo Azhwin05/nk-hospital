@@ -18,7 +18,7 @@ export default function HealthPackages() {
       <TopBarDark />
       <Navbar />
 
-      <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1e3a5f, #0f4c81)' }}>
+      <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Health Packages</h1>
@@ -28,15 +28,15 @@ export default function HealthPackages() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#0f4c81] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
+          <Link to="/" className="flex items-center gap-1.5 hover:text-[#0c1b33] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
           <span className="mx-2 text-gray-300">/</span>
-          <span style={{ color: '#0f4c81' }}>Health Packages</span>
+          <span style={{ color: '#0c1b33' }}>Health Packages</span>
         </div>
       </div>
 
       <main className="max-w-[1920px] mx-auto px-4 lg:px-16 py-12 w-full flex-1">
         <div className="text-center mb-12">
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0f4c81' }}>Preventive Care</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#c9a227' }}>Preventive Care</p>
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Choose Your Health Package</h2>
           <p className="text-sm text-gray-500 mt-3 max-w-xl mx-auto">Early detection saves lives. Our health packages are designed to give you a complete picture of your health at affordable prices.</p>
         </div>
@@ -50,8 +50,8 @@ export default function HealthPackages() {
               <p className="text-[11px] font-semibold text-blue-500 mb-3">{tests}</p>
               <p className="text-xs text-gray-500 leading-relaxed mb-5 flex-1">{desc}</p>
               <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                <span className="text-xl font-extrabold" style={{ color: '#0f4c81' }}>{price}</span>
-                <Link to="/book" className="text-white text-xs font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#0f4c81' }}>Book Now</Link>
+                <span className="text-xl font-extrabold" style={{ color: '#0c1b33' }}>{price}</span>
+                <Link to="/book" className="text-white text-xs font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#0c1b33' }}>Book Now</Link>
               </div>
             </div>
           ))}

@@ -26,7 +26,7 @@ function Avatar({ img, initials, gender, name }) {
   if (img) {
     return <img src={img} className="w-20 h-[5.5rem] object-cover object-top rounded-xl bg-gray-100 shrink-0" alt={name} />
   }
-  const bg = gender === 'female' ? '#e91e8c' : gender === 'team' ? '#0c1b33' : '#0f4c81'
+  const bg = gender === 'female' ? '#e91e8c' : gender === 'team' ? '#0c1b33' : '#0c1b33'
   return (
     <div className="w-20 h-[5.5rem] rounded-xl shrink-0 flex flex-col items-center justify-center gap-1"
       style={{ backgroundColor: bg + '15', border: `1.5px solid ${bg}30` }}>
@@ -52,13 +52,13 @@ export default function FindDoctor() {
       <div className="bg-white pt-12 pb-6 border-b border-gray-100">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
           <div className="text-left mb-8">
-            <h1 className="text-3xl font-bold mb-1.5 tracking-tight" style={{ color: '#014c68' }}>Doctors</h1>
+            <h1 className="text-3xl font-bold mb-1.5 tracking-tight" style={{ color: '#0c1b33' }}>Doctors</h1>
             <p className="text-sm text-gray-500">Find the right specialist for your care</p>
           </div>
           <div className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow rounded-xl flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <div className="flex-1 p-3.5 flex items-center justify-between text-[13px] text-gray-500 cursor-pointer group">
-              <div className="flex items-center gap-2"><i className="ph ph-stethoscope text-gray-400 group-hover:text-[#0f4c81] text-lg transition-colors"></i> Select Speciality</div>
-              <i className="ph ph-caret-down text-gray-400 group-hover:text-[#0f4c81]"></i>
+              <div className="flex items-center gap-2"><i className="ph ph-stethoscope text-gray-400 group-hover:text-[#0c1b33] text-lg transition-colors"></i> Select Speciality</div>
+              <i className="ph ph-caret-down text-gray-400 group-hover:text-[#0c1b33]"></i>
             </div>
             <div className="flex-[1.5] p-3.5 flex items-center gap-2 text-[13px] text-gray-500">
               <i className="ph ph-user text-lg"></i>
@@ -80,7 +80,7 @@ export default function FindDoctor() {
                 <div className="flex gap-4 mb-5">
                   <Avatar img={img} initials={initials} gender={gender} name={name} />
                   <div className="min-w-0">
-                    <h3 className="font-bold text-sm mb-0.5 leading-tight" style={{ color: '#0f4c81' }}>{name}</h3>
+                    <h3 className="font-bold text-sm mb-0.5 leading-tight" style={{ color: '#0c1b33' }}>{name}</h3>
                     <p className="text-[11px] text-blue-600 font-semibold mb-1.5 tracking-wide">{specialty}</p>
                     {exp && (
                       <div className="flex items-center gap-1.5 text-[10px] text-gray-500 mb-1">
@@ -93,8 +93,8 @@ export default function FindDoctor() {
                   </div>
                 </div>
                 <Link to="/book"
-                  className={`w-full py-2.5 rounded-lg text-[11px] font-bold text-center transition-colors ${filled ? 'text-white hover:opacity-90' : 'border border-[#0f4c81] text-[#0f4c81] hover:bg-blue-50'}`}
-                  style={filled ? { backgroundColor: '#0f4c81' } : {}}>
+                  className={`w-full py-2.5 rounded-lg text-[11px] font-bold text-center transition-colors ${filled ? 'text-white hover:opacity-90' : 'border border-[#0c1b33] text-[#0c1b33] hover:bg-blue-50'}`}
+                  style={filled ? { backgroundColor: '#0c1b33' } : {}}>
                   {filled ? 'Book Appointment' : <><i className="ph ph-calendar-plus mr-1"></i> Request Appointment</>}
                 </Link>
               </div>

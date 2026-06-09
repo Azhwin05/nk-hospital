@@ -120,8 +120,8 @@ export default function DoctorDashboard() {
           <div className="flex gap-1.5 flex-wrap">
             {TABS.map(t => (
               <button key={t} onClick={() => setTab(t)}
-                className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold capitalize transition-colors ${tab === t ? 'text-white' : 'bg-white border border-gray-200 text-gray-500 hover:border-[#0f4c81] hover:text-[#0f4c81]'}`}
-                style={tab === t ? { backgroundColor: '#0f4c81' } : {}}>
+                className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold capitalize transition-colors ${tab === t ? 'text-white' : 'bg-white border border-gray-200 text-gray-500 hover:border-[#0c1b33] hover:text-[#0c1b33]'}`}
+                style={tab === t ? { backgroundColor: '#0c1b33' } : {}}>
                 {t === 'all' ? 'All' : t.charAt(0).toUpperCase() + t.slice(1)}
                 <span className="ml-1.5 opacity-70">{counts[t]}</span>
               </button>
@@ -132,7 +132,7 @@ export default function DoctorDashboard() {
             <input type="text" value={search} onChange={e => setSearch(e.target.value)}
               placeholder="Search patient or doctor..."
               className="w-full sm:w-60 pl-8 pr-4 py-1.5 border border-gray-200 rounded-full text-xs outline-none bg-white"
-              onFocus={e => e.target.style.borderColor = '#0f4c81'}
+              onFocus={e => e.target.style.borderColor = '#0c1b33'}
               onBlur={e => e.target.style.borderColor = '#e5e7eb'} />
           </div>
         </div>

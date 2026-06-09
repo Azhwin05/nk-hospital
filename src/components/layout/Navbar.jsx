@@ -40,10 +40,9 @@ export default function Navbar({ transparent = false }) {
   }
 
   return (
-    <nav className="bg-white py-2 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50 shadow-sm border-b border-gray-100 relative">
+    <nav className="bg-white py-2 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50 shadow-sm border-b border-gray-100">
       <Link to="/">
-        <img src="/logo.png" alt="NK Hospital" className="h-20 w-auto object-contain"
-          style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(190deg)' }} />
+        <img src="/logo-dark.png" alt="NK Hospital" className="h-20 w-auto object-contain" />
       </Link>
       <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 text-[13px] font-semibold text-gray-700">
         {navLinks.map(({ label, to }) => (

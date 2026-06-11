@@ -59,8 +59,8 @@ function HeroSlider() {
       ))}
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/70 z-0" />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-6 py-32">
-        <div className="inline-block bg-white/10 border border-white/20 text-white/90 text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-6 backdrop-blur-sm">
+      <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-6 py-16 md:py-32">
+        <div className="inline-block bg-white/10 border border-white/20 text-white/90 text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-3 sm:px-5 py-1.5 sm:py-2 rounded-full mb-6 backdrop-blur-sm">
           Multi Super-Specialty Hospital · Kalaburagi
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-bold text-white mb-5 leading-tight tracking-tight shiny-text">
@@ -94,9 +94,9 @@ function HeroSlider() {
 
 function SpecialtiesSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 md:mb-12">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>
             DEPARTMENTS &amp; SPECIALTIES
           </p>
@@ -134,11 +134,11 @@ function SpecialtiesSection() {
 
 function AboutSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
-        <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-16">
           {/* Left: Hospital Video */}
-          <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-2xl min-h-[480px] bg-black">
+          <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-2xl min-h-[220px] md:min-h-[480px] bg-black">
             <video
               src="https://res.cloudinary.com/dmhonzqrm/video/upload/a_-90,f_mp4,q_auto/v1780563841/IMG_8788_nejnfg.mp4"
               className="w-full h-full object-cover"
@@ -201,14 +201,14 @@ function EmergencySection() {
     <section className="py-0 overflow-hidden">
       <div className="flex flex-col lg:flex-row min-h-[480px]">
         {/* Left: Image with overlay */}
-        <div className="w-full lg:w-1/2 relative min-h-[320px]">
+        <div className="w-full lg:w-1/2 relative min-h-[220px] md:min-h-[320px]">
           <img
             src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?q=80&w=1200&auto=format&fit=crop"
             className="absolute inset-0 w-full h-full object-cover"
             alt="Emergency Care"
           />
           <div className="absolute inset-0 bg-[#0c1b33]/80"></div>
-          <div className="relative z-10 flex flex-col items-center justify-center h-full px-10 py-16 text-white text-center">
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10 md:px-10 md:py-16 text-white text-center">
             <div className="w-20 h-20 rounded-full bg-red-500/20 border-2 border-red-400 flex items-center justify-center mb-6">
               <i className="ph-fill ph-siren text-4xl text-red-300"></i>
             </div>
@@ -219,7 +219,7 @@ function EmergencySection() {
 
         {/* Right: Content */}
         <div className="w-full lg:w-1/2 bg-[#0c1b33] flex items-center">
-          <div className="px-10 py-16">
+          <div className="px-5 py-10 md:px-10 md:py-16 w-full">
             <p className="text-xs font-bold uppercase tracking-widest text-red-400 mb-3">
               EMERGENCY &amp; CRITICAL CARE
             </p>
@@ -261,9 +261,9 @@ function EmergencySection() {
 
 function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>
             WHY CHOOSE US
           </p>
@@ -294,9 +294,9 @@ function WhyChooseUs() {
 
 function Testimonials() {
   return (
-    <section className="py-20 bg-slate-50 border-t border-gray-100 overflow-hidden">
-      <div className="w-full mx-auto pb-10">
-        <div className="px-4 lg:px-16 2xl:px-24 mb-12 text-center">
+    <section className="py-12 md:py-20 bg-slate-50 border-t border-gray-100 overflow-hidden">
+      <div className="w-full mx-auto pb-6 md:pb-10">
+        <div className="px-4 lg:px-16 2xl:px-24 mb-8 md:mb-12 text-center">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>PATIENT STORIES</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">What Our Patients Say</h2>
           <p className="text-sm text-gray-500 italic font-serif max-w-xl mx-auto">
@@ -309,7 +309,7 @@ function Testimonials() {
         >
           <div className="flex animate-x-slider gap-5 w-max hover:[animation-play-state:paused]">
             {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={i} className="border border-gray-200 flex flex-col bg-white rounded-2xl shrink-0 w-[340px] sm:w-[440px] lg:w-[520px] shadow-sm hover:shadow-md transition-shadow">
+              <div key={i} className="border border-gray-200 flex flex-col bg-white rounded-2xl shrink-0 w-[280px] sm:w-[380px] lg:w-[480px] shadow-sm hover:shadow-md transition-shadow">
                 <div className="px-7 py-8">
                   <i className="ph-fill ph-quotes text-3xl mb-4 block" style={{ color: '#1a3a6b', opacity: 0.2 }}></i>
                   <p className="text-base md:text-lg font-medium text-gray-700 leading-relaxed italic">"{t.quote}"</p>

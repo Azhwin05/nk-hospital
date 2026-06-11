@@ -71,7 +71,7 @@ function Overview() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative overflow-hidden text-white py-16" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 50%, #1a3054 100%)' }}>
+      <div className="relative overflow-hidden text-white py-10 md:py-16" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 50%, #1a3054 100%)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-5 tracking-tight">
@@ -86,7 +86,7 @@ function Overview() {
       {/* Stats bar */}
       <div style={{ backgroundColor: '#1a3a6b' }}>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
-          <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-white/20">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-white/20">
             {stats.map(({ icon, value, label }) => (
               <div key={label} className="py-5 px-3 flex flex-col items-center justify-center text-white text-center">
                 <i className={`${icon} text-xl text-blue-200 mb-1`}></i>
@@ -99,11 +99,11 @@ function Overview() {
       </div>
 
       {/* About Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
-          <div className="flex flex-col lg:flex-row gap-14 items-center">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
             <div className="w-full lg:w-1/2 shrink-0">
-              <div className="rounded-2xl overflow-hidden shadow-xl h-[420px]">
+              <div className="rounded-2xl overflow-hidden shadow-xl h-[220px] md:h-[420px]">
                 <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop"
                   className="w-full h-full object-cover" alt="NK Hospital" />
               </div>
@@ -131,7 +131,7 @@ function Overview() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-12 md:py-20 bg-slate-50">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Our Foundation</p>
@@ -159,7 +159,7 @@ function Overview() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>What We Stand For</p>
@@ -180,7 +180,7 @@ function Overview() {
       </section>
 
       {/* Milestones */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-12 md:py-20 bg-white overflow-hidden">
         <div className="text-center mb-14 px-4">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Our Growth</p>
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Our Journey</h2>
@@ -208,7 +208,7 @@ function Overview() {
 
       {/* CTA */}
 
-      <section className="py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #162a4a)' }}>
+      <section className="py-10 md:py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #162a4a)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 text-center relative z-10">
           <h2 className="text-3xl font-extrabold mb-3 tracking-tight">Experience Quality Healthcare You Can Trust</h2>
@@ -229,11 +229,11 @@ function Overview() {
 
 function Chairman() {
   return (
-    <div className="py-20" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 100%)' }}>
+    <div className="py-12 md:py-20" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 100%)' }}>
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="w-full lg:w-[28%] shrink-0">
-            <div className="rounded-2xl overflow-hidden h-[400px] shadow-xl mb-5 flex flex-col items-center justify-center gap-4" style={{ backgroundColor: '#122543' }}>
+            <div className="rounded-2xl overflow-hidden h-[200px] md:h-[400px] shadow-xl mb-5 flex flex-col items-center justify-center gap-4" style={{ backgroundColor: '#122543' }}>
               <div className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ backgroundColor: '#1a3a6b' }}>
                 AR
               </div>
@@ -265,7 +265,7 @@ function Chairman() {
 
 function Board() {
   return (
-    <div className="py-20 bg-slate-50">
+    <div className="py-12 md:py-20 bg-slate-50">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
         <div className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Leadership</p>
@@ -304,7 +304,7 @@ function Board() {
 function Accreditations() {
   return (
     <div>
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Quality &amp; Safety</p>
@@ -350,11 +350,11 @@ export default function About() {
       <Navbar />
 
       {/* Tab bar */}
-      <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[49px] z-40">
-        <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto justify-center">
+      <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
+        <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto justify-center md:justify-center">
           {TABS.map(({ key, label }) => (
             <button key={key} onClick={() => setActiveTab(key)}
-              className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
+              className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
               {label}
             </button>
           ))}

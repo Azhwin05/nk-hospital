@@ -13,7 +13,7 @@ export default function Footer() {
             <a href="tel:08040-123456" className="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full text-[10px] font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> Ambulance: 08040-123456
             </a>
-            <Link to="/book" className="px-5 py-2 rounded-full text-[10px] font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap" style={{ backgroundColor: '#0c1b33' }}>
+            <Link to="/book" className="px-5 py-2 rounded-full text-[10px] font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap text-[#0c1b33]" style={{ backgroundColor: '#c9a227' }}>
               Book Appointment
             </Link>
           </div>
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center text-[9px] text-gray-500 pt-3 border-t border-white/5 gap-1 pr-0 sm:pr-44">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-[9px] text-gray-500 pt-3 border-t border-white/5 gap-1">
           <p>&copy; 2026 NK Hospital, Kalaburagi. All Rights Reserved.</p>
           <p className="text-gray-600">Designed and developed by <a href="https://digitaltrionix.in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 font-semibold hover:text-white transition-colors">Digitaltrionix Pvt Ltd</a></p>
         </div>

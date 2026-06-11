@@ -33,7 +33,7 @@ export default function SpecialityDetail() {
       <Navbar />
 
       {/* Hero */}
-      <div className="text-white py-14 relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #1a3054)' }}>
+      <div className="text-white py-8 md:py-14 relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 relative z-10">
           <div className="flex items-center gap-2 text-xs text-blue-300 mb-4">
@@ -43,8 +43,8 @@ export default function SpecialityDetail() {
             <span>/</span>
             <span className="text-white">{data.name}</span>
           </div>
-          <div className="flex items-center gap-5">
-            <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl shrink-0">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-white/10 flex items-center justify-center text-2xl md:text-3xl shrink-0">
               <i className={data.icon}></i>
             </div>
             <div>
@@ -56,11 +56,11 @@ export default function SpecialityDetail() {
       </div>
 
       {/* Tab bar */}
-      <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[49px] z-40">
+      <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex overflow-x-auto">
           {visibleTabs.map(t => (
             <button key={t} onClick={() => setTab(t)}
-              className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === t ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
+              className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === t ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
               {t}
             </button>
           ))}
@@ -71,7 +71,7 @@ export default function SpecialityDetail() {
 
         {/* Overview */}
         {tab === 'Overview' && (
-          <section className="py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
+          <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-extrabold mb-6" style={{ color: '#1a3a6b' }}>Overview</h2>
               <div className="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10">
@@ -96,7 +96,7 @@ export default function SpecialityDetail() {
 
         {/* Conditions */}
         {tab === 'Conditions' && (
-          <section className="py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
+          <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-extrabold mb-8" style={{ color: '#1a3a6b' }}>Conditions We Treat</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -113,17 +113,17 @@ export default function SpecialityDetail() {
 
         {/* Treatments */}
         {tab === 'Treatments' && (
-          <section className="py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
+          <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl space-y-10">
               <div>
                 <h2 className="text-2xl font-extrabold mb-5" style={{ color: '#1a3a6b' }}>Treatments &amp; Procedures</h2>
                 <p className="text-[15px] text-gray-600 leading-relaxed">{data.treatments}</p>
               </div>
-              <div className="bg-slate-50 rounded-2xl p-8 border border-gray-100">
+              <div className="bg-slate-50 rounded-2xl p-5 md:p-8 border border-gray-100">
                 <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>Our Approach to Care</h3>
                 <p className="text-[14px] text-gray-600 leading-relaxed">{data.approach}</p>
               </div>
-              <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+              <div className="bg-blue-50 rounded-2xl p-5 md:p-8 border border-blue-100">
                 <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>When Should a Patient Consult?</h3>
                 <p className="text-[14px] text-gray-700 leading-relaxed">{data.whenToConsult}</p>
               </div>
@@ -133,7 +133,7 @@ export default function SpecialityDetail() {
 
         {/* Doctors */}
         {tab === 'Doctors' && (
-          <section className="py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
+          <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>Doctors &amp; Specialists</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {data.doctors.map(({ name, qualification, experience, img, expertise, note }) => (
@@ -171,7 +171,7 @@ export default function SpecialityDetail() {
 
         {/* FAQs */}
         {tab === 'FAQs' && data.faqs && data.faqs.length > 0 && (
-          <section className="py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
+          <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>Frequently Asked Questions</h2>
               <div className="space-y-4">

@@ -7,22 +7,22 @@ import Footer from '../components/layout/Footer'
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
 const expertiseItems = [
-  { label: 'Medical\nGastroenterology', icon: 'https://cdn-icons-png.flaticon.com/128/3004/3004381.png' },
-  { label: 'Surgical\nGastroenterology', icon: 'https://cdn-icons-png.flaticon.com/128/13600/13600490.png' },
-  { label: 'Hepatology', icon: 'https://cdn-icons-png.flaticon.com/128/3138/3138865.png' },
-  { label: 'Cardiology', icon: 'https://cdn-icons-png.flaticon.com/128/4807/4807490.png' },
-  { label: 'Cardiothoracic\nSurgery', icon: 'https://cdn-icons-png.flaticon.com/128/3063/3063259.png' },
-  { label: 'Liver Transplant', icon: 'https://cdn-icons-png.flaticon.com/128/10465/10465660.png' },
-  { label: 'Medical\nOncology', icon: 'https://cdn-icons-png.flaticon.com/128/2855/2855682.png' },
-  { label: 'Surgical\nOncology', icon: 'https://cdn-icons-png.flaticon.com/128/8367/8367856.png' },
-  { label: 'Neurology', icon: 'https://cdn-icons-png.flaticon.com/128/2660/2660126.png' },
-  { label: 'Radiation\nOncology', icon: 'https://cdn-icons-png.flaticon.com/128/4807/4807469.png' },
-  { label: 'Neurosurgery', icon: 'https://cdn-icons-png.flaticon.com/128/8343/8343603.png' },
-  { label: 'ENT', icon: 'https://cdn-icons-png.flaticon.com/128/5084/5084478.png' },
-  { label: 'Orthopaedics', icon: 'https://cdn-icons-png.flaticon.com/128/3138/3138865.png' },
-  { label: 'Pulmonology', icon: 'https://cdn-icons-png.flaticon.com/128/2855/2855682.png' },
-  { label: 'Nephrology', icon: 'https://cdn-icons-png.flaticon.com/128/8367/8367856.png' },
-  { label: 'Urology', icon: 'https://cdn-icons-png.flaticon.com/128/13600/13600490.png' },
+  { label: 'Medical\nGastroenterology', icon: 'ph ph-stomach' },
+  { label: 'Surgical\nGastroenterology', icon: 'ph ph-knife' },
+  { label: 'Hepatology', icon: 'ph ph-pill' },
+  { label: 'Cardiology', icon: 'ph ph-heartbeat' },
+  { label: 'Cardiothoracic\nSurgery', icon: 'ph ph-activity' },
+  { label: 'Liver Transplant', icon: 'ph ph-bed' },
+  { label: 'Medical\nOncology', icon: 'ph ph-bandaids' },
+  { label: 'Surgical\nOncology', icon: 'ph ph-scissors' },
+  { label: 'Neurology', icon: 'ph ph-brain' },
+  { label: 'Radiation\nOncology', icon: 'ph ph-radioactive' },
+  { label: 'Neurosurgery', icon: 'ph ph-head' },
+  { label: 'ENT', icon: 'ph ph-ear' },
+  { label: 'Orthopaedics', icon: 'ph ph-bone' },
+  { label: 'Pulmonology', icon: 'ph ph-wind' },
+  { label: 'Nephrology', icon: 'ph ph-flask' },
+  { label: 'Urology', icon: 'ph ph-toilet-paper' },
 ]
 
 const testimonials = [
@@ -110,8 +110,8 @@ function SpecialtiesSection() {
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4">
           {expertiseItems.map(({ label, icon }) => (
             <Link key={label} to="/specialities" className="icon-box border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center gap-3 bg-white hover:border-[#1a3a6b] hover:shadow-md transition-all group">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#1a3a6b]/10 transition-colors">
-                <img src={icon} className="w-7 h-7 object-contain" alt="" />
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#1a3a6b]/10 transition-colors" style={{ color: '#1a3a6b' }}>
+                <i className={`${icon} text-2xl group-hover:text-[#1a3a6b]`}></i>
               </div>
               <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: '#1a3a6b' }}>
                 {label.split('\n').map((l, i, arr) => (

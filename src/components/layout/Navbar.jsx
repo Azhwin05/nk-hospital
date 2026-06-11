@@ -47,7 +47,7 @@ export default function Navbar({ transparent = false }) {
       <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 text-[13px] font-semibold text-gray-700">
         {navLinks.map(({ label, to }) => (
           <Link key={to} to={to}
-            className={`hover:text-[#0c1b33] transition-colors whitespace-nowrap ${isActive(to) ? 'text-[#0c1b33]' : ''}`}>
+            className={`hover:text-[#1a3a6b] transition-colors whitespace-nowrap ${isActive(to) ? 'text-[#1a3a6b]' : ''}`}>
             {label}
           </Link>
         ))}
@@ -57,7 +57,7 @@ export default function Navbar({ transparent = false }) {
           <i className="ph ph-phone text-lg"></i> 08040-123456
         </a>
         <Link to="/book" className="text-white px-5 py-2.5 rounded-md text-xs font-bold tracking-wide flex items-center gap-2 transition-colors shadow-sm"
-          style={{ backgroundColor: '#0c1b33' }}>
+          style={{ backgroundColor: '#1a3a6b' }}>
           <i className="ph ph-calendar-plus text-base"></i> Book Appointment
         </Link>
       </div>
@@ -71,18 +71,18 @@ export default function Navbar({ transparent = false }) {
 
 function MobileMenu({ links, onClose, dark }) {
   return (
-    <div className={`absolute top-full left-0 right-0 z-50 shadow-lg border-t ${dark ? 'bg-white border-gray-100' : 'bg-[#0c1b33] border-white/10'}`}>
+    <div className={`absolute top-full left-0 right-0 z-50 shadow-lg border-t ${dark ? 'bg-white border-gray-100' : 'bg-[#1a3a6b] border-white/10'}`}>
       <div className="flex flex-col py-2">
         {links.map(({ label, to }) => (
           <Link key={to} to={to} onClick={onClose}
-            className={`px-6 py-3 text-sm font-semibold transition-colors ${dark ? 'text-gray-700 hover:text-[#0c1b33] hover:bg-gray-50' : 'text-white/80 hover:text-white hover:bg-white/5'}`}>
+            className={`px-6 py-3 text-sm font-semibold transition-colors ${dark ? 'text-gray-700 hover:text-[#1a3a6b] hover:bg-gray-50' : 'text-white/80 hover:text-white hover:bg-white/5'}`}>
             {label}
           </Link>
         ))}
         <div className="px-6 py-3 border-t border-gray-100 mt-1">
           <Link to="/book" onClick={onClose}
             className="flex items-center justify-center gap-2 text-white text-sm font-bold py-2.5 px-4 rounded-lg"
-            style={{ backgroundColor: '#0c1b33' }}>
+            style={{ backgroundColor: '#1a3a6b' }}>
             <i className="ph ph-calendar-plus"></i> Book Appointment
           </Link>
         </div>

@@ -71,7 +71,7 @@ function Overview() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative overflow-hidden text-white py-16" style={{ background: 'linear-gradient(135deg, #0c1b33 0%, #162a4a 50%, #1a3054 100%)' }}>
+      <div className="relative overflow-hidden text-white py-16" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 50%, #1a3054 100%)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-5 tracking-tight">
@@ -84,7 +84,7 @@ function Overview() {
       </div>
 
       {/* Stats bar */}
-      <div style={{ backgroundColor: '#0c1b33' }}>
+      <div style={{ backgroundColor: '#1a3a6b' }}>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-white/20">
             {stats.map(({ icon, value, label }) => (
@@ -110,7 +110,7 @@ function Overview() {
             </div>
             <div className="w-full lg:w-1/2">
               <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Who We Are</p>
-              <h2 className="text-3xl font-extrabold mb-5 tracking-tight leading-snug" style={{ color: '#0c1b33' }}>Excellence in Advanced Healthcare</h2>
+              <h2 className="text-3xl font-extrabold mb-5 tracking-tight leading-snug" style={{ color: '#1a3a6b' }}>Excellence in Advanced Healthcare</h2>
               <div className="space-y-4 text-[14px] text-gray-600 leading-relaxed mb-8">
                 <p>Our hospital was founded with a clear purpose: to bring high-quality, patient-centered healthcare to North Karnataka while bridging the gap between skilled medical professionals and advanced infrastructure.</p>
                 <p>The vision has always been to create a collaborative environment where doctors are empowered with the right tools, systems, and support to deliver their best clinical outcomes. By combining experienced specialists with modern facilities, we aim to ensure that patients receive care that is both clinically sound and compassionate.</p>
@@ -118,10 +118,10 @@ function Overview() {
                 <p>Committed to accessibility and dependability, we strive to make quality healthcare available to people across the region without delays or uncertainty. Our goal is not just to treat illness, but to build a trusted healthcare institution that communities can rely on — consistently, transparently, and with excellence.</p>
               </div>
               <div className="flex gap-3">
-                <Link to="/specialities" className="flex items-center gap-2 text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#0c1b33' }}>
+                <Link to="/specialities" className="flex items-center gap-2 text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
                   <i className="ph ph-stethoscope"></i> Our Specialties
                 </Link>
-                <Link to="/find-doctor" className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-lg border border-gray-200 text-gray-700 hover:border-[#0c1b33] hover:text-[#0c1b33] transition-colors">
+                <Link to="/find-doctor" className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-lg border border-gray-200 text-gray-700 hover:border-[#1a3a6b] hover:text-[#1a3a6b] transition-colors">
                   <i className="ph ph-user-circle"></i> Find a Doctor
                 </Link>
               </div>
@@ -135,22 +135,22 @@ function Overview() {
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Our Foundation</p>
-            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Vision &amp; Mission</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Vision &amp; Mission</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white text-xl" style={{ backgroundColor: '#0c1b33' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white text-xl" style={{ backgroundColor: '#1a3a6b' }}>
                 <i className="ph-fill ph-eye"></i>
               </div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: '#0c1b33' }}>Our Vision</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a3a6b' }}>Our Vision</h3>
               <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">What we aspire to be</p>
               <p className="text-sm text-gray-600 leading-relaxed">To become a trusted healthcare institution through clinical excellence, innovation, advanced technology, compassionate care, and leadership in accessible, patient-centered healthcare delivery.</p>
             </div>
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white text-xl" style={{ backgroundColor: '#0c1b33' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white text-xl" style={{ backgroundColor: '#1a3a6b' }}>
                 <i className="ph-fill ph-rocket-launch"></i>
               </div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: '#0c1b33' }}>Our Mission</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#1a3a6b' }}>Our Mission</h3>
               <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">How we achieve it</p>
               <p className="text-sm text-gray-600 leading-relaxed">To provide safe, high-quality healthcare through skilled professionals, ethical practices, modern technology, patient-focused systems, and continuous commitment to excellence, accessibility, and community well-being.</p>
             </div>
@@ -163,15 +163,15 @@ function Overview() {
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>What We Stand For</p>
-            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Values That Drive Us</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Values That Drive Us</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {coreValues.map(({ icon, title, desc, color }) => (
               <div key={title} className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md hover:-translate-y-1 transition-all group">
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 text-lg ${color} group-hover:bg-[#0c1b33] group-hover:text-white transition-colors`}>
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 text-lg ${color} group-hover:bg-[#1a3a6b] group-hover:text-white transition-colors`}>
                   <i className={icon}></i>
                 </div>
-                <h3 className="text-sm font-bold mb-1.5" style={{ color: '#0c1b33' }}>{title}</h3>
+                <h3 className="text-sm font-bold mb-1.5" style={{ color: '#1a3a6b' }}>{title}</h3>
                 <p className="text-[12px] text-gray-500 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -183,7 +183,7 @@ function Overview() {
       <section className="py-20 bg-white overflow-hidden">
         <div className="text-center mb-14 px-4">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Our Growth</p>
-          <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Journey</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Our Journey</h2>
         </div>
         <div className="overflow-x-auto">
           <div className="relative flex px-16 min-w-max mx-auto justify-center">
@@ -191,13 +191,13 @@ function Overview() {
             <div className="absolute top-[38px] left-24 right-24 h-px bg-blue-100"></div>
             {milestones.map(({ year, icon, title, desc }) => (
               <div key={year} className="w-[240px] flex flex-col items-center text-center shrink-0 group px-4">
-                <div className="relative z-10 w-[52px] h-[52px] rounded-full border border-gray-200 bg-white flex items-center justify-center text-lg mb-1.5 group-hover:border-[#0c1b33] transition-all shadow-sm" style={{ color: '#93b4d4' }}>
+                <div className="relative z-10 w-[52px] h-[52px] rounded-full border border-gray-200 bg-white flex items-center justify-center text-lg mb-1.5 group-hover:border-[#1a3a6b] transition-all shadow-sm" style={{ color: '#93b4d4' }}>
                   <i className={icon}></i>
                 </div>
-                <div className="w-2 h-2 rounded-full mb-5 z-10" style={{ backgroundColor: '#0c1b33' }}></div>
+                <div className="w-2 h-2 rounded-full mb-5 z-10" style={{ backgroundColor: '#1a3a6b' }}></div>
                 <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm group-hover:shadow-md group-hover:border-blue-100 transition-all text-left w-full">
-                  <span className="text-[10px] font-bold block mb-1.5" style={{ color: '#0c1b33' }}>{year}</span>
-                  <h3 className="text-sm font-bold mb-2" style={{ color: '#0c1b33' }}>{title}</h3>
+                  <span className="text-[10px] font-bold block mb-1.5" style={{ color: '#1a3a6b' }}>{year}</span>
+                  <h3 className="text-sm font-bold mb-2" style={{ color: '#1a3a6b' }}>{title}</h3>
                   <p className="text-[11px] text-gray-500 leading-relaxed">{desc}</p>
                 </div>
               </div>
@@ -208,13 +208,13 @@ function Overview() {
 
       {/* CTA */}
 
-      <section className="py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #162a4a)' }}>
+      <section className="py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #162a4a)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 text-center relative z-10">
           <h2 className="text-3xl font-extrabold mb-3 tracking-tight">Experience Quality Healthcare You Can Trust</h2>
           <p className="text-sm text-blue-100/90 max-w-xl mx-auto mb-8 leading-relaxed">Get access to expert medical care and advanced treatment facilities at NK Hospital. Schedule a consultation with our specialists today.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/book" className="bg-white text-[#0c1b33] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
+            <Link to="/book" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
               <i className="ph ph-calendar-plus"></i> Book Appointment
             </Link>
             <a href="tel:08040-123456" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
@@ -229,12 +229,12 @@ function Overview() {
 
 function Chairman() {
   return (
-    <div className="py-20" style={{ background: 'linear-gradient(135deg, #0c1b33 0%, #162a4a 100%)' }}>
+    <div className="py-20" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 100%)' }}>
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="w-full lg:w-[28%] shrink-0">
             <div className="rounded-2xl overflow-hidden h-[400px] shadow-xl mb-5 flex flex-col items-center justify-center gap-4" style={{ backgroundColor: '#122543' }}>
-              <div className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ backgroundColor: '#0c1b33' }}>
+              <div className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ backgroundColor: '#1a3a6b' }}>
                 AR
               </div>
               <i className="ph-fill ph-user-circle text-white/10 text-8xl"></i>
@@ -269,7 +269,7 @@ function Board() {
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
         <div className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Leadership</p>
-          <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Our Leadership Team</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Our Leadership Team</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {board.map(({ name, role, initials, gender, experience, expertise, bio }) => (
@@ -277,15 +277,15 @@ function Board() {
               <div className="h-48 flex items-center justify-center" style={{ backgroundColor: gender === 'female' ? '#fce7f3' : '#eaf1fb' }}>
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-24 h-24 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-md"
-                    style={{ backgroundColor: gender === 'female' ? '#e91e8c' : '#0c1b33' }}>
+                    style={{ backgroundColor: gender === 'female' ? '#e91e8c' : '#1a3a6b' }}>
                     {initials}
                   </div>
                   <i className={`text-4xl ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
-                    style={{ color: gender === 'female' ? '#e91e8c' : '#0c1b33', opacity: 0.2 }}></i>
+                    style={{ color: gender === 'female' ? '#e91e8c' : '#1a3a6b', opacity: 0.2 }}></i>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-base font-bold mb-0.5" style={{ color: '#0c1b33' }}>{name}</h3>
+                <h3 className="text-base font-bold mb-0.5" style={{ color: '#1a3a6b' }}>{name}</h3>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">{role}</p>
                 <div className="space-y-1.5 mb-4">
                   <div className="text-[11px] text-gray-500"><span className="font-semibold text-gray-600">Experience:</span> {experience}</div>
@@ -308,7 +308,7 @@ function Accreditations() {
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Quality &amp; Safety</p>
-            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Accreditations &amp; Certifications</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Accreditations &amp; Certifications</h2>
           </div>
           <div className="max-w-4xl mx-auto">
             <p className="text-sm text-gray-600 leading-relaxed text-center mb-10">
@@ -325,7 +325,7 @@ function Accreditations() {
                   <div className={`w-14 h-14 rounded-full ${color} flex items-center justify-center mx-auto mb-4 text-white text-2xl`}>
                     <i className={icon}></i>
                   </div>
-                  <h3 className="text-lg font-extrabold mb-3" style={{ color: '#0c1b33' }}>{label}</h3>
+                  <h3 className="text-lg font-extrabold mb-3" style={{ color: '#1a3a6b' }}>{label}</h3>
                   <p className="text-[11px] text-gray-500 leading-relaxed">{desc}</p>
                 </div>
               ))}
@@ -354,7 +354,7 @@ export default function About() {
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto justify-center">
           {TABS.map(({ key, label }) => (
             <button key={key} onClick={() => setActiveTab(key)}
-              className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#0c1b33] text-[#0c1b33]' : 'border-transparent text-gray-500 hover:text-[#0c1b33]'}`}>
+              className={`py-4 px-5 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
               {label}
             </button>
           ))}

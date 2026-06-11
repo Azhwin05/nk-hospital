@@ -70,7 +70,7 @@ function HeroSlider() {
           Bringing Together the Right Expertise &amp; Infrastructure for Better Care
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/book" className="bg-white text-[#0c1b33] hover:bg-blue-50 px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center gap-2">
+          <Link to="/book" className="bg-white text-[#1a3a6b] hover:bg-blue-50 px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center gap-2">
             <i className="ph ph-calendar-plus text-base"></i> Book Appointment
           </Link>
           <a href="tel:08040-123456" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center gap-2">
@@ -109,11 +109,11 @@ function SpecialtiesSection() {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4">
           {expertiseItems.map(({ label, icon }) => (
-            <Link key={label} to="/specialities" className="icon-box border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center gap-3 bg-white hover:border-[#0c1b33] hover:shadow-md transition-all group">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#0c1b33]/10 transition-colors">
+            <Link key={label} to="/specialities" className="icon-box border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center gap-3 bg-white hover:border-[#1a3a6b] hover:shadow-md transition-all group">
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#1a3a6b]/10 transition-colors">
                 <img src={icon} className="w-7 h-7 object-contain" alt="" />
               </div>
-              <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: '#0c1b33' }}>
+              <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: '#1a3a6b' }}>
                 {label.split('\n').map((l, i, arr) => (
                   <span key={i}>{l}{i < arr.length - 1 ? <br /> : ''}</span>
                 ))}
@@ -123,7 +123,7 @@ function SpecialtiesSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link to="/specialities" className="inline-flex items-center gap-2 border-2 border-[#0c1b33] text-[#0c1b33] rounded-full px-8 py-3 text-sm font-bold hover:bg-[#0c1b33] hover:text-white transition-all">
+          <Link to="/specialities" className="inline-flex items-center gap-2 border-2 border-[#1a3a6b] text-[#1a3a6b] rounded-full px-8 py-3 text-sm font-bold hover:bg-[#1a3a6b] hover:text-white transition-all">
             View All Specialties <i className="ph ph-arrow-right"></i>
           </Link>
         </div>
@@ -171,7 +171,7 @@ function AboutSection() {
             {/* Bottom Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { icon: 'ph ph-wrench', label: 'Advanced Surgical Infrastructure', color: 'bg-blue-50 text-[#0c1b33]' },
+                { icon: 'ph ph-wrench', label: 'Advanced Surgical Infrastructure', color: 'bg-blue-50 text-[#1a3a6b]' },
                 { icon: 'ph ph-users-three', label: 'Expert Multidisciplinary Team', color: 'bg-teal-50 text-teal-600' },
                 { icon: 'ph ph-heart', label: 'Patient-Centric Care', color: 'bg-rose-50 text-rose-600' },
               ].map(({ icon, label, color }) => (
@@ -185,7 +185,7 @@ function AboutSection() {
             </div>
 
             <div className="mt-8">
-              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-bold text-[#0c1b33] hover:underline">
+              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-bold text-[#1a3a6b] hover:underline">
                 Learn More About Us <i className="ph ph-arrow-right"></i>
               </Link>
             </div>
@@ -275,12 +275,12 @@ function WhyChooseUs() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {whyChooseUs.map(({ icon, value, label, desc }) => (
-            <div key={label} className="group bg-gray-50 hover:bg-[#0c1b33] border border-gray-100 hover:border-[#0c1b33] rounded-2xl p-7 transition-all duration-300 cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-[#0c1b33]/10 group-hover:bg-white/10 flex items-center justify-center mb-5 transition-colors">
-                <i className={`${icon} text-2xl text-[#0c1b33] group-hover:text-white transition-colors`}></i>
+            <div key={label} className="group bg-gray-50 hover:bg-[#1a3a6b] border border-gray-100 hover:border-[#1a3a6b] rounded-2xl p-7 transition-all duration-300 cursor-default">
+              <div className="w-12 h-12 rounded-xl bg-[#1a3a6b]/10 group-hover:bg-white/10 flex items-center justify-center mb-5 transition-colors">
+                <i className={`${icon} text-2xl text-[#1a3a6b] group-hover:text-white transition-colors`}></i>
               </div>
               {value && (
-                <div className="text-4xl font-black text-[#0c1b33] group-hover:text-white mb-1 transition-colors">{value}</div>
+                <div className="text-4xl font-black text-[#1a3a6b] group-hover:text-white mb-1 transition-colors">{value}</div>
               )}
               <h3 className="text-base font-bold text-gray-900 group-hover:text-white mb-2 transition-colors leading-tight">{label}</h3>
               <p className="text-xs text-gray-500 group-hover:text-blue-100 leading-relaxed transition-colors">{desc}</p>
@@ -311,16 +311,16 @@ function Testimonials() {
             {[...testimonials, ...testimonials].map((t, i) => (
               <div key={i} className="border border-gray-200 flex flex-col bg-white rounded-2xl shrink-0 w-[340px] sm:w-[440px] lg:w-[520px] shadow-sm hover:shadow-md transition-shadow">
                 <div className="px-7 py-8">
-                  <i className="ph-fill ph-quotes text-3xl mb-4 block" style={{ color: '#0c1b33', opacity: 0.2 }}></i>
+                  <i className="ph-fill ph-quotes text-3xl mb-4 block" style={{ color: '#1a3a6b', opacity: 0.2 }}></i>
                   <p className="text-base md:text-lg font-medium text-gray-700 leading-relaxed italic">"{t.quote}"</p>
                 </div>
                 <div className="border-t border-gray-100 flex gap-4 items-center px-7 py-5 mt-auto bg-gray-50/50 rounded-b-2xl">
                   <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 shadow-sm text-white text-xl"
-                    style={{ backgroundColor: t.gender === 'female' ? '#e91e8c' : '#0c1b33' }}>
+                    style={{ backgroundColor: t.gender === 'female' ? '#e91e8c' : '#1a3a6b' }}>
                     <i className={t.gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}></i>
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold" style={{ color: '#0c1b33' }}>{t.name}</h5>
+                    <h5 className="text-sm font-bold" style={{ color: '#1a3a6b' }}>{t.name}</h5>
                     <div className="flex gap-0.5 mt-0.5">
                       {[...Array(5)].map((_, s) => <i key={s} className="ph-fill ph-star text-amber-400 text-xs"></i>)}
                     </div>

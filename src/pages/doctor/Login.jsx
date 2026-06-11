@@ -31,7 +31,7 @@ export default function DoctorLogin() {
         <div className="text-center mb-8">
           <img src="/logo.png" alt="NK Hospital" className="h-14 mx-auto mb-4 object-contain"
             style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(190deg)' }} />
-          <h1 className="text-xl font-extrabold tracking-tight" style={{ color: '#0c1b33' }}>Doctor Portal</h1>
+          <h1 className="text-xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Doctor Portal</h1>
           <p className="text-xs text-gray-400 mt-1">NK Hospital, Kalaburagi</p>
         </div>
 
@@ -45,7 +45,7 @@ export default function DoctorLogin() {
               <input required type="email" value={form.email}
                 onChange={e => setForm({ ...form, email: e.target.value })}
                 className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none transition-colors"
-                onFocus={e => e.target.style.borderColor = '#0c1b33'}
+                onFocus={e => e.target.style.borderColor = '#1a3a6b'}
                 onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                 placeholder="doctor@nkhospital.in" />
             </div>
@@ -54,7 +54,7 @@ export default function DoctorLogin() {
               <input required type="password" value={form.password}
                 onChange={e => setForm({ ...form, password: e.target.value })}
                 className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none transition-colors"
-                onFocus={e => e.target.style.borderColor = '#0c1b33'}
+                onFocus={e => e.target.style.borderColor = '#1a3a6b'}
                 onBlur={e => e.target.style.borderColor = '#e5e7eb'}
                 placeholder="••••••••" />
             </div>
@@ -67,7 +67,7 @@ export default function DoctorLogin() {
 
             <button type="submit" disabled={loading}
               className="w-full text-white py-3 rounded-lg text-sm font-bold hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2 transition-opacity"
-              style={{ backgroundColor: '#0c1b33' }}>
+              style={{ backgroundColor: '#1a3a6b' }}>
               {loading
                 ? <><i className="ph ph-circle-notch animate-spin"></i> Signing in...</>
                 : <><i className="ph ph-sign-in"></i> Sign In</>}

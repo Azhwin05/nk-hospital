@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #0c1b33;
+  --color-brand-blue: #1a3a6b;
   --color-brand-gold: #c9a227;
   --color-bg-blue: #162a4a;
-  --color-bg-dark-blue: #0c1b33;
-  --color-footer-blue: #0c1b33;
+  --color-bg-dark-blue: #1a3a6b;
+  --color-footer-blue: #1a3a6b;
   --color-footer-box: #122543;
   --font-family-sans: "Inter", sans-serif;
 }

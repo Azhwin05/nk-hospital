@@ -18,7 +18,7 @@ export default function Blog() {
       <TopBarDark />
       <Navbar />
 
-      <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #1a3054)' }}>
+      <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Blogs & Articles</h1>
@@ -28,9 +28,9 @@ export default function Blog() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#0c1b33] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
+          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
           <span className="mx-2 text-gray-300">/</span>
-          <span style={{ color: '#0c1b33' }}>Blog</span>
+          <span style={{ color: '#1a3a6b' }}>Blog</span>
         </div>
       </div>
 
@@ -46,9 +46,9 @@ export default function Blog() {
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-600">{category}</span>
                   <span className="text-[10px] text-gray-400">{date}</span>
                 </div>
-                <h3 className="text-sm font-bold leading-snug mb-2" style={{ color: '#0c1b33' }}>{title}</h3>
+                <h3 className="text-sm font-bold leading-snug mb-2" style={{ color: '#1a3a6b' }}>{title}</h3>
                 <p className="text-[12px] text-gray-500 leading-relaxed flex-1">{excerpt}</p>
-                <button className="mt-4 text-[11px] font-bold flex items-center gap-1 hover:gap-2 transition-all" style={{ color: '#0c1b33' }}>
+                <button className="mt-4 text-[11px] font-bold flex items-center gap-1 hover:gap-2 transition-all" style={{ color: '#1a3a6b' }}>
                   Read More <i className="ph ph-arrow-right text-xs"></i>
                 </button>
               </div>

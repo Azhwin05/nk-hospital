@@ -7,7 +7,7 @@ import { slugMap } from '../data/specialitiesData'
 const specialities = [
   { icon: 'ph ph-heartbeat', name: 'Cardiology' },
   { icon: 'ph ph-activity', name: 'Cardiothoracic Surgery' },
-  { icon: 'ph ph-stomach', name: 'Medical Gastroenterology' },
+  { icon: 'ph ph-first-aid-kit', name: 'Medical Gastroenterology' },
   { icon: 'ph ph-knife', name: 'Surgical Gastroenterology' },
   { icon: 'ph ph-pill', name: 'Hepatology' },
   { icon: 'ph ph-bed', name: 'Liver Transplant' },
@@ -15,7 +15,7 @@ const specialities = [
   { icon: 'ph ph-scissors', name: 'Surgical Oncology' },
   { icon: 'ph ph-brain', name: 'Neurology' },
   { icon: 'ph ph-radioactive', name: 'Radiation Oncology' },
-  { icon: 'ph ph-head', name: 'Neurosurgery' },
+  { icon: 'ph ph-lightning', name: 'Neurosurgery' },
   { icon: 'ph ph-ear', name: 'ENT' },
   { icon: 'ph ph-bone', name: 'Orthopedics' },
   { icon: 'ph ph-baby', name: 'Pediatrics' },

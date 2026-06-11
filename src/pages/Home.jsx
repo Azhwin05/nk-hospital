@@ -7,7 +7,7 @@ import Footer from '../components/layout/Footer'
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
 const expertiseItems = [
-  { label: 'Medical\nGastroenterology', icon: 'ph ph-stomach' },
+  { label: 'Medical\nGastroenterology', icon: 'ph ph-first-aid-kit' },
   { label: 'Surgical\nGastroenterology', icon: 'ph ph-knife' },
   { label: 'Hepatology', icon: 'ph ph-pill' },
   { label: 'Cardiology', icon: 'ph ph-heartbeat' },
@@ -17,7 +17,7 @@ const expertiseItems = [
   { label: 'Surgical\nOncology', icon: 'ph ph-scissors' },
   { label: 'Neurology', icon: 'ph ph-brain' },
   { label: 'Radiation\nOncology', icon: 'ph ph-radioactive' },
-  { label: 'Neurosurgery', icon: 'ph ph-head' },
+  { label: 'Neurosurgery', icon: 'ph ph-lightning' },
   { label: 'ENT', icon: 'ph ph-ear' },
   { label: 'Orthopaedics', icon: 'ph ph-bone' },
   { label: 'Pulmonology', icon: 'ph ph-wind' },

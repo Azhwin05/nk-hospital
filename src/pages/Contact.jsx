@@ -3,16 +3,31 @@ import { Link } from 'react-router-dom'
 import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', subject: '', message: '' })
   const [sent, setSent] = useState(false)
+  const { t } = useLanguage()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setSent(true)
     setTimeout(() => { setSent(false); setForm({ name: '', phone: '', email: '', subject: '', message: '' }) }, 3000)
   }
+
+  const infoCards = [
+    { icon: 'ph-fill ph-map-pin', titleKey: 'contact_address_title', lines: ['NK Nagar, opposite Shor Gumbad,', 'Jaferabad, Kalaburagi,', 'Karnataka 585103'] },
+    { icon: 'ph-fill ph-phone', titleKey: 'contact_phone_title', lines: [
+        <a key="p1" href="tel:08040123456" className="hover:text-[#1a3a6b] transition-colors">08040-123456</a>,
+        <a key="p2" href="tel:+919876543210" className="hover:text-[#1a3a6b] transition-colors">+91 98765 43210</a>,
+    ]},
+    { icon: 'ph-fill ph-envelope', titleKey: 'contact_email_title', lines: [
+        <a key="e1" href="mailto:info@nkhospital.in" className="hover:text-[#1a3a6b] transition-colors">info@nkhospital.in</a>,
+        <a key="e2" href="mailto:appointments@nkhospital.in" className="hover:text-[#1a3a6b] transition-colors">appointments@nkhospital.in</a>,
+    ]},
+    { icon: 'ph-fill ph-clock', titleKey: 'contact_hours_title', lines: ['Mon – Sat: 8:00 AM – 8:00 PM', 'Emergency: 24/7'] },
+  ]
 
   return (
     <div className="antialiased bg-slate-50 text-gray-800 min-h-screen flex flex-col">
@@ -22,16 +37,18 @@ export default function Contact() {
       <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Contact Us</h1>
-          <p className="text-xs md:text-sm text-blue-200/90 font-medium">We're here to help — reach out to us anytime</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">{t('contact_heading')}</h1>
+          <p className="text-xs md:text-sm text-blue-200/90 font-medium">{t('contact_sub')}</p>
         </div>
       </div>
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400"><i className="ph ph-house text-sm"></i> Home</Link>
+          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
+            <i className="ph ph-house text-sm"></i> {t('common_home')}
+          </Link>
           <span className="mx-2 text-gray-300">/</span>
-          <span style={{ color: '#1a3a6b' }}>Contact Us</span>
+          <span style={{ color: '#1a3a6b' }}>{t('contact_heading')}</span>
         </div>
       </div>
 
@@ -40,19 +57,14 @@ export default function Contact() {
 
           {/* Info cards */}
           <div className="space-y-5">
-            {[
-              { icon: 'ph-fill ph-map-pin', title: 'Address', lines: ['NK Nagar, opposite Shor Gumbad,', 'Jaferabad, Kalaburagi,', 'Karnataka 585103'] },
-              { icon: 'ph-fill ph-phone', title: 'Phone', lines: ['08040-123456', '+91 98765 43210'] },
-              { icon: 'ph-fill ph-envelope', title: 'Email', lines: ['info@nkhospital.in', 'appointments@nkhospital.in'] },
-              { icon: 'ph-fill ph-clock', title: 'Working Hours', lines: ['Mon – Sat: 8:00 AM – 8:00 PM', 'Emergency: 24/7'] },
-            ].map(({ icon, title, lines }) => (
-              <div key={title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-4 items-start">
+            {infoCards.map(({ icon, titleKey, lines }) => (
+              <div key={titleKey} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-4 items-start">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-lg" style={{ backgroundColor: '#eaf1fb', color: '#1a3a6b' }}>
                   <i className={icon}></i>
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">{title}</h4>
-                  {lines.map(l => <p key={l} className="text-sm font-medium text-gray-700">{l}</p>)}
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">{t(titleKey)}</h4>
+                  {lines.map((l, i) => <p key={i} className="text-sm font-medium text-gray-700">{l}</p>)}
                 </div>
               </div>
             ))}
@@ -60,7 +72,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-            <h2 className="text-xl font-bold mb-1" style={{ color: '#1a3a6b' }}>Send Us a Message</h2>
+            <h2 className="text-xl font-bold mb-1" style={{ color: '#1a3a6b' }}>{t('contact_form_send')}</h2>
             <p className="text-xs text-gray-400 mb-6">Our team will get back to you within 24 hours.</p>
 
             {sent ? (
@@ -68,41 +80,41 @@ export default function Contact() {
                 <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500 text-3xl">
                   <i className="ph-fill ph-check-circle"></i>
                 </div>
-                <h3 className="font-bold text-gray-800 text-lg mb-1">Message Sent!</h3>
-                <p className="text-sm text-gray-500">We'll get back to you shortly.</p>
+                <h3 className="font-bold text-gray-800 text-lg mb-1">{t('contact_success_title')}</h3>
+                <p className="text-sm text-gray-500">{t('contact_form_success')}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs font-semibold text-gray-600 mb-1 block">Full Name *</label>
+                    <label className="text-xs font-semibold text-gray-600 mb-1 block">{t('contact_form_name')} *</label>
                     <input required type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" placeholder="Your name" />
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" placeholder={t('contact_form_name')} />
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-gray-600 mb-1 block">Phone *</label>
+                    <label className="text-xs font-semibold text-gray-600 mb-1 block">{t('contact_form_phone')} *</label>
                     <input required type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
                       className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" placeholder="+91 XXXXX XXXXX" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-gray-600 mb-1 block">Email</label>
+                  <label className="text-xs font-semibold text-gray-600 mb-1 block">{t('contact_form_email')}</label>
                   <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" placeholder="you@email.com" />
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-gray-600 mb-1 block">Subject *</label>
+                  <label className="text-xs font-semibold text-gray-600 mb-1 block">{t('contact_form_subject')} *</label>
                   <input required type="text" value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })}
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" placeholder="How can we help?" />
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-gray-600 mb-1 block">Message *</label>
+                  <label className="text-xs font-semibold text-gray-600 mb-1 block">{t('contact_form_msg')} *</label>
                   <textarea required rows={5} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors resize-none" placeholder="Write your message here..."></textarea>
                 </div>
                 <button type="submit" className="text-white px-8 py-3 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity flex items-center gap-2"
                   style={{ backgroundColor: '#1a3a6b' }}>
-                  <i className="ph ph-paper-plane-tilt"></i> Send Message
+                  <i className="ph ph-paper-plane-tilt"></i> {t('contact_form_send')}
                 </button>
               </form>
             )}

@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../../context/LanguageContext'
 
 export default function TopBarDark() {
+  const { t } = useLanguage()
   return (
     <div style={{ backgroundColor: '#0c1b33' }} className="text-white text-xs py-1.5 px-4 md:px-8 flex justify-between items-center">
       <div className="flex items-center gap-2">
         <i className="ph-fill ph-ambulance text-red-500 text-lg"></i>
-        <span>24/7 Ambulance Service : <strong>08040-123456</strong></span>
+        <span>{t('topbar_ambulance')} : <a href="tel:08040123456" className="font-bold text-white hover:text-white/80 transition-colors">08040-123456</a></span>
       </div>
       <div className="hidden md:flex items-center gap-4">
-        <a href="#" className="hover:text-gray-300">Careers</a>
-        <a href="#" className="hover:text-gray-300">Conferences / Events</a>
-        <Link to="/contact" className="hover:text-gray-300">Contact Us</Link>
-        <Link to="/blog" className="hover:text-gray-300">Blogs</Link>
+        <a href="#" className="hover:text-gray-300">{t('topbar_careers')}</a>
+        <a href="#" className="hover:text-gray-300">{t('topbar_events')}</a>
+        <Link to="/contact" className="hover:text-gray-300">{t('topbar_contact')}</Link>
+        <Link to="/blog" className="hover:text-gray-300">{t('topbar_blogs')}</Link>
       </div>
     </div>
   )

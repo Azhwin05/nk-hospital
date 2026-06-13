@@ -1,29 +1,42 @@
-import { useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
 import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { specialitiesData } from '../data/specialitiesData'
+import { useLanguage } from '../context/LanguageContext'
 
-const TABS = ['Overview', 'Conditions', 'Treatments', 'Doctors', 'FAQs']
+const TABS = [
+  { key: 'Overview',   labelKey: 'sd_tab_overview' },
+  { key: 'Conditions', labelKey: 'sd_tab_conditions' },
+  { key: 'Treatments', labelKey: 'sd_tab_treatments' },
+  { key: 'Doctors',    labelKey: 'sd_tab_doctors' },
+  { key: 'FAQs',       labelKey: 'sd_tab_faqs' },
+]
 
 export default function SpecialityDetail() {
   const { slug } = useParams()
-  const navigate = useNavigate()
   const [tab, setTab] = useState('Overview')
   const data = specialitiesData[slug]
+  const { t } = useLanguage()
+
+  useEffect(() => {
+    const base = 'NK Hospital Kalaburagi | Multi Super-Specialty Hospital'
+    if (data) document.title = `${data.name} | NK Hospital Kalaburagi`
+    return () => { document.title = base }
+  }, [data])
 
   if (!data) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <p className="text-gray-500 mb-4">Specialty not found.</p>
-        <Link to="/specialities" className="text-[#1a3a6b] font-bold hover:underline">← Back to Specialties</Link>
+        <p className="text-gray-500 mb-4">{t('sd_not_found')}</p>
+        <Link to="/specialities" className="text-[#1a3a6b] font-bold hover:underline">{t('sd_back')}</Link>
       </div>
     )
   }
 
-  const visibleTabs = TABS.filter(t => {
-    if (t === 'FAQs' && (!data.faqs || data.faqs.length === 0)) return false
+  const visibleTabs = TABS.filter(tab => {
+    if (tab.key === 'FAQs' && (!data.faqs || data.faqs.length === 0)) return false
     return true
   })
 
@@ -37,9 +50,9 @@ export default function SpecialityDetail() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 relative z-10">
           <div className="flex items-center gap-2 text-xs text-blue-300 mb-4">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/" className="hover:text-white transition-colors">{t('common_home')}</Link>
             <span>/</span>
-            <Link to="/specialities" className="hover:text-white transition-colors">Specialties</Link>
+            <Link to="/specialities" className="hover:text-white transition-colors">{t('nav_specialties')}</Link>
             <span>/</span>
             <span className="text-white">{data.name}</span>
           </div>
@@ -58,10 +71,10 @@ export default function SpecialityDetail() {
       {/* Tab bar */}
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex overflow-x-auto">
-          {visibleTabs.map(t => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === t ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
-              {t}
+          {visibleTabs.map(tabObj => (
+            <button key={tabObj.key} onClick={() => setTab(tabObj.key)}
+              className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === tabObj.key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
+              {t(tabObj.labelKey)}
             </button>
           ))}
         </div>
@@ -73,13 +86,13 @@ export default function SpecialityDetail() {
         {tab === 'Overview' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl">
-              <h2 className="text-2xl font-extrabold mb-6" style={{ color: '#1a3a6b' }}>Overview</h2>
+              <h2 className="text-2xl font-extrabold mb-6" style={{ color: '#1a3a6b' }}>{t('sd_overview_h')}</h2>
               <div className="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10">
                 {data.overview.map((p, i) => <p key={i}>{p}</p>)}
               </div>
               {data.subspecialties && (
                 <div>
-                  <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>Subspecialties Include</h3>
+                  <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>{t('sd_subspecialties_h')}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {data.subspecialties.map(({ title, desc }) => (
                       <div key={title} className="bg-slate-50 rounded-xl p-4 border border-gray-100">
@@ -98,7 +111,7 @@ export default function SpecialityDetail() {
         {tab === 'Conditions' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl">
-              <h2 className="text-2xl font-extrabold mb-8" style={{ color: '#1a3a6b' }}>Conditions We Treat</h2>
+              <h2 className="text-2xl font-extrabold mb-8" style={{ color: '#1a3a6b' }}>{t('sd_conditions_h')}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {data.conditions.map((c, i) => (
                   <div key={i} className="flex items-start gap-3 bg-white border border-gray-100 rounded-xl px-5 py-4 shadow-sm">
@@ -116,15 +129,15 @@ export default function SpecialityDetail() {
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl space-y-10">
               <div>
-                <h2 className="text-2xl font-extrabold mb-5" style={{ color: '#1a3a6b' }}>Treatments &amp; Procedures</h2>
+                <h2 className="text-2xl font-extrabold mb-5" style={{ color: '#1a3a6b' }}>{t('sd_treatments_h')}</h2>
                 <p className="text-[15px] text-gray-600 leading-relaxed">{data.treatments}</p>
               </div>
               <div className="bg-slate-50 rounded-2xl p-5 md:p-8 border border-gray-100">
-                <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>Our Approach to Care</h3>
+                <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>{t('sd_approach_h')}</h3>
                 <p className="text-[14px] text-gray-600 leading-relaxed">{data.approach}</p>
               </div>
               <div className="bg-blue-50 rounded-2xl p-5 md:p-8 border border-blue-100">
-                <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>When Should a Patient Consult?</h3>
+                <h3 className="text-lg font-bold mb-4" style={{ color: '#1a3a6b' }}>{t('sd_when_h')}</h3>
                 <p className="text-[14px] text-gray-700 leading-relaxed">{data.whenToConsult}</p>
               </div>
             </div>
@@ -134,33 +147,35 @@ export default function SpecialityDetail() {
         {/* Doctors */}
         {tab === 'Doctors' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
-            <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>Doctors &amp; Specialists</h2>
+            <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>{t('sd_doctors_h')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {data.doctors.map(({ name, qualification, experience, img, expertise, note }) => (
                 <div key={name} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="h-56 bg-gray-100 overflow-hidden">
-                    <img src={img} className="w-full h-full object-cover object-top" alt={name} />
+                    <img src={img} className="w-full h-full object-cover object-top" alt={name} loading="lazy" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-base font-bold mb-0.5" style={{ color: '#1a3a6b' }}>{name}</h3>
-                    <p className="text-[11px] text-gray-400 font-semibold mb-1">{qualification}</p>
-                    <p className="text-[11px] text-gray-500 mb-4"><i className="ph ph-clock mr-1"></i>{experience} experience</p>
+                    <p className="text-xs md:text-[11px] text-gray-400 font-semibold mb-1">{qualification}</p>
+                    <p className="text-xs md:text-[11px] text-gray-500 mb-4">
+                      <i className="ph ph-clock mr-1"></i>{experience} {t('sd_experience')}
+                    </p>
                     <div className="mb-4">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">Area of Expertise</p>
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">{t('sd_expertise_h')}</p>
                       <ul className="space-y-1.5">
                         {expertise.map((e, i) => (
-                          <li key={i} className="flex items-start gap-2 text-[12px] text-gray-600">
+                          <li key={i} className="flex items-start gap-2 text-[13px] md:text-[12px] text-gray-600">
                             <i className="ph-bold ph-caret-right text-[#1a3a6b] text-xs mt-0.5 shrink-0"></i>{e}
                           </li>
                         ))}
                       </ul>
                     </div>
                     {note && (
-                      <p className="text-[11px] text-gray-400 italic border-t border-gray-100 pt-3 leading-relaxed">{note}</p>
+                      <p className="text-xs md:text-[11px] text-gray-400 italic border-t border-gray-100 pt-3 leading-relaxed">{note}</p>
                     )}
                     <Link to="/book" className="mt-4 flex items-center justify-center gap-2 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full hover:opacity-90 transition-opacity"
                       style={{ backgroundColor: '#1a3a6b' }}>
-                      <i className="ph ph-calendar-plus"></i> Book Appointment
+                      <i className="ph ph-calendar-plus"></i> {t('sd_book')}
                     </Link>
                   </div>
                 </div>
@@ -173,7 +188,7 @@ export default function SpecialityDetail() {
         {tab === 'FAQs' && data.faqs && data.faqs.length > 0 && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-3xl">
-              <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>{t('sd_faqs_h')}</h2>
               <div className="space-y-4">
                 {data.faqs.map(({ q, a }, i) => (
                   <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">

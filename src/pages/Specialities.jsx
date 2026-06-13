@@ -3,6 +3,7 @@ import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { slugMap } from '../data/specialitiesData'
+import { useLanguage } from '../context/LanguageContext'
 
 const specialities = [
   { icon: 'ph ph-heartbeat', name: 'Cardiology' },
@@ -37,6 +38,9 @@ const specialities = [
 ]
 
 export default function Specialities() {
+  const { t } = useLanguage()
+  const specNames = t('spec_names') || {}
+
   return (
     <div className="antialiased text-gray-800 bg-white">
       <TopBarDark />
@@ -45,9 +49,9 @@ export default function Specialities() {
       <div className="text-white py-12 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #1a3a6b)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10">
-          <h1 className="text-3xl font-bold mb-2">Our Specialties</h1>
+          <h1 className="text-3xl font-bold mb-2">{t('spec_page_heading')}</h1>
           <div className="text-xs text-blue-200">
-            <Link to="/" className="hover:text-white">Home</Link> / <span className="text-white">Specialties</span>
+            <Link to="/" className="hover:text-white">{t('common_home')}</Link> / <span className="text-white">{t('spec_page_heading')}</span>
           </div>
         </div>
       </div>
@@ -55,22 +59,23 @@ export default function Specialities() {
       <main className="py-16 bg-gray-50 min-h-screen">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#1a3a6b' }}>30+ Health Domains</h2>
-            <p className="text-gray-600 text-sm max-w-2xl mx-auto">NK Hospital provides comprehensive care across a wide spectrum of medical and surgical specialties. Click on a specialty to learn more.</p>
+            <h2 className="text-3xl font-bold mb-4" style={{ color: '#1a3a6b' }}>{t('spec_page_domains')}</h2>
+            <p className="text-gray-600 text-sm max-w-2xl mx-auto">{t('spec_page_sub')}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {specialities.map(({ icon, name }) => {
               const slug = slugMap[name]
               const hasPage = !!slug
+              const displayName = specNames[name] || name
               const content = (
                 <>
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-[#1a3a6b] transition-colors shrink-0 ${hasPage ? 'bg-blue-50 group-hover:bg-[#1a3a6b] group-hover:text-white' : 'bg-gray-50'}`}>
                     <i className={`${icon} text-xl`}></i>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="text-sm font-semibold text-gray-800 leading-snug block">{name}</span>
-                    {hasPage && <span className="text-[10px] text-[#1a3a6b] font-semibold">View Details →</span>}
+                    <span className="text-sm font-semibold text-gray-800 leading-snug block">{displayName}</span>
+                    {hasPage && <span className="text-[10px] text-[#1a3a6b] font-semibold">{t('spec_page_view_details')}</span>}
                   </div>
                 </>
               )

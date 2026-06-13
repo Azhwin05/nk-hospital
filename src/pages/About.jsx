@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom'
 import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
-
-const TABS = [
-  { key: 'overview', label: 'Overview' },
-  { key: 'chairman', label: "Chairman's Message" },
-  { key: 'board', label: 'Board Of Directors' },
-  { key: 'accreditations', label: 'Certifications' },
-]
+import { useLanguage } from '../context/LanguageContext'
 
 const coreValues = [
   { icon: 'ph ph-heart', title: 'Compassion', desc: 'Care delivered with empathy and respect for every patient.', color: 'text-rose-500 bg-rose-50' },
@@ -46,7 +40,7 @@ const board = [
     gender: 'female',
     experience: 'Healthcare Management',
     expertise: 'Medical Quality Standards, Multidisciplinary Coordination, Hospital Operations',
-    bio: 'Dr. Amera contributes to strengthening hospital systems, medical coordination, and quality-driven patient care across departments. Her involvement supports the hospital\'s commitment toward ethical practice, patient safety, and evidence-based treatment approaches.',
+    bio: "Dr. Amera contributes to strengthening hospital systems, medical coordination, and quality-driven patient care across departments. Her involvement supports the hospital's commitment toward ethical practice, patient safety, and evidence-based treatment approaches.",
   },
   {
     name: 'Dr. Numan',
@@ -55,7 +49,7 @@ const board = [
     gender: 'male',
     experience: 'Healthcare Operations & Administration',
     expertise: 'Hospital Strategy, Operational Leadership, Clinical Coordination, Institutional Growth, Hospital Systems, Operational Efficiency, Compliance, Service Delivery',
-    bio: 'Dr. Numan plays a key leadership role in driving the hospital\'s operational excellence, strategic expansion, and clinical coordination. His focus lies in strengthening systems, ensuring quality-driven healthcare delivery, infrastructure management and building a patient-centric institution aligned with global healthcare standards.',
+    bio: "Dr. Numan plays a key leadership role in driving the hospital's operational excellence, strategic expansion, and clinical coordination. His focus lies in strengthening systems, ensuring quality-driven healthcare delivery, infrastructure management and building a patient-centric institution aligned with global healthcare standards.",
   },
 ]
 
@@ -84,14 +78,14 @@ function Overview() {
       </div>
 
       {/* Stats bar */}
-      <div style={{ backgroundColor: '#1a3a6b' }}>
-        <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-white/20">
+      <div className="bg-white/20">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px">
             {stats.map(({ icon, value, label }) => (
-              <div key={label} className="py-5 px-3 flex flex-col items-center justify-center text-white text-center">
+              <div key={label} className="py-5 px-3 flex flex-col items-center justify-center text-white text-center" style={{ backgroundColor: '#1a3a6b' }}>
                 <i className={`${icon} text-xl text-blue-200 mb-1`}></i>
                 {value && <div className="text-xl font-extrabold leading-tight">{value}</div>}
-                <div className="text-[9px] font-semibold text-blue-200 uppercase tracking-wide leading-tight mt-0.5">{label}</div>
+                <div className="text-[11px] md:text-[9px] font-semibold text-blue-200 uppercase tracking-wide leading-tight mt-0.5">{label}</div>
               </div>
             ))}
           </div>
@@ -181,13 +175,18 @@ function Overview() {
 
       {/* Milestones */}
       <section className="py-12 md:py-20 bg-white overflow-hidden">
-        <div className="text-center mb-14 px-4">
+        <div className="text-center mb-10 px-4">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Our Growth</p>
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Our Journey</h2>
+          <p className="mt-3 text-xs text-gray-400 md:hidden flex items-center justify-center gap-1">
+            <i className="ph ph-hand-swipe-right text-sm"></i> Swipe to explore our timeline
+          </p>
         </div>
-        <div className="overflow-x-auto">
+        <div className="relative">
+          <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-16 z-10 md:hidden"
+            style={{ background: 'linear-gradient(to right, transparent, white)' }} />
+          <div className="overflow-x-auto scrollbar-hide">
           <div className="relative flex px-16 min-w-max mx-auto justify-center">
-            {/* Connecting line */}
             <div className="absolute top-[38px] left-24 right-24 h-px bg-blue-100"></div>
             {milestones.map(({ year, icon, title, desc }) => (
               <div key={year} className="w-[240px] flex flex-col items-center text-center shrink-0 group px-4">
@@ -203,11 +202,11 @@ function Overview() {
               </div>
             ))}
           </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-
       <section className="py-10 md:py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #162a4a)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 text-center relative z-10">
@@ -336,13 +335,20 @@ function Accreditations() {
           </div>
         </div>
       </section>
-
     </div>
   )
 }
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('overview')
+  const { t } = useLanguage()
+
+  const TABS = [
+    { key: 'overview',       labelKey: 'about_tab_overview' },
+    { key: 'chairman',       labelKey: 'about_tab_chairman' },
+    { key: 'board',          labelKey: 'about_tab_board' },
+    { key: 'accreditations', labelKey: 'about_tab_certifications' },
+  ]
 
   return (
     <div className="antialiased text-gray-800 bg-white">
@@ -351,11 +357,11 @@ export default function About() {
 
       {/* Tab bar */}
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
-        <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto justify-center md:justify-center">
-          {TABS.map(({ key, label }) => (
+        <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto md:justify-center">
+          {TABS.map(({ key, labelKey }) => (
             <button key={key} onClick={() => setActiveTab(key)}
               className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
-              {label}
+              {t(labelKey)}
             </button>
           ))}
         </div>

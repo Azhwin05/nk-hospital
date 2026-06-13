@@ -12,12 +12,16 @@ import Contact from './pages/Contact'
 import DoctorLogin from './pages/doctor/Login'
 import DoctorDashboard from './pages/doctor/Dashboard'
 import FloatingBookButton from './components/FloatingBookButton'
+import StickyEmergencyBar from './components/StickyEmergencyBar'
 import ScrollToTop from './components/ScrollToTop'
+import { LanguageProvider } from './context/LanguageContext'
 
 export default function App() {
   return (
+    <LanguageProvider>
     <BrowserRouter>
       <ScrollToTop />
+      <StickyEmergencyBar />
       <FloatingBookButton />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,5 +38,6 @@ export default function App() {
         <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
       </Routes>
     </BrowserRouter>
+    </LanguageProvider>
   )
 }

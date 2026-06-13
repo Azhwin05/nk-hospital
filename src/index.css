@@ -11,6 +11,12 @@
 }
 
 body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; margin: 0; }
+
+/* Kannada language font overrides */
+html[lang="kn"] body { font-family: 'Noto Sans Kannada', 'Inter', sans-serif; }
+html[lang="kn"] h1, html[lang="kn"] h2, html[lang="kn"] h3 {
+  font-family: 'Noto Serif Kannada', 'Noto Sans Kannada', serif;
+}
 #root { width: 100%; }
 
 @keyframes shiny-text-anim {
@@ -56,3 +62,7 @@ body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; ma
   to { opacity: 1; transform: translateY(0); }
 }
 .tab-content-enter { animation: fadeInUp 0.4s ease-in-out; }
+
+/* Hide scrollbar on mobile carousels */
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }

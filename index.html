@@ -4,11 +4,103 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NK Hospitals</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Primary SEO -->
+    <title>NK Hospital Kalaburagi | Multi Super-Specialty Hospital</title>
+    <meta name="description" content="NK Hospital is Kalaburagi's leading multi super-specialty hospital with 200+ beds, 40+ specialties including Gastroenterology, Cardiology, Neurology, Oncology, and 24/7 emergency care. Expert doctors. Advanced infrastructure." />
+    <meta name="keywords" content="NK Hospital Kalaburagi, multi specialty hospital Kalaburagi, best hospital Gulbarga, gastroenterology Kalaburagi, cardiology hospital Karnataka, emergency hospital Kalaburagi" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nk-hospital.vercel.app/" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nk-hospital.vercel.app/" />
+    <meta property="og:title" content="NK Hospital Kalaburagi | Multi Super-Specialty Hospital" />
+    <meta property="og:description" content="Kalaburagi's trusted multi super-specialty hospital. 200+ beds, 40+ specialties, 24/7 emergency. Advanced infrastructure. Expert specialists." />
+    <meta property="og:image" content="https://nk-hospital.vercel.app/slide1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="NK Hospital Kalaburagi" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NK Hospital Kalaburagi | Multi Super-Specialty Hospital" />
+    <meta name="twitter:description" content="Kalaburagi's trusted multi super-specialty hospital. 200+ beds, 40+ specialties, 24/7 emergency." />
+    <meta name="twitter:image" content="https://nk-hospital.vercel.app/slide1.jpg" />
+
+    <!-- Hospital Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hospital",
+      "name": "NK Hospital",
+      "alternateName": "NK Multi Super-Specialty Hospital",
+      "url": "https://nk-hospital.vercel.app/",
+      "logo": "https://nk-hospital.vercel.app/logo.png",
+      "image": "https://nk-hospital.vercel.app/slide1.jpg",
+      "description": "NK Hospital is a leading multi super-specialty hospital in Kalaburagi, Karnataka, providing advanced healthcare across 40+ specialties including Gastroenterology, Cardiology, Neurology, Oncology, and Orthopedics.",
+      "telephone": "+918040123456",
+      "email": "info@nkhospital.in",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "NK Nagar, opposite Shor Gumbad, Jaferabad",
+        "addressLocality": "Kalaburagi",
+        "addressRegion": "Karnataka",
+        "postalCode": "585103",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 17.329,
+        "longitude": 76.819
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "00:00",
+          "closes": "23:59",
+          "description": "Emergency services available 24/7"
+        }
+      ],
+      "availableService": [
+        {"@type": "MedicalProcedure", "name": "Emergency Care"},
+        {"@type": "MedicalSpecialty", "name": "Gastroenterology"},
+        {"@type": "MedicalSpecialty", "name": "Cardiology"},
+        {"@type": "MedicalSpecialty", "name": "Neurology"},
+        {"@type": "MedicalSpecialty", "name": "Oncology"},
+        {"@type": "MedicalSpecialty", "name": "Orthopedics"},
+        {"@type": "MedicalSpecialty", "name": "Nephrology"},
+        {"@type": "MedicalSpecialty", "name": "Hepatology"},
+        {"@type": "MedicalSpecialty", "name": "Liver Transplant"}
+      ],
+      "numberOfBeds": 200,
+      "sameAs": [
+        "https://www.facebook.com/NKHospitalKalburagi",
+        "https://www.instagram.com/nk_hospital_/",
+        "https://www.linkedin.com/company/nk-hospital-kalaburagi/",
+        "https://www.youtube.com/@NKhospital_Kalaburagi"
+      ]
+    }
+    </script>
+
+    <!-- Fonts: Inter (English) + Noto Sans/Serif Kannada -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Kannada:wght@400;500;600;700;800&family=Noto+Serif+Kannada:wght@700;800&display=swap" rel="stylesheet" />
+
+    <!-- Preload first hero image for fast LCP -->
+    <link rel="preload" as="image" href="/slide1.jpg" fetchpriority="high" />
+
+    <!-- Phosphor Icons — pinned version, deferred so it never blocks render -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
   </head>
   <body>
     <div id="root"></div>

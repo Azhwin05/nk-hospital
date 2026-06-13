@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import TopBarDark from '../components/layout/TopBarDark'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import { useLanguage } from '../context/LanguageContext'
 
 const doctors = [
   { name: 'Dr. Arif Raza Ahmed',  specialty: 'Surgical Gastroenterology', exp: '14+', img: '/doctors/Dr arif raza ahmed.JPG',  initials: 'AR', gender: 'male',   filled: true },
@@ -24,9 +25,9 @@ const doctors = [
 
 function Avatar({ img, initials, gender, name }) {
   if (img) {
-    return <img src={img} className="w-20 h-[5.5rem] object-cover object-top rounded-xl bg-gray-100 shrink-0" alt={name} />
+    return <img src={img} className="w-20 h-[5.5rem] object-cover object-top rounded-xl bg-gray-100 shrink-0" alt={name} loading="lazy" />
   }
-  const bg = gender === 'female' ? '#e91e8c' : gender === 'team' ? '#1a3a6b' : '#1a3a6b'
+  const bg = gender === 'female' ? '#e91e8c' : '#1a3a6b'
   return (
     <div className="w-20 h-[5.5rem] rounded-xl shrink-0 flex flex-col items-center justify-center gap-1"
       style={{ backgroundColor: bg + '15', border: `1.5px solid ${bg}30` }}>
@@ -39,6 +40,9 @@ function Avatar({ img, initials, gender, name }) {
 
 export default function FindDoctor() {
   const [search, setSearch] = useState('')
+  const { t } = useLanguage()
+  const specNames = t('spec_names') || {}
+
   const filtered = doctors.filter(d =>
     d.name.toLowerCase().includes(search.toLowerCase()) ||
     d.specialty.toLowerCase().includes(search.toLowerCase())
@@ -52,19 +56,19 @@ export default function FindDoctor() {
       <div className="bg-white pt-12 pb-6 border-b border-gray-100">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
           <div className="text-left mb-8">
-            <h1 className="text-3xl font-bold mb-1.5 tracking-tight" style={{ color: '#1a3a6b' }}>Doctors</h1>
-            <p className="text-sm text-gray-500">Find the right specialist for your care</p>
+            <h1 className="text-3xl font-bold mb-1.5 tracking-tight" style={{ color: '#1a3a6b' }}>{t('finddr_heading')}</h1>
+            <p className="text-sm text-gray-500">{t('finddr_sub')}</p>
           </div>
           <div className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow rounded-xl flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <div className="flex-1 p-3.5 flex items-center justify-between text-[13px] text-gray-500 cursor-pointer group">
-              <div className="flex items-center gap-2"><i className="ph ph-stethoscope text-gray-400 group-hover:text-[#1a3a6b] text-lg transition-colors"></i> Select Speciality</div>
+              <div className="flex items-center gap-2"><i className="ph ph-stethoscope text-gray-400 group-hover:text-[#1a3a6b] text-lg transition-colors"></i> {t('finddr_select')}</div>
               <i className="ph ph-caret-down text-gray-400 group-hover:text-[#1a3a6b]"></i>
             </div>
             <div className="flex-[1.5] p-3.5 flex items-center gap-2 text-[13px] text-gray-500">
               <i className="ph ph-user text-lg"></i>
               <input
                 type="text" value={search} onChange={e => setSearch(e.target.value)}
-                placeholder="Search Doctor or Specialty"
+                placeholder={t('finddr_search')}
                 className="w-full outline-none bg-transparent text-gray-800 placeholder-gray-400"
               />
             </div>
@@ -81,21 +85,21 @@ export default function FindDoctor() {
                   <Avatar img={img} initials={initials} gender={gender} name={name} />
                   <div className="min-w-0">
                     <h3 className="font-bold text-sm mb-0.5 leading-tight" style={{ color: '#1a3a6b' }}>{name}</h3>
-                    <p className="text-[11px] text-blue-600 font-semibold mb-1.5 tracking-wide">{specialty}</p>
+                    <p className="text-xs text-blue-600 font-semibold mb-1.5 tracking-wide">
+                      {specNames[specialty] || specialty}
+                    </p>
                     {exp && (
-                      <div className="flex items-center gap-1.5 text-[10px] text-gray-500 mb-1">
-                        <i className="ph ph-clock text-gray-400 text-xs"></i> {exp} yrs experience
+                      <div className="flex items-center gap-1.5 text-[11px] text-gray-500 mb-1">
+                        <i className="ph ph-clock text-gray-400 text-xs"></i> {exp} {t('book_experience')}
                       </div>
                     )}
-                    {members && (
-                      <p className="text-[10px] text-gray-400 leading-snug">{members}</p>
-                    )}
+                    {members && <p className="text-[10px] text-gray-400 leading-snug">{members}</p>}
                   </div>
                 </div>
                 <Link to="/book"
                   className={`w-full py-2.5 rounded-lg text-[11px] font-bold text-center transition-colors ${filled ? 'text-white hover:opacity-90' : 'border border-[#1a3a6b] text-[#1a3a6b] hover:bg-blue-50'}`}
                   style={filled ? { backgroundColor: '#1a3a6b' } : {}}>
-                  {filled ? 'Book Appointment' : <><i className="ph ph-calendar-plus mr-1"></i> Request Appointment</>}
+                  {filled ? t('finddr_book') : <><i className="ph ph-calendar-plus mr-1"></i> {t('finddr_request')}</>}
                 </Link>
               </div>
             ))}

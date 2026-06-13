@@ -8,22 +8,22 @@ import { useLanguage } from '../context/LanguageContext'
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
 const expertiseItems = [
-  { icon: 'ph ph-first-aid-kit' },
-  { icon: 'ph ph-knife' },
-  { icon: 'ph ph-pill' },
+  { icon: 'ph ph-stomach' },
+  { icon: 'ph ph-stomach' },
+  { icon: 'ph ph-drop' },
   { icon: 'ph ph-heartbeat' },
-  { icon: 'ph ph-activity' },
-  { icon: 'ph ph-bed' },
+  { icon: 'ph ph-heart' },
+  { icon: 'ph ph-arrows-clockwise' },
+  { icon: 'ph ph-dna' },
   { icon: 'ph ph-bandaids' },
-  { icon: 'ph ph-scissors' },
   { icon: 'ph ph-brain' },
   { icon: 'ph ph-radioactive' },
-  { icon: 'ph ph-lightning' },
+  { icon: 'ph ph-brain' },
   { icon: 'ph ph-ear' },
   { icon: 'ph ph-bone' },
-  { icon: 'ph ph-wind' },
-  { icon: 'ph ph-flask' },
-  { icon: 'ph ph-toilet-paper' },
+  { icon: 'ph ph-lungs' },
+  { icon: 'ph ph-drop' },
+  { icon: 'ph ph-funnel' },
 ]
 
 const testimonials = [

@@ -95,7 +95,7 @@ export const specialitiesData = {
 
   'surgical-gastroenterology': {
     name: 'Surgical Gastroenterology',
-    icon: 'ph ph-knife',
+    icon: 'svg:scalpel',
     tagline: 'Advanced Surgical Care for the Digestive System',
     overview: [
       'The department of surgical gastroenterology specializes in the surgical treatment of diseases related to the digestive system. This includes disorders affecting the esophagus, stomach, intestines, liver, gallbladder, pancreas, colon, rectum, and related organs. The department manages a wide range of conditions, from common digestive disorders to complex gastrointestinal diseases requiring advanced surgical care.',
@@ -144,7 +144,7 @@ export const specialitiesData = {
 
   'medical-gastroenterology': {
     name: 'Medical Gastroenterology',
-    icon: 'ph ph-stomach',
+    icon: 'svg:stomach',
     tagline: 'Expert Diagnosis and Treatment of Digestive Disorders',
     overview: [
       'Gastroenterology is a medical specialty focused on the diagnosis, treatment, and prevention of diseases affecting the digestive system and associated organs. It deals with the gastrointestinal (GI) tract, including the esophagus, stomach, small intestine, large intestine, rectum, and anus, as well as related organs such as the liver, gallbladder, bile ducts, and pancreas.',
@@ -188,6 +188,54 @@ export const specialitiesData = {
       { q: 'Is endoscopy painful?', a: 'No. It is done with local anesthesia so the patient does not feel pain. Anxious patients can opt for IV anesthesia and get the procedure done safely and comfortably.' },
     ],
   },
+
+  'pulmonology': {
+    name: 'Pulmonology',
+    icon: 'ph ph-lungs',
+    tagline: 'Comprehensive Care for Respiratory and Lung Disorders',
+    overview: [
+      'Pulmonology is a medical specialty focused on the diagnosis and treatment of diseases affecting the respiratory system — including the lungs, airways, and respiratory muscles. Pulmonologists manage both acute and chronic lung conditions, providing expert care for breathing difficulties, persistent cough, chest infections, and complex respiratory diseases.',
+      'Common conditions treated include asthma, COPD (Chronic Obstructive Pulmonary Disease), pneumonia, tuberculosis, sleep apnea, pulmonary hypertension, interstitial lung disease, and pleural diseases. With the rising burden of air pollution-related and lifestyle-related respiratory diseases, timely evaluation and expert management are essential.',
+      'The department provides advanced diagnostic services including pulmonary function tests (spirometry), bronchoscopy, chest imaging interpretation, and sleep studies, as well as management of patients requiring oxygen therapy and respiratory support.',
+    ],
+    conditions: [
+      'Asthma',
+      'Chronic Obstructive Pulmonary Disease (COPD)',
+      'Pneumonia and Lung Infections',
+      'Tuberculosis (TB)',
+      'Sleep Apnea',
+      'Interstitial Lung Disease (ILD)',
+      'Pulmonary Hypertension',
+      'Pleural Effusion',
+      'Bronchiectasis',
+      'Respiratory Failure',
+    ],
+    treatments: 'Treatment in pulmonology includes both medical management and procedural interventions. Medical management involves bronchodilators, inhaled corticosteroids, antibiotics, antifungals, and targeted therapies for specific lung diseases. Procedures include bronchoscopy for airway evaluation and biopsy, thoracentesis for fluid drainage, and management of patients requiring oxygen therapy or non-invasive ventilation. Sleep-related breathing disorders such as sleep apnea are managed with CPAP/BiPAP therapy. Anti-TB treatment, pulmonary rehabilitation, and long-term monitoring of chronic conditions like COPD and ILD are also key areas of care.',
+    approach: 'Each patient undergoes a thorough clinical evaluation including history, physical examination, and relevant investigations such as pulmonary function tests, chest X-ray, CT scan, and bronchoscopy when indicated. A personalized treatment plan is developed based on the diagnosis and disease severity. Close monitoring and regular follow-up ensure timely adjustment of therapy and prevention of disease progression.',
+    whenToConsult: 'Consult a pulmonologist if you experience persistent breathlessness, chronic cough lasting more than 3 weeks, wheezing, recurrent chest infections, coughing up blood, or night-time breathing difficulties. Patients with a history of smoking, occupational dust exposure, or known lung conditions should seek regular pulmonary evaluation. Early diagnosis significantly improves long-term respiratory health.',
+    doctors: [
+      {
+        name: 'Dr. Sohail',
+        qualification: 'MBBS, MD (Respiratory Medicine)',
+        experience: '8 years',
+        img: '/doctors/Dr sohail.JPG',
+        expertise: [
+          'Asthma and COPD Management',
+          'Tuberculosis Diagnosis and Treatment',
+          'Sleep Apnea and Sleep Studies',
+          'Interstitial Lung Disease',
+          'Bronchoscopy and Interventional Pulmonology',
+        ],
+        note: 'Experienced in managing complex respiratory conditions including critical respiratory failure, advanced lung diseases, and ventilator management.',
+      },
+    ],
+    faqs: [
+      { q: 'When should I see a pulmonologist?', a: 'Consult a pulmonologist for persistent breathlessness, chronic cough, wheezing, recurrent chest infections, or worsening of any known lung condition.' },
+      { q: 'What is a pulmonary function test?', a: 'A pulmonary function test (spirometry) measures how well your lungs work by assessing lung capacity, airflow, and the ability to exhale forcefully.' },
+      { q: 'Is asthma curable?', a: 'Asthma cannot be completely cured but can be well-controlled with the right medications and lifestyle changes, allowing patients to lead a normal life.' },
+      { q: 'Can COPD be reversed?', a: 'COPD cannot be reversed, but progression can be slowed significantly with treatment, smoking cessation, and pulmonary rehabilitation.' },
+    ],
+  },
 }
 
 export const slugMap = {
@@ -195,4 +243,5 @@ export const slugMap = {
   'Orthopedics': 'orthopedics',
   'Surgical Gastroenterology': 'surgical-gastroenterology',
   'Medical Gastroenterology': 'medical-gastroenterology',
+  'Pulmonology': 'pulmonology',
 }

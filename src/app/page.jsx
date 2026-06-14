@@ -5,12 +5,13 @@ import TopBar from '@/components/layout/TopBar'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { IconRender } from '@/components/SpecialtyIcon'
 
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
 const expertiseItems = [
-  { icon: 'ph ph-stomach' },
-  { icon: 'ph ph-stomach' },
+  { icon: 'svg:stomach' },
+  { icon: 'svg:scalpel' },
   { icon: 'ph ph-drop' },
   { icon: 'ph ph-heartbeat' },
   { icon: 'ph ph-heart' },
@@ -120,7 +121,7 @@ function SpecialtiesSection() {
               <Link key={i} href="/specialities"
                 className="icon-box border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center gap-3 bg-white hover:border-[#1a3a6b] hover:shadow-md active:bg-blue-50 active:border-[#1a3a6b] transition-all group">
                 <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#1a3a6b]/10 transition-colors" style={{ color: '#1a3a6b' }}>
-                  <i className={`${icon} text-2xl`}></i>
+                  <IconRender icon={icon} className="text-2xl" />
                 </div>
                 <span className="text-[13px] md:text-[11px] font-semibold text-center leading-tight" style={{ color: '#1a3a6b' }}>
                   {rawLabel.split('\n').map((l, j, arr) => (

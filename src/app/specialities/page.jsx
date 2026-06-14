@@ -4,13 +4,14 @@ import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { slugMap } from '@/data/specialitiesData'
+import { IconRender } from '@/components/SpecialtyIcon'
 import { useLanguage } from '@/context/LanguageContext'
 
 const specialities = [
   { icon: 'ph ph-heartbeat', name: 'Cardiology' },
   { icon: 'ph ph-heart', name: 'Cardiothoracic Surgery' },
-  { icon: 'ph ph-stomach', name: 'Medical Gastroenterology' },
-  { icon: 'ph ph-stomach', name: 'Surgical Gastroenterology' },
+  { icon: 'svg:stomach', name: 'Medical Gastroenterology' },
+  { icon: 'svg:scalpel', name: 'Surgical Gastroenterology' },
   { icon: 'ph ph-drop', name: 'Hepatology' },
   { icon: 'ph ph-arrows-clockwise', name: 'Liver Transplant' },
   { icon: 'ph ph-dna', name: 'Medical Oncology' },
@@ -72,7 +73,7 @@ export default function Specialities() {
               const content = (
                 <>
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-[#1a3a6b] transition-colors shrink-0 ${hasPage ? 'bg-blue-50 group-hover:bg-[#1a3a6b] group-hover:text-white' : 'bg-gray-50'}`}>
-                    <i className={`${icon} text-xl`}></i>
+                    <IconRender icon={icon} className="text-xl" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <span className="text-sm font-semibold text-gray-800 leading-snug block">{displayName}</span>

@@ -6,6 +6,7 @@ import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { specialitiesData } from '@/data/specialitiesData'
+import { IconRender } from '@/components/SpecialtyIcon'
 import { useLanguage } from '@/context/LanguageContext'
 
 const TABS = [
@@ -59,7 +60,7 @@ export default function SpecialityDetail() {
           </div>
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-white/10 flex items-center justify-center text-2xl md:text-3xl shrink-0">
-              <i className={data.icon}></i>
+              <IconRender icon={data.icon} />
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">{data.name}</h1>

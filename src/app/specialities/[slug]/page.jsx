@@ -1,10 +1,12 @@
+'use client'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { specialitiesData } from '../data/specialitiesData'
-import { useLanguage } from '../context/LanguageContext'
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { specialitiesData } from '@/data/specialitiesData'
+import { useLanguage } from '@/context/LanguageContext'
 
 const TABS = [
   { key: 'Overview',   labelKey: 'sd_tab_overview' },
@@ -30,7 +32,7 @@ export default function SpecialityDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
         <p className="text-gray-500 mb-4">{t('sd_not_found')}</p>
-        <Link to="/specialities" className="text-[#1a3a6b] font-bold hover:underline">{t('sd_back')}</Link>
+        <Link href="/specialities" className="text-[#1a3a6b] font-bold hover:underline">{t('sd_back')}</Link>
       </div>
     )
   }
@@ -45,14 +47,13 @@ export default function SpecialityDetail() {
       <TopBarDark />
       <Navbar />
 
-      {/* Hero */}
       <div className="text-white py-8 md:py-14 relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 relative z-10">
           <div className="flex items-center gap-2 text-xs text-blue-300 mb-4">
-            <Link to="/" className="hover:text-white transition-colors">{t('common_home')}</Link>
+            <Link href="/" className="hover:text-white transition-colors">{t('common_home')}</Link>
             <span>/</span>
-            <Link to="/specialities" className="hover:text-white transition-colors">{t('nav_specialties')}</Link>
+            <Link href="/specialities" className="hover:text-white transition-colors">{t('nav_specialties')}</Link>
             <span>/</span>
             <span className="text-white">{data.name}</span>
           </div>
@@ -68,7 +69,6 @@ export default function SpecialityDetail() {
         </div>
       </div>
 
-      {/* Tab bar */}
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex overflow-x-auto">
           {visibleTabs.map(tabObj => (
@@ -82,7 +82,6 @@ export default function SpecialityDetail() {
 
       <main className="flex-1">
 
-        {/* Overview */}
         {tab === 'Overview' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl">
@@ -107,7 +106,6 @@ export default function SpecialityDetail() {
           </section>
         )}
 
-        {/* Conditions */}
         {tab === 'Conditions' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl">
@@ -124,7 +122,6 @@ export default function SpecialityDetail() {
           </section>
         )}
 
-        {/* Treatments */}
         {tab === 'Treatments' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-4xl space-y-10">
@@ -144,7 +141,6 @@ export default function SpecialityDetail() {
           </section>
         )}
 
-        {/* Doctors */}
         {tab === 'Doctors' && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <h2 className="text-2xl font-extrabold mb-10" style={{ color: '#1a3a6b' }}>{t('sd_doctors_h')}</h2>
@@ -173,7 +169,7 @@ export default function SpecialityDetail() {
                     {note && (
                       <p className="text-xs md:text-[11px] text-gray-400 italic border-t border-gray-100 pt-3 leading-relaxed">{note}</p>
                     )}
-                    <Link to="/book" className="mt-4 flex items-center justify-center gap-2 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full hover:opacity-90 transition-opacity"
+                    <Link href="/book" className="mt-4 flex items-center justify-center gap-2 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full hover:opacity-90 transition-opacity"
                       style={{ backgroundColor: '#1a3a6b' }}>
                       <i className="ph ph-calendar-plus"></i> {t('sd_book')}
                     </Link>
@@ -184,7 +180,6 @@ export default function SpecialityDetail() {
           </section>
         )}
 
-        {/* FAQs */}
         {tab === 'FAQs' && data.faqs && data.faqs.length > 0 && (
           <section className="py-8 md:py-14 max-w-[1920px] mx-auto px-4 lg:px-16">
             <div className="max-w-3xl">

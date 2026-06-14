@@ -1,9 +1,10 @@
+'use client'
 import { useEffect, useState, useRef, useCallback } from 'react'
-import { Link } from 'react-router-dom'
-import TopBar from '../components/layout/TopBar'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link'
+import TopBar from '@/components/layout/TopBar'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
@@ -71,11 +72,11 @@ function HeroSlider() {
           {t('hero_subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto">
-          <Link to="/book"
+          <Link href="/book"
             className="bg-white text-[#1a3a6b] hover:bg-blue-50 active:bg-blue-100 px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
             <i className="ph ph-calendar-plus text-base"></i> {t('hero_book')}
           </Link>
-          <Link to="/find-doctor"
+          <Link href="/find-doctor"
             className="bg-transparent border-2 border-white text-white hover:bg-white/10 active:bg-white/20 px-8 py-3.5 rounded-full text-sm font-bold transition-colors flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-auto">
             <i className="ph ph-user-circle text-base"></i> {t('hero_find_doctor')}
           </Link>
@@ -116,7 +117,7 @@ function SpecialtiesSection() {
           {expertiseItems.map(({ icon }, i) => {
             const rawLabel = labels[i] || ''
             return (
-              <Link key={i} to="/specialities"
+              <Link key={i} href="/specialities"
                 className="icon-box border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center gap-3 bg-white hover:border-[#1a3a6b] hover:shadow-md active:bg-blue-50 active:border-[#1a3a6b] transition-all group">
                 <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#1a3a6b]/10 transition-colors" style={{ color: '#1a3a6b' }}>
                   <i className={`${icon} text-2xl`}></i>
@@ -132,7 +133,7 @@ function SpecialtiesSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link to="/specialities"
+          <Link href="/specialities"
             className="inline-flex items-center gap-2 border-2 border-[#1a3a6b] text-[#1a3a6b] rounded-full px-8 py-3 text-sm font-bold hover:bg-[#1a3a6b] hover:text-white active:opacity-80 transition-all">
             {t('home_spec_view_all')} <i className="ph ph-arrow-right"></i>
           </Link>
@@ -189,7 +190,7 @@ function AboutSection() {
             </div>
 
             <div className="mt-8">
-              <Link to="/about" className="inline-flex items-center gap-2 text-sm font-bold text-[#1a3a6b] hover:underline active:opacity-70">
+              <Link href="/about" className="inline-flex items-center gap-2 text-sm font-bold text-[#1a3a6b] hover:underline active:opacity-70">
                 {t('home_about_learn_more')} <i className="ph ph-arrow-right"></i>
               </Link>
             </div>
@@ -253,7 +254,7 @@ function EmergencySection() {
                 className="bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-6 py-3.5 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 justify-center w-full sm:w-auto">
                 <i className="ph ph-phone-call text-base"></i> {t('home_em_helpline')}
               </a>
-              <Link to="/contact"
+              <Link href="/contact"
                 className="border border-white/20 hover:bg-white/10 active:bg-white/20 text-white px-6 py-3.5 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 justify-center w-full sm:w-auto">
                 {t('home_em_contact')} <i className="ph ph-arrow-right text-sm"></i>
               </Link>

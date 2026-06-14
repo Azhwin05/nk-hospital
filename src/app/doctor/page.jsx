@@ -1,9 +1,10 @@
+'use client'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { supabase } from '../../lib/supabase'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabase'
 
 export default function DoctorLogin() {
-  const navigate = useNavigate()
+  const router = useRouter()
   const [form, setForm] = useState({ email: '', password: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -20,14 +21,13 @@ export default function DoctorLogin() {
     if (error) {
       setError('Invalid email or password. Please try again.')
     } else {
-      navigate('/doctor/dashboard')
+      router.push('/doctor/dashboard')
     }
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
       <div className="w-full max-w-sm">
-        {/* Logo / Brand */}
         <div className="text-center mb-8">
           <img src="/logo.png" alt="NK Hospital" className="h-14 mx-auto mb-4 object-contain"
             style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(190deg)' }} />

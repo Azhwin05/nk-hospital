@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+'use client'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 const packages = [
   { name: 'Basic Health Checkup', price: '₹999', tests: '30+ Tests', icon: 'ph ph-heart', color: 'text-rose-500 bg-rose-50', desc: 'Complete blood count, blood sugar, lipid profile, liver function, kidney function and more.' },
@@ -31,7 +32,7 @@ export default function HealthPackages() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
+          <Link href="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
             <i className="ph ph-house text-sm"></i> {t('common_home')}
           </Link>
           <span className="mx-2 text-gray-300">/</span>
@@ -56,7 +57,7 @@ export default function HealthPackages() {
               <p className="text-xs text-gray-500 leading-relaxed mb-5 flex-1">{desc}</p>
               <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                 <span className="text-xl font-extrabold" style={{ color: '#1a3a6b' }}>{price}</span>
-                <Link to="/book" className="text-white text-xs font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
+                <Link href="/book" className="text-white text-xs font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
                   {t('hp_book_now')}
                 </Link>
               </div>

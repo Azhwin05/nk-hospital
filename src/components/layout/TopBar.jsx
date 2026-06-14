@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
-import { useLanguage } from '../../context/LanguageContext'
+'use client'
+import Link from 'next/link'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function TopBar() {
   const { t } = useLanguage()
@@ -12,8 +13,8 @@ export default function TopBar() {
       <div className="hidden md:flex items-center gap-4 text-white/90">
         <a href="#" className="hover:text-white transition-colors">{t('topbar_careers')}</a>
         <a href="#" className="hover:text-white transition-colors">{t('topbar_events')}</a>
-        <Link to="/contact" className="hover:text-white transition-colors">{t('topbar_contact')}</Link>
-        <Link to="/blog" className="hover:text-white transition-colors">{t('topbar_blogs')}</Link>
+        <Link href="/contact" className="hover:text-white transition-colors">{t('topbar_contact')}</Link>
+        <Link href="/blog" className="hover:text-white transition-colors">{t('topbar_blogs')}</Link>
       </div>
     </div>
   )

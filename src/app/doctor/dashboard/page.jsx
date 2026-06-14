@@ -1,6 +1,7 @@
+'use client'
 import { useState, useEffect, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { supabase } from '../../lib/supabase'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabase'
 
 const STATUS_CONFIG = {
   pending:   { label: 'Pending',   bg: 'bg-amber-50',  text: 'text-amber-600',  border: 'border-amber-200' },
@@ -12,7 +13,7 @@ const STATUS_CONFIG = {
 const TABS = ['all', 'today', 'pending', 'confirmed', 'completed', 'cancelled']
 
 export default function DoctorDashboard() {
-  const navigate = useNavigate()
+  const router = useRouter()
   const [user, setUser] = useState(null)
   const [appointments, setAppointments] = useState([])
   const [loading, setLoading] = useState(true)
@@ -34,11 +35,11 @@ export default function DoctorDashboard() {
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
-      if (!user) { navigate('/doctor'); return }
+      if (!user) { router.push('/doctor'); return }
       setUser(user)
       fetchAppointments()
     })
-  }, [navigate, fetchAppointments])
+  }, [router, fetchAppointments])
 
   const updateStatus = async (id, status) => {
     setUpdating(id)
@@ -49,7 +50,7 @@ export default function DoctorDashboard() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
-    navigate('/doctor')
+    router.push('/doctor')
   }
 
   const filtered = appointments.filter(a => {
@@ -76,7 +77,6 @@ export default function DoctorDashboard() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Top nav */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -95,7 +95,6 @@ export default function DoctorDashboard() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
-        {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
           {[
             { label: "Today's Appointments", value: counts.today, icon: 'ph ph-calendar-check', color: 'text-blue-600 bg-blue-50' },
@@ -115,7 +114,6 @@ export default function DoctorDashboard() {
           ))}
         </div>
 
-        {/* Filters row */}
         <div className="flex flex-col sm:flex-row gap-3 mb-5">
           <div className="flex gap-1.5 flex-wrap">
             {TABS.map(t => (
@@ -137,7 +135,6 @@ export default function DoctorDashboard() {
           </div>
         </div>
 
-        {/* Table */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
           {loading ? (
             <div className="py-20 text-center text-gray-400">

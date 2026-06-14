@@ -1,10 +1,11 @@
+'use client'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { supabase } from '../lib/supabase'
-import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { supabase } from '@/lib/supabase'
+import { useLanguage } from '@/context/LanguageContext'
 
 const STATUS = { idle: 'idle', loading: 'loading', success: 'success', error: 'error' }
 
@@ -80,7 +81,6 @@ export default function Book() {
       <TopBarDark />
       <Navbar />
 
-      {/* Hero */}
       <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1e3a5f, #312e81)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -89,10 +89,9 @@ export default function Book() {
         </div>
       </div>
 
-      {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
+          <Link href="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
             <i className="ph ph-house text-sm"></i> {t('common_home')}
           </Link>
           <span className="mx-2 text-gray-300">/</span>
@@ -100,7 +99,6 @@ export default function Book() {
         </div>
       </div>
 
-      {/* Search + Grid */}
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24 pt-10 pb-6 w-full">
         <div className="max-w-3xl mx-auto relative mb-10">
           <i className="ph ph-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
@@ -151,7 +149,6 @@ export default function Book() {
         )}
       </div>
 
-      {/* Booking Modal */}
       {selectedDoctor && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={closeModal}>
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>

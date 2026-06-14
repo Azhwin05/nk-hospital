@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { slugMap } from '../data/specialitiesData'
-import { useLanguage } from '../context/LanguageContext'
+'use client'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { slugMap } from '@/data/specialitiesData'
+import { useLanguage } from '@/context/LanguageContext'
 
 const specialities = [
   { icon: 'ph ph-heartbeat', name: 'Cardiology' },
@@ -51,7 +52,7 @@ export default function Specialities() {
         <div className="relative z-10">
           <h1 className="text-3xl font-bold mb-2">{t('spec_page_heading')}</h1>
           <div className="text-xs text-blue-200">
-            <Link to="/" className="hover:text-white">{t('common_home')}</Link> / <span className="text-white">{t('spec_page_heading')}</span>
+            <Link href="/" className="hover:text-white">{t('common_home')}</Link> / <span className="text-white">{t('spec_page_heading')}</span>
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@ export default function Specialities() {
                 </>
               )
               return hasPage ? (
-                <Link key={name} to={`/specialities/${slug}`}
+                <Link key={name} href={`/specialities/${slug}`}
                   className="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-[#1a3a6b] hover:shadow-md transition-all group">
                   {content}
                 </Link>

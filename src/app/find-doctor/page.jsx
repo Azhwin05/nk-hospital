@@ -1,9 +1,10 @@
+'use client'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 const doctors = [
   { name: 'Dr. Arif Raza Ahmed',  specialty: 'Surgical Gastroenterology', exp: '14+', img: '/doctors/Dr arif raza ahmed.JPG',  initials: 'AR', gender: 'male',   filled: true },
@@ -96,7 +97,7 @@ export default function FindDoctor() {
                     {members && <p className="text-[10px] text-gray-400 leading-snug">{members}</p>}
                   </div>
                 </div>
-                <Link to="/book"
+                <Link href="/book"
                   className={`w-full py-2.5 rounded-lg text-[11px] font-bold text-center transition-colors ${filled ? 'text-white hover:opacity-90' : 'border border-[#1a3a6b] text-[#1a3a6b] hover:bg-blue-50'}`}
                   style={filled ? { backgroundColor: '#1a3a6b' } : {}}>
                   {filled ? t('finddr_book') : <><i className="ph ph-calendar-plus mr-1"></i> {t('finddr_request')}</>}

@@ -1,24 +1,26 @@
+'use client'
 import { useState, useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { useLanguage } from '../../context/LanguageContext'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Navbar({ transparent = false }) {
-  const location = useLocation()
-  const isActive = (path) => location.pathname === path
+  const pathname = usePathname()
+  const isActive = (path) => pathname === path
   const [menuOpen, setMenuOpen] = useState(false)
   const navRef = useRef(null)
   const { t, toggle } = useLanguage()
 
   const navLinks = [
-    { label: t('nav_home'), to: '/' },
-    { label: t('nav_about'), to: '/about' },
-    { label: t('nav_specialties'), to: '/specialities' },
-    { label: t('nav_doctors'), to: '/find-doctor' },
-    { label: t('nav_health_packages'), to: '/health-packages' },
-    { label: t('nav_gallery'), to: '/gallery' },
+    { label: t('nav_home'), href: '/' },
+    { label: t('nav_about'), href: '/about' },
+    { label: t('nav_specialties'), href: '/specialities' },
+    { label: t('nav_doctors'), href: '/find-doctor' },
+    { label: t('nav_health_packages'), href: '/health-packages' },
+    { label: t('nav_gallery'), href: '/gallery' },
   ]
 
-  useEffect(() => { setMenuOpen(false) }, [location.pathname])
+  useEffect(() => { setMenuOpen(false) }, [pathname])
 
   useEffect(() => {
     if (!menuOpen) return
@@ -42,12 +44,12 @@ export default function Navbar({ transparent = false }) {
     return (
       <>
         <nav ref={navRef} className="bg-transparent py-3 px-4 md:px-8 flex justify-between items-center relative z-50">
-          <Link to="/" className="flex items-center relative z-10">
+          <Link href="/" className="flex items-center relative z-10">
             <img src="/logo.png" alt="NK Hospital" className="h-14 md:h-20 w-auto object-contain" />
           </Link>
           <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 text-sm font-medium text-white/90 w-max z-0">
-            {navLinks.map(({ label, to }) => (
-              <Link key={to} to={to} className="hover:text-white transition-colors whitespace-nowrap">{label}</Link>
+            {navLinks.map(({ label, href }) => (
+              <Link key={href} href={href} className="hover:text-white transition-colors whitespace-nowrap">{label}</Link>
             ))}
           </div>
           <div className="hidden lg:flex items-center gap-3 relative z-10">
@@ -80,13 +82,13 @@ export default function Navbar({ transparent = false }) {
   return (
     <>
       <nav ref={navRef} className="bg-white py-2 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50 shadow-sm border-b border-gray-100">
-        <Link to="/">
+        <Link href="/">
           <img src="/logo-dark.png" alt="NK Hospital" className="h-14 md:h-20 w-auto object-contain" />
         </Link>
         <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 text-[13px] font-semibold text-gray-700">
-          {navLinks.map(({ label, to }) => (
-            <Link key={to} to={to}
-              className={`hover:text-[#1a3a6b] transition-colors whitespace-nowrap ${isActive(to) ? 'text-[#1a3a6b]' : ''}`}>
+          {navLinks.map(({ label, href }) => (
+            <Link key={href} href={href}
+              className={`hover:text-[#1a3a6b] transition-colors whitespace-nowrap ${isActive(href) ? 'text-[#1a3a6b]' : ''}`}>
               {label}
             </Link>
           ))}
@@ -99,7 +101,7 @@ export default function Navbar({ transparent = false }) {
           <a href="tel:08040123456" className="flex items-center gap-2 text-red-500 font-bold text-sm">
             <i className="ph ph-phone text-lg"></i> 08040-123456
           </a>
-          <Link to="/book"
+          <Link href="/book"
             className="text-white px-5 py-2.5 rounded-md text-xs font-bold tracking-wide flex items-center gap-2 transition-colors shadow-sm hover:opacity-90"
             style={{ backgroundColor: '#1a3a6b' }}>
             <i className="ph ph-calendar-plus text-base"></i> {t('nav_book')}
@@ -134,8 +136,8 @@ function MobileMenu({ links, open, onClose, dark, onToggleLang, langLabel, bookL
       `}
       aria-hidden={!open}>
       <div className="flex flex-col py-2">
-        {links.map(({ label, to }) => (
-          <Link key={to} to={to} onClick={onClose}
+        {links.map(({ label, href }) => (
+          <Link key={href} href={href} onClick={onClose}
             className={`px-6 py-3.5 text-sm font-semibold transition-colors active:opacity-70 ${dark
               ? 'text-gray-700 hover:text-[#1a3a6b] hover:bg-gray-50 active:bg-gray-100'
               : 'text-white/80 hover:text-white hover:bg-white/5 active:bg-white/10'}`}>
@@ -147,7 +149,7 @@ function MobileMenu({ links, open, onClose, dark, onToggleLang, langLabel, bookL
             className="flex items-center justify-center gap-2 text-white text-sm font-bold py-3 px-4 rounded-lg bg-red-600 active:bg-red-700 transition-colors">
             <i className="ph ph-phone"></i> Emergency: 08040-123456
           </a>
-          <Link to="/book" onClick={onClose}
+          <Link href="/book" onClick={onClose}
             className="flex items-center justify-center gap-2 text-white text-sm font-bold py-3 px-4 rounded-lg active:opacity-80 transition-opacity"
             style={{ backgroundColor: '#1a3a6b' }}>
             <i className="ph ph-calendar-plus"></i> {bookLabel || 'Book Appointment'}

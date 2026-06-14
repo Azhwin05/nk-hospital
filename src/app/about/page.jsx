@@ -1,9 +1,10 @@
+'use client'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 const coreValues = [
   { icon: 'ph ph-heart', title: 'Compassion', desc: 'Care delivered with empathy and respect for every patient.', color: 'text-rose-500 bg-rose-50' },
@@ -64,7 +65,6 @@ const milestones = [
 function Overview() {
   return (
     <div>
-      {/* Hero */}
       <div className="relative overflow-hidden text-white py-10 md:py-16" style={{ background: 'linear-gradient(135deg, #1a3a6b 0%, #162a4a 50%, #1a3054 100%)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
@@ -77,7 +77,6 @@ function Overview() {
         </div>
       </div>
 
-      {/* Stats bar */}
       <div className="bg-white/20">
         <div className="max-w-[1920px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px">
@@ -92,7 +91,6 @@ function Overview() {
         </div>
       </div>
 
-      {/* About Overview */}
       <section className="py-12 md:py-20 bg-white">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
@@ -112,10 +110,10 @@ function Overview() {
                 <p>Committed to accessibility and dependability, we strive to make quality healthcare available to people across the region without delays or uncertainty. Our goal is not just to treat illness, but to build a trusted healthcare institution that communities can rely on — consistently, transparently, and with excellence.</p>
               </div>
               <div className="flex gap-3">
-                <Link to="/specialities" className="flex items-center gap-2 text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
+                <Link href="/specialities" className="flex items-center gap-2 text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
                   <i className="ph ph-stethoscope"></i> Our Specialties
                 </Link>
-                <Link to="/find-doctor" className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-lg border border-gray-200 text-gray-700 hover:border-[#1a3a6b] hover:text-[#1a3a6b] transition-colors">
+                <Link href="/find-doctor" className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-lg border border-gray-200 text-gray-700 hover:border-[#1a3a6b] hover:text-[#1a3a6b] transition-colors">
                   <i className="ph ph-user-circle"></i> Find a Doctor
                 </Link>
               </div>
@@ -124,7 +122,6 @@ function Overview() {
         </div>
       </section>
 
-      {/* Vision & Mission */}
       <section className="py-12 md:py-20 bg-slate-50">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
@@ -152,7 +149,6 @@ function Overview() {
         </div>
       </section>
 
-      {/* Core Values */}
       <section className="py-12 md:py-20 bg-white">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
           <div className="text-center mb-12">
@@ -173,7 +169,6 @@ function Overview() {
         </div>
       </section>
 
-      {/* Milestones */}
       <section className="py-12 md:py-20 bg-white overflow-hidden">
         <div className="text-center mb-10 px-4">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Our Growth</p>
@@ -206,14 +201,13 @@ function Overview() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-10 md:py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #162a4a)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 text-center relative z-10">
           <h2 className="text-3xl font-extrabold mb-3 tracking-tight">Experience Quality Healthcare You Can Trust</h2>
           <p className="text-sm text-blue-100/90 max-w-xl mx-auto mb-8 leading-relaxed">Get access to expert medical care and advanced treatment facilities at NK Hospital. Schedule a consultation with our specialists today.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/book" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
+            <Link href="/book" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
               <i className="ph ph-calendar-plus"></i> Book Appointment
             </Link>
             <a href="tel:08040-123456" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
@@ -355,7 +349,6 @@ export default function About() {
       <TopBarDark />
       <Navbar />
 
-      {/* Tab bar */}
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto md:justify-center">
           {TABS.map(({ key, labelKey }) => (

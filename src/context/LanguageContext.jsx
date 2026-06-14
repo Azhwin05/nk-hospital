@@ -1,13 +1,15 @@
+'use client'
 import { createContext, useContext, useState, useEffect } from 'react'
-import en from '../i18n/en'
-import kn from '../i18n/kn'
+import en from '@/i18n/en'
+import kn from '@/i18n/kn'
 
 const LanguageContext = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(
-    () => localStorage.getItem('nk_lang') || 'en'
-  )
+  const [lang, setLang] = useState(() => {
+    if (typeof window !== 'undefined') return localStorage.getItem('nk_lang') || 'en'
+    return 'en'
+  })
 
   useEffect(() => {
     document.documentElement.lang = lang

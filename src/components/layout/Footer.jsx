@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
-import { useLanguage } from '../../context/LanguageContext'
+'use client'
+import Link from 'next/link'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -16,7 +17,7 @@ export default function Footer() {
               className="bg-white/5 hover:bg-white/10 active:bg-white/15 px-4 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> {t('footer_ambulance')}
             </a>
-            <Link to="/book"
+            <Link href="/book"
               className="px-5 py-2.5 rounded-full text-xs font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap text-[#002247] active:opacity-80"
               style={{ backgroundColor: '#c9a227' }}>
               {t('footer_book')}
@@ -29,24 +30,24 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[11px]">{t('footer_patient_care')}</h4>
             <ul className="space-y-2.5 text-gray-400 text-xs">
-              <li><Link to="/find-doctor" className="hover:text-white active:text-white/80 transition-colors">{t('footer_find_doctor')}</Link></li>
-              <li><Link to="/specialities" className="hover:text-white active:text-white/80 transition-colors">{t('footer_specialties')}</Link></li>
-              <li><Link to="/book" className="hover:text-white active:text-white/80 transition-colors">{t('footer_book')}</Link></li>
-              <li><Link to="/health-packages" className="hover:text-white active:text-white/80 transition-colors">{t('footer_health_packages')}</Link></li>
+              <li><Link href="/find-doctor" className="hover:text-white active:text-white/80 transition-colors">{t('footer_find_doctor')}</Link></li>
+              <li><Link href="/specialities" className="hover:text-white active:text-white/80 transition-colors">{t('footer_specialties')}</Link></li>
+              <li><Link href="/book" className="hover:text-white active:text-white/80 transition-colors">{t('footer_book')}</Link></li>
+              <li><Link href="/health-packages" className="hover:text-white active:text-white/80 transition-colors">{t('footer_health_packages')}</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[11px]">{t('footer_discover')}</h4>
             <ul className="space-y-2.5 text-gray-400 text-xs">
-              <li><Link to="/about" className="hover:text-white active:text-white/80 transition-colors">{t('footer_about')}</Link></li>
-              <li><Link to="/gallery" className="hover:text-white active:text-white/80 transition-colors">{t('footer_gallery')}</Link></li>
-              <li><Link to="/blog" className="hover:text-white active:text-white/80 transition-colors">{t('footer_blogs')}</Link></li>
+              <li><Link href="/about" className="hover:text-white active:text-white/80 transition-colors">{t('footer_about')}</Link></li>
+              <li><Link href="/gallery" className="hover:text-white active:text-white/80 transition-colors">{t('footer_gallery')}</Link></li>
+              <li><Link href="/blog" className="hover:text-white active:text-white/80 transition-colors">{t('footer_blogs')}</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-gray-300 uppercase tracking-wider mb-3 text-[11px]">{t('footer_connect')}</h4>
             <ul className="space-y-2.5 text-gray-400 text-xs">
-              <li><Link to="/contact" className="hover:text-white active:text-white/80 transition-colors">{t('footer_contact')}</Link></li>
+              <li><Link href="/contact" className="hover:text-white active:text-white/80 transition-colors">{t('footer_contact')}</Link></li>
               <li><a href="#" className="hover:text-white active:text-white/80 transition-colors">{t('footer_careers')}</a></li>
               <li><a href="#" className="hover:text-white active:text-white/80 transition-colors">{t('footer_feedback')}</a></li>
             </ul>

@@ -1,9 +1,10 @@
+'use client'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', subject: '', message: '' })
@@ -44,7 +45,7 @@ export default function Contact() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
+          <Link href="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
             <i className="ph ph-house text-sm"></i> {t('common_home')}
           </Link>
           <span className="mx-2 text-gray-300">/</span>
@@ -55,7 +56,6 @@ export default function Contact() {
       <main className="max-w-[1920px] mx-auto px-4 lg:px-16 py-14 w-full flex-1">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-          {/* Info cards */}
           <div className="space-y-5">
             {infoCards.map(({ icon, titleKey, lines }) => (
               <div key={titleKey} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-4 items-start">
@@ -70,7 +70,6 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Form */}
           <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
             <h2 className="text-xl font-bold mb-1" style={{ color: '#1a3a6b' }}>{t('contact_form_send')}</h2>
             <p className="text-xs text-gray-400 mb-6">Our team will get back to you within 24 hours.</p>
@@ -121,7 +120,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map */}
         <div className="mt-10 rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-72">
           <iframe
             title="NK Hospital Location"

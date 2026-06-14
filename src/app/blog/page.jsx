@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+'use client'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 const posts = [
   { title: 'Understanding Diabetes: Prevention and Lifestyle Changes', category: 'Endocrinology', date: 'May 20, 2026', img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop', excerpt: 'Diabetes affects millions globally. Learn how simple lifestyle changes can help prevent and manage Type 2 diabetes effectively.' },
@@ -31,7 +32,7 @@ export default function Blog() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
+          <Link href="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
             <i className="ph ph-house text-sm"></i> {t('common_home')}
           </Link>
           <span className="mx-2 text-gray-300">/</span>

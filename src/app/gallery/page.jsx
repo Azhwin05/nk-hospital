@@ -1,9 +1,10 @@
+'use client'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import TopBarDark from '../components/layout/TopBarDark'
-import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
-import { useLanguage } from '../context/LanguageContext'
+import Link from 'next/link'
+import TopBarDark from '@/components/layout/TopBarDark'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 
 const CLOUD = 'dmhonzqrm'
 const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_webp,q_80/${id}.jpg`
@@ -51,7 +52,7 @@ export default function Gallery() {
 
       <div className="bg-white border-b border-gray-100 py-3">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex items-center text-xs font-semibold text-gray-500">
-          <Link to="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
+          <Link href="/" className="flex items-center gap-1.5 hover:text-[#1a3a6b] text-gray-400">
             <i className="ph ph-house text-sm"></i> {t('common_home')}
           </Link>
           <span className="mx-2 text-gray-300">/</span>
@@ -81,7 +82,6 @@ export default function Gallery() {
         </div>
       </main>
 
-      {/* Lightbox */}
       {lightbox !== null && (
         <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}>

@@ -129,7 +129,7 @@ function MobileMenu({ links, open, onClose, dark, onToggleLang, langLabel, bookL
       className={`
         absolute top-full left-0 right-0 z-50 shadow-xl border-t overflow-hidden
         transition-all duration-300 ease-in-out
-        ${dark ? 'bg-white border-gray-100' : 'bg-[#0c1b33] border-white/10'}
+        ${dark ? 'bg-white border-gray-100' : 'bg-[#002247] border-white/10'}
         ${open ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}
       `}
       aria-hidden={!open}>

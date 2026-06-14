@@ -46,7 +46,7 @@ export default function Specialities() {
       <TopBarDark />
       <Navbar />
 
-      <div className="text-white py-12 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #0c1b33, #1a3a6b)' }}>
+      <div className="text-white py-12 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #002247, #1a3a6b)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10">
           <h1 className="text-3xl font-bold mb-2">{t('spec_page_heading')}</h1>

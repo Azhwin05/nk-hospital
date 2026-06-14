@@ -217,7 +217,7 @@ function EmergencySection() {
             alt="Emergency Care"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-[#0c1b33]/45"></div>
+          <div className="absolute inset-0 bg-[#002247]/45"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 py-12 md:px-10 md:py-16 text-white text-center">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-red-500/20 border-2 border-red-400 flex items-center justify-center mb-5">
               <i className="ph-fill ph-siren text-3xl md:text-4xl text-red-300"></i>
@@ -227,7 +227,7 @@ function EmergencySection() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 bg-[#0c1b33] flex items-center">
+        <div className="w-full lg:w-1/2 bg-[#002247] flex items-center">
           <div className="px-5 py-10 md:px-10 md:py-16 w-full">
             <p className="text-xs font-bold uppercase tracking-widest text-red-400 mb-3">
               {t('home_em_eyebrow')}

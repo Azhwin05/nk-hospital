@@ -4,7 +4,7 @@ import { useLanguage } from '../../context/LanguageContext'
 export default function Footer() {
   const { t } = useLanguage()
   return (
-    <footer style={{ backgroundColor: '#0c1b33' }} className="text-white pt-8 pb-4">
+    <footer style={{ backgroundColor: '#002247' }} className="text-white pt-8 pb-4">
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16 2xl:px-24">
 
         {/* Top bar */}
@@ -17,7 +17,7 @@ export default function Footer() {
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> {t('footer_ambulance')}
             </a>
             <Link to="/book"
-              className="px-5 py-2.5 rounded-full text-xs font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap text-[#0c1b33] active:opacity-80"
+              className="px-5 py-2.5 rounded-full text-xs font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap text-[#002247] active:opacity-80"
               style={{ backgroundColor: '#c9a227' }}>
               {t('footer_book')}
             </Link>

@@ -215,18 +215,19 @@ export const specialitiesData = {
     whenToConsult: 'Consult a pulmonologist if you experience persistent breathlessness, chronic cough lasting more than 3 weeks, wheezing, recurrent chest infections, coughing up blood, or night-time breathing difficulties. Patients with a history of smoking, occupational dust exposure, or known lung conditions should seek regular pulmonary evaluation. Early diagnosis significantly improves long-term respiratory health.',
     doctors: [
       {
-        name: 'Dr. Sohail',
-        qualification: 'MBBS, MD (Respiratory Medicine)',
-        experience: '8 years',
-        img: '/doctors/Dr sohail.JPG',
+        name: 'Dr. Mohammed Sameer Kumdale',
+        qualification: 'MBBS, MD (Pulmonary Medicine)',
+        experience: '',
+        img: null,
         expertise: [
           'Asthma and COPD Management',
-          'Tuberculosis Diagnosis and Treatment',
+          'Tuberculosis (TB) Diagnosis and Treatment',
           'Sleep Apnea and Sleep Studies',
-          'Interstitial Lung Disease',
+          'Interstitial Lung Disease (ILD)',
           'Bronchoscopy and Interventional Pulmonology',
+          'Pleural Effusion Management',
         ],
-        note: 'Experienced in managing complex respiratory conditions including critical respiratory failure, advanced lung diseases, and ventilator management.',
+        note: 'Specialist in chest diseases and tuberculosis, providing comprehensive pulmonary care including respiratory failure management and long-term follow-up of chronic lung conditions.',
       },
     ],
     faqs: [

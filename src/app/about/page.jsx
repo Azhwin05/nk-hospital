@@ -28,6 +28,7 @@ const board = [
   {
     name: 'Dr. Arif Raza Ahmed',
     role: 'Founder & Chairman',
+    img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/v1781722544/IMG-20260613-WA0041.jpg_tudbmi.jpg',
     initials: 'AR',
     gender: 'male',
     experience: 'Clinical Practice & Healthcare Entrepreneurship',
@@ -226,11 +227,12 @@ function Chairman() {
       <div className="max-w-[1920px] mx-auto px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
           <div className="w-full lg:w-[28%] shrink-0">
-            <div className="rounded-2xl overflow-hidden h-[200px] md:h-[400px] shadow-xl mb-5 flex flex-col items-center justify-center gap-4" style={{ backgroundColor: '#122543' }}>
-              <div className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ backgroundColor: '#1a3a6b' }}>
-                AR
-              </div>
-              <i className="ph-fill ph-user-circle text-white/10 text-8xl"></i>
+            <div className="rounded-2xl overflow-hidden h-[200px] md:h-[400px] shadow-xl mb-5">
+              <img
+                src="https://res.cloudinary.com/dmhonzqrm/image/upload/v1781722544/IMG-20260613-WA0041.jpg_tudbmi.jpg"
+                className="w-full h-full object-cover object-top"
+                alt="Dr. Arif Raza Ahmed"
+              />
             </div>
             <div className="text-white">
               <h3 className="text-xl font-bold mb-1">Dr. Arif Raza Ahmed</h3>
@@ -265,17 +267,21 @@ function Board() {
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Our Leadership Team</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {board.map(({ name, role, initials, gender, experience, expertise, bio }) => (
+          {board.map(({ name, role, img, initials, gender, experience, expertise, bio }) => (
             <div key={name} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="h-48 flex items-center justify-center" style={{ backgroundColor: gender === 'female' ? '#fce7f3' : '#eaf1fb' }}>
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-md"
-                    style={{ backgroundColor: gender === 'female' ? '#e91e8c' : '#1a3a6b' }}>
-                    {initials}
+              <div className="h-48 flex items-center justify-center overflow-hidden" style={{ backgroundColor: gender === 'female' ? '#fce7f3' : '#eaf1fb' }}>
+                {img ? (
+                  <img src={img} className="w-full h-full object-cover object-top" alt={name} />
+                ) : (
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-md"
+                      style={{ backgroundColor: gender === 'female' ? '#e91e8c' : '#1a3a6b' }}>
+                      {initials}
+                    </div>
+                    <i className={`text-4xl ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
+                      style={{ color: gender === 'female' ? '#e91e8c' : '#1a3a6b', opacity: 0.2 }}></i>
                   </div>
-                  <i className={`text-4xl ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
-                    style={{ color: gender === 'female' ? '#e91e8c' : '#1a3a6b', opacity: 0.2 }}></i>
-                </div>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-base font-bold mb-0.5" style={{ color: '#1a3a6b' }}>{name}</h3>

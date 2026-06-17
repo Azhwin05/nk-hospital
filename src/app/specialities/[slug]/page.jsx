@@ -148,8 +148,16 @@ export default function SpecialityDetail() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {data.doctors.map(({ name, qualification, experience, img, expertise, note }) => (
                 <div key={name} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="h-56 bg-gray-100 overflow-hidden">
-                    <img src={img} className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500" alt={name} loading="lazy" />
+                  <div className="h-56 bg-gray-100 overflow-hidden flex items-center justify-center">
+                    {img
+                      ? <img src={img} className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500" alt={name} loading="lazy" />
+                      : <div className="flex flex-col items-center justify-center gap-2">
+                          <div className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-extrabold text-white" style={{ backgroundColor: '#1a3a6b' }}>
+                            {name.split(' ').filter(w => w.match(/^[A-Z]/)).slice(0, 2).map(w => w[0]).join('')}
+                          </div>
+                          <i className="ph-fill ph-gender-male text-2xl" style={{ color: '#1a3a6b', opacity: 0.3 }}></i>
+                        </div>
+                    }
                   </div>
                   <div className="p-6">
                     <h3 className="text-base font-bold mb-0.5" style={{ color: '#1a3a6b' }}>{name}</h3>

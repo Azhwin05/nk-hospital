@@ -20,12 +20,14 @@ export default function Contact() {
   const infoCards = [
     { icon: 'ph-fill ph-map-pin', titleKey: 'contact_address_title', lines: ['NK Nagar, opposite Shor Gumbad,', 'Jaferabad, Kalaburagi,', 'Karnataka 585103'] },
     { icon: 'ph-fill ph-phone', titleKey: 'contact_phone_title', lines: [
-        <a key="p1" href="tel:08040123456" className="hover:text-[#1a3a6b] transition-colors">08040-123456</a>,
-        <a key="p2" href="tel:+919876543210" className="hover:text-[#1a3a6b] transition-colors">+91 98765 43210</a>,
+        <a key="p1" href="tel:9353957095" className="hover:text-[#1a3a6b] transition-colors">9353957095 (Ambulance)</a>,
+        <a key="p2" href="tel:9187966774" className="hover:text-[#1a3a6b] transition-colors">9187966774 (Ambulance)</a>,
+        <a key="p3" href="tel:9901573323" className="hover:text-[#1a3a6b] transition-colors">9901573323 (OPD / IPD)</a>,
     ]},
     { icon: 'ph-fill ph-envelope', titleKey: 'contact_email_title', lines: [
         <a key="e1" href="mailto:info@nkhospital.in" className="hover:text-[#1a3a6b] transition-colors">info@nkhospital.in</a>,
-        <a key="e2" href="mailto:appointments@nkhospital.in" className="hover:text-[#1a3a6b] transition-colors">appointments@nkhospital.in</a>,
+        <a key="e2" href="mailto:hr@nkhospital.com" className="hover:text-[#1a3a6b] transition-colors">hr@nkhospital.com</a>,
+        <a key="e3" href="mailto:nkhospitalglb@gmail.com" className="hover:text-[#1a3a6b] transition-colors">nkhospitalglb@gmail.com</a>,
     ]},
     { icon: 'ph-fill ph-clock', titleKey: 'contact_hours_title', lines: ['Mon – Sat: 8:00 AM – 8:00 PM', 'Emergency: 24/7'] },
   ]

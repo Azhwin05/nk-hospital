@@ -149,7 +149,7 @@ export default function SpecialityDetail() {
               {data.doctors.map(({ name, qualification, experience, img, expertise, note }) => (
                 <div key={name} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="h-56 bg-gray-100 overflow-hidden">
-                    <img src={img} className="w-full h-full object-cover object-top" alt={name} loading="lazy" />
+                    <img src={img} className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500" alt={name} loading="lazy" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-base font-bold mb-0.5" style={{ color: '#1a3a6b' }}>{name}</h3>

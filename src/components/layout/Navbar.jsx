@@ -57,8 +57,8 @@ export default function Navbar({ transparent = false }) {
               className="text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/30 text-white/80 hover:bg-white/10 active:bg-white/20 transition-colors whitespace-nowrap">
               {t('lang_toggle')}
             </button>
-            <a href="tel:08040123456" className="flex items-center gap-2 text-white/90 font-semibold text-sm">
-              <i className="ph ph-phone text-red-400 text-lg"></i> 08040-123456
+            <a href="tel:9353957095" className="flex items-center gap-2 text-white/90 font-semibold text-sm">
+              <i className="ph ph-phone text-red-400 text-lg"></i> 9353957095
             </a>
           </div>
           <button
@@ -98,8 +98,8 @@ export default function Navbar({ transparent = false }) {
             className="text-[11px] font-bold px-3 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-[#1a3a6b] hover:text-[#1a3a6b] active:bg-gray-50 transition-colors whitespace-nowrap">
             {t('lang_toggle')}
           </button>
-          <a href="tel:08040123456" className="flex items-center gap-2 text-red-500 font-bold text-sm">
-            <i className="ph ph-phone text-lg"></i> 08040-123456
+          <a href="tel:9353957095" className="flex items-center gap-2 text-red-500 font-bold text-sm">
+            <i className="ph ph-phone text-lg"></i> 9353957095
           </a>
           <Link href="/book"
             className="text-white px-5 py-2.5 rounded-md text-xs font-bold tracking-wide flex items-center gap-2 transition-colors shadow-sm hover:opacity-90"
@@ -145,9 +145,9 @@ function MobileMenu({ links, open, onClose, dark, onToggleLang, langLabel, bookL
           </Link>
         ))}
         <div className={`px-6 py-4 border-t mt-1 space-y-3 ${dark ? 'border-gray-100' : 'border-white/10'}`}>
-          <a href="tel:08040123456"
+          <a href="tel:9353957095"
             className="flex items-center justify-center gap-2 text-white text-sm font-bold py-3 px-4 rounded-lg bg-red-600 active:bg-red-700 transition-colors">
-            <i className="ph ph-phone"></i> Emergency: 08040-123456
+            <i className="ph ph-phone"></i> Emergency: 9353957095
           </a>
           <Link href="/book" onClick={onClose}
             className="flex items-center justify-center gap-2 text-white text-sm font-bold py-3 px-4 rounded-lg active:opacity-80 transition-opacity"

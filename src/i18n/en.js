@@ -27,10 +27,9 @@ export default {
 
   // Home expertise grid labels (order matches expertiseItems array)
   home_expertise_labels: [
-    'Medical\nGastroenterology', 'Surgical\nGastroenterology', 'Hepatology',
-    'Cardiology', 'Cardiothoracic\nSurgery', 'Liver Transplant',
-    'Medical\nOncology', 'Surgical\nOncology', 'Neurology',
-    'Radiation\nOncology', 'Neurosurgery', 'ENT',
+    'Medical\nGastroenterology', 'Surgical\nGastroenterology',
+    'Cardiology', 'Medical\nOncology', 'Surgical\nOncology',
+    'Neurology', 'Neurosurgery', 'ENT',
     'Orthopaedics', 'Pulmonology', 'Nephrology', 'Urology',
   ],
 
@@ -175,10 +174,10 @@ export default {
   sd_not_found: 'Specialty not found.',
 
   // Sticky Emergency Bar
-  sticky_emergency: 'Emergency? Call 08040-123456',
+  sticky_emergency: 'Emergency? Call 9353957095',
 
   // Footer
-  footer_ambulance: 'Ambulance: 08040-123456',
+  footer_ambulance: 'Ambulance: 9353957095',
   footer_book: 'Book Appointment',
   footer_patient_care: 'Patient Care',
   footer_find_doctor: 'Find A Doctor',

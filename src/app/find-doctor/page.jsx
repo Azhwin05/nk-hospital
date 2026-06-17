@@ -26,7 +26,11 @@ const doctors = [
 
 function Avatar({ img, initials, gender, name }) {
   if (img) {
-    return <img src={img} className="w-20 h-[5.5rem] object-cover object-top rounded-xl bg-gray-100 shrink-0" alt={name} loading="lazy" />
+    return (
+      <div className="w-20 h-[5.5rem] rounded-xl bg-gray-100 shrink-0 overflow-hidden">
+        <img src={img} className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500" alt={name} loading="lazy" />
+      </div>
+    )
   }
   const bg = gender === 'female' ? '#e91e8c' : '#1a3a6b'
   return (

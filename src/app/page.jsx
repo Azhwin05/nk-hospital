@@ -12,14 +12,10 @@ const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 const expertiseItems = [
   { icon: 'svg:stomach' },
   { icon: 'svg:scalpel' },
-  { icon: 'ph ph-drop' },
   { icon: 'ph ph-heartbeat' },
-  { icon: 'ph ph-heart' },
-  { icon: 'ph ph-arrows-clockwise' },
   { icon: 'ph ph-dna' },
   { icon: 'ph ph-bandaids' },
   { icon: 'ph ph-brain' },
-  { icon: 'ph ph-radioactive' },
   { icon: 'ph ph-brain' },
   { icon: 'ph ph-ear' },
   { icon: 'ph ph-bone' },
@@ -81,7 +77,7 @@ function HeroSlider() {
             className="bg-transparent border-2 border-white text-white hover:bg-white/10 active:bg-white/20 px-8 py-3.5 rounded-full text-sm font-bold transition-colors flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-auto">
             <i className="ph ph-user-circle text-base"></i> {t('hero_find_doctor')}
           </Link>
-          <a href="tel:08040123456"
+          <a href="tel:9353957095"
             className="bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
             <i className="ph-fill ph-siren text-base"></i> {t('hero_emergency')}
           </a>
@@ -251,7 +247,7 @@ function EmergencySection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="tel:08040123456"
+              <a href="tel:9353957095"
                 className="bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-6 py-3.5 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 justify-center w-full sm:w-auto">
                 <i className="ph ph-phone-call text-base"></i> {t('home_em_helpline')}
               </a>

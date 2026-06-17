@@ -210,8 +210,8 @@ function Overview() {
             <Link href="/book" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
               <i className="ph ph-calendar-plus"></i> Book Appointment
             </Link>
-            <a href="tel:08040-123456" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
-              <i className="ph ph-phone"></i> Call Now: 08040-123456
+            <a href="tel:9353957095" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+              <i className="ph ph-phone"></i> Call Now: 9353957095
             </a>
           </div>
         </div>
@@ -264,7 +264,7 @@ function Board() {
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>Leadership</p>
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Our Leadership Team</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {board.map(({ name, role, initials, gender, experience, expertise, bio }) => (
             <div key={name} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
               <div className="h-48 flex items-center justify-center" style={{ backgroundColor: gender === 'female' ? '#fce7f3' : '#eaf1fb' }}>

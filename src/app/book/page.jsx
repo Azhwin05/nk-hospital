@@ -30,6 +30,7 @@ export default function Book() {
   const { t } = useLanguage()
 
   useEffect(() => {
+    if (!supabase) { setDoctorsLoading(false); return }
     supabase.from('doctors').select('*').order('name').then(({ data }) => {
       if (data) setDoctors(data)
       setDoctorsLoading(false)

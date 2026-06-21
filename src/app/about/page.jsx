@@ -267,18 +267,8 @@ function Board() {
           <h2 className="text-3xl font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>{t('about_board_heading')}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {board.map(({ name, roleKey, initials, gender, expKey, expertiseKey, bioKey }) => (
-            <div key={name} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="h-48 flex items-center justify-center" style={{ backgroundColor: gender === 'female' ? '#fce7f3' : '#eaf1fb' }}>
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-md"
-                    style={{ backgroundColor: gender === 'female' ? '#e91e8c' : '#1a3a6b' }}>
-                    {initials}
-                  </div>
-                  <i className={`text-4xl ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
-                    style={{ color: gender === 'female' ? '#e91e8c' : '#1a3a6b', opacity: 0.2 }}></i>
-                </div>
-              </div>
+          {board.map(({ name, roleKey, expKey, expertiseKey, bioKey }) => (
+            <div key={name} className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
               <div className="p-6">
                 <h3 className="text-base font-bold mb-0.5" style={{ color: '#1a3a6b' }}>{name}</h3>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">{t(roleKey)}</p>

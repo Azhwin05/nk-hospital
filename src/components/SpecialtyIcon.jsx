@@ -21,25 +21,11 @@ function ScalpelSVG() {
 function LungsSVG() {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <line x1="12" y1="3" x2="12" y2="9" />
-      <path d="M12 7 Q8 7 6 10 Q4 13 5 16 Q6 19 9 19 Q11 19 12 17" />
-      <path d="M12 7 Q16 7 18 10 Q20 13 19 16 Q18 19 15 19 Q13 19 12 17" />
-      <path d="M9 13 Q9 15 10 16" />
-      <path d="M15 13 Q15 15 14 16" />
-    </svg>
-  )
-}
-
-function NeurosurgerySVG() {
-  return (
-    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {/* Brain outline */}
-      <path d="M9 4C6.5 4 4 6 4 9C4 11 5 12.5 6.5 13.5C6.5 15.5 7.5 17 9 17H13" />
-      <path d="M15 4C17.5 4 20 6 20 9C20 11 19 12.5 17.5 13.5C17.5 15.5 16.5 17 15 17H13" />
-      <line x1="13" y1="4" x2="13" y2="17" />
-      {/* Scalpel */}
-      <line x1="15" y1="19" x2="21" y2="13" strokeWidth="1.5" />
-      <path d="M21 13 L22 11.5 L20 12.5Z" fill="currentColor" stroke="none" />
+      <line x1="12" y1="3" x2="12" y2="7" />
+      <line x1="12" y1="7" x2="8" y2="9" />
+      <line x1="12" y1="7" x2="16" y2="9" />
+      <path d="M8 9 C4 9 3 12 3 15 C3 18 5 20 8 20 C10 20 12 18 12 16 L12 9" />
+      <path d="M16 9 C20 9 21 12 21 15 C21 18 19 20 16 20 C14 20 12 18 12 16 L12 9" />
     </svg>
   )
 }

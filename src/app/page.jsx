@@ -16,7 +16,7 @@ const expertiseItems = [
   { icon: 'ph ph-dna' },
   { icon: 'ph ph-bandaids' },
   { icon: 'ph ph-brain' },
-  { icon: 'svg:neurosurgery' },
+  { icon: 'ph ph-knife' },
   { icon: 'ph ph-ear' },
   { icon: 'ph ph-bone' },
   { icon: 'svg:lungs' },

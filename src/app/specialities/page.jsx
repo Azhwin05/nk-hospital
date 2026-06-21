@@ -14,7 +14,7 @@ const specialities = [
   { icon: 'ph ph-dna', name: 'Medical Oncology' },
   { icon: 'ph ph-bandaids', name: 'Surgical Oncology' },
   { icon: 'ph ph-brain', name: 'Neurology' },
-  { icon: 'svg:neurosurgery', name: 'Neurosurgery' },
+  { icon: 'ph ph-knife', name: 'Neurosurgery' },
   { icon: 'ph ph-ear', name: 'ENT' },
   { icon: 'ph ph-bone', name: 'Orthopedics' },
   { icon: 'ph ph-baby', name: 'Pediatrics' },

@@ -22,7 +22,7 @@ export default function Contact() {
     { icon: 'ph-fill ph-phone', titleKey: 'contact_phone_title', lines: [
         <a key="p1" href="tel:9353957095" className="hover:text-[#1a3a6b] transition-colors">9353957095 (Ambulance)</a>,
         <a key="p2" href="tel:9187966774" className="hover:text-[#1a3a6b] transition-colors">9187966774 (Ambulance)</a>,
-        <a key="p3" href="tel:9901573323" className="hover:text-[#1a3a6b] transition-colors">9901573323 (OPD / IPD)</a>,
+        <a key="p3" href="tel:9901573323" className="hover:text-[#1a3a6b] transition-colors">9901573323 (Consultation)</a>,
     ]},
     { icon: 'ph-fill ph-envelope', titleKey: 'contact_email_title', lines: [
         <a key="e1" href="mailto:info@nkhospital.in" className="hover:text-[#1a3a6b] transition-colors">info@nkhospital.in</a>,

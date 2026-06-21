@@ -16,10 +16,10 @@ const expertiseItems = [
   { icon: 'ph ph-dna' },
   { icon: 'ph ph-bandaids' },
   { icon: 'ph ph-brain' },
-  { icon: 'ph ph-brain' },
+  { icon: 'svg:neurosurgery' },
   { icon: 'ph ph-ear' },
   { icon: 'ph ph-bone' },
-  { icon: 'ph ph-lungs' },
+  { icon: 'svg:lungs' },
   { icon: 'ph ph-drop' },
   { icon: 'ph ph-funnel' },
 ]

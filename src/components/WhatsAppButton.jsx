@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   if (pathname === '/book') return null
   return (
     <a
-      href="https://wa.me/919353957095"
+      href="https://wa.me/919901573323"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

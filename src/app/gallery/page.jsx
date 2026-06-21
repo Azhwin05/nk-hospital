@@ -10,14 +10,6 @@ const CLOUD = 'dmhonzqrm'
 const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_webp,q_80/${id}.jpg`
 const full  = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_1400,f_webp,q_85/${id}.jpg`
 
-const events = [
-  {
-    img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/ee85070e-38d5-4ed1-8d30-8e809f8cc5f2_nwgtzb.jpg',
-    title: 'NK Hospital Event',
-    date: '2026',
-  },
-]
-
 const images = [
   { id: '_KS00761_rdn9d1', caption: 'NK Hospital' },
   { id: '_KS00760_ckoqg9', caption: 'NK Hospital' },
@@ -69,45 +61,6 @@ export default function Gallery() {
       </div>
 
       <main className="max-w-[1920px] mx-auto px-4 lg:px-16 py-12 w-full flex-1">
-
-        {/* Events Section */}
-        <div className="mb-14">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#c9a227' }}></div>
-            <h2 className="text-lg font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Events</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map(({ img, title, date }) => (
-              <div key={img} className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer bg-gray-100"
-                onClick={() => setLightbox({ type: 'event', src: img, caption: title })}>
-                <div className="aspect-video overflow-hidden">
-                  <img src={img} loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    alt={title} />
-                </div>
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent flex items-end">
-                  <div className="p-4">
-                    <p className="text-white font-bold text-sm leading-tight">{title}</p>
-                    <p className="text-white/70 text-[11px] mt-0.5 flex items-center gap-1">
-                      <i className="ph ph-calendar-blank"></i> {date}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute top-3 right-3">
-                  <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/20">
-                    Event
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Gallery Section */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#1a3a6b' }}></div>
-          <h2 className="text-lg font-extrabold tracking-tight" style={{ color: '#1a3a6b' }}>Gallery</h2>
-        </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map(({ id, caption }, i) => (
             <div key={id}
@@ -135,37 +88,25 @@ export default function Gallery() {
           <button className="absolute top-4 right-4 text-white/70 hover:text-white text-3xl z-10">
             <i className="ph ph-x"></i>
           </button>
-          {typeof lightbox === 'number' && (
-            <>
-              <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10"
-                onClick={e => { e.stopPropagation(); setLightbox(l => (l - 1 + images.length) % images.length) }}>
-                <i className="ph ph-caret-left"></i>
-              </button>
-              <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10"
-                onClick={e => { e.stopPropagation(); setLightbox(l => (l + 1) % images.length) }}>
-                <i className="ph ph-caret-right"></i>
-              </button>
-              <img
-                src={full(images[lightbox].id)}
-                className="max-h-[88vh] max-w-[90vw] rounded-xl shadow-2xl object-contain"
-                alt={images[lightbox].caption}
-                onClick={e => e.stopPropagation()}
-              />
-              <p className="absolute bottom-5 text-white/70 text-xs font-semibold">
-                {lightbox + 1} / {images.length}
-              </p>
-            </>
-          )}
-          {typeof lightbox === 'object' && (
-            <img
-              src={lightbox.src}
-              className="max-h-[88vh] max-w-[90vw] rounded-xl shadow-2xl object-contain"
-              alt={lightbox.caption}
-              onClick={e => e.stopPropagation()}
-            />
-          )}
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10"
+            onClick={e => { e.stopPropagation(); setLightbox(l => (l - 1 + images.length) % images.length) }}>
+            <i className="ph ph-caret-left"></i>
+          </button>
+          <img
+            src={full(images[lightbox].id)}
+            className="max-h-[88vh] max-w-[90vw] rounded-xl shadow-2xl object-contain"
+            alt={images[lightbox].caption}
+            onClick={e => e.stopPropagation()}
+          />
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10"
+            onClick={e => { e.stopPropagation(); setLightbox(l => (l + 1) % images.length) }}>
+            <i className="ph ph-caret-right"></i>
+          </button>
+          <p className="absolute bottom-5 text-white/70 text-xs font-semibold">
+            {lightbox + 1} / {images.length}
+          </p>
         </div>
       )}
 

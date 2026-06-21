@@ -12,7 +12,7 @@ export default function TopBar() {
       </div>
       <div className="hidden md:flex items-center gap-4 text-white/90">
         <a href="/careers" className="hover:text-white transition-colors">{t('topbar_careers')}</a>
-        <a href="#" className="hover:text-white transition-colors">{t('topbar_events')}</a>
+        <a href="/events" className="hover:text-white transition-colors">{t('topbar_events')}</a>
         <Link href="/contact" className="hover:text-white transition-colors">{t('topbar_contact')}</Link>
         <Link href="/blog" className="hover:text-white transition-colors">{t('topbar_blogs')}</Link>
       </div>

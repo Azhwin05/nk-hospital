@@ -12,7 +12,7 @@ export default function TopBarDark() {
       </div>
       <div className="hidden md:flex items-center gap-4">
         <a href="/careers" className="hover:text-gray-300">{t('topbar_careers')}</a>
-        <a href="#" className="hover:text-gray-300">{t('topbar_events')}</a>
+        <a href="/events" className="hover:text-gray-300">{t('topbar_events')}</a>
         <Link href="/contact" className="hover:text-gray-300">{t('topbar_contact')}</Link>
         <Link href="/blog" className="hover:text-gray-300">{t('topbar_blogs')}</Link>
       </div>

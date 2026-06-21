@@ -178,7 +178,7 @@ function Overview() {
             <Link href="/book" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
               <i className="ph ph-calendar-plus"></i> {t('about_cta_book')}
             </Link>
-            <a href="tel:9353957095" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+            <a href="tel:9901573323" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
               <i className="ph ph-phone"></i> {t('about_cta_call')}
             </a>
           </div>

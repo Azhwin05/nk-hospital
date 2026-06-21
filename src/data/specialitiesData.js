@@ -191,7 +191,7 @@ export const specialitiesData = {
 
   'pulmonology': {
     name: 'Pulmonology',
-    icon: 'ph ph-lungs',
+    icon: 'svg:lungs',
     tagline: 'Comprehensive Care for Respiratory and Lung Disorders',
     overview: [
       'Pulmonology is a medical specialty focused on the diagnosis and treatment of diseases affecting the respiratory system — including the lungs, airways, and respiratory muscles. Pulmonologists manage both acute and chronic lung conditions, providing expert care for breathing difficulties, persistent cough, chest infections, and complex respiratory diseases.',

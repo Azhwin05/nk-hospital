@@ -15,7 +15,11 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <a href="tel:9353957095"
               className="bg-white/5 hover:bg-white/10 active:bg-white/15 px-4 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
-              <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> {t('footer_ambulance')}
+              <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> 9353957095 (Ambulance)
+            </a>
+            <a href="tel:9187966774"
+              className="bg-white/5 hover:bg-white/10 active:bg-white/15 px-4 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
+              <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> 9187966774 (Ambulance)
             </a>
             <Link href="/book"
               className="px-5 py-2.5 rounded-full text-xs font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap text-[#002247] active:opacity-80"
@@ -78,6 +82,9 @@ export default function Footer() {
               </a>
               <a href="tel:9353957095" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors font-semibold">
                 <i className="ph-fill ph-phone text-red-500 shrink-0"></i> 9353957095 (Ambulance)
+              </a>
+              <a href="tel:9187966774" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors font-semibold">
+                <i className="ph-fill ph-phone text-red-500 shrink-0"></i> 9187966774 (Ambulance)
               </a>
               <a href="tel:9901573323" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors">
                 <i className="ph-fill ph-phone text-gray-500 shrink-0"></i> 9901573323 (Consultation)

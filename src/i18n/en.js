@@ -160,7 +160,7 @@ export default {
   about_cta_heading: 'Experience Quality Healthcare You Can Trust',
   about_cta_sub: 'Get access to expert medical care and advanced treatment facilities at NK Hospital. Schedule a consultation with our specialists today.',
   about_cta_book: 'Book Appointment',
-  about_cta_call: 'Call Now: 9353957095',
+  about_cta_call: 'Call Now: 9901573323',
   about_stat_beds: 'Beds', about_stat_spec: 'Specialties', about_stat_em: 'Emergency Care',
   about_stat_surg: 'Advanced Surgical Infrastructure', about_stat_team: 'Expert Multidisciplinary Team', about_stat_patient: 'Patient-Centric Care',
 

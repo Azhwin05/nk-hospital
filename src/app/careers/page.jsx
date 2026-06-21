@@ -146,7 +146,7 @@ export default function Careers() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">WhatsApp</p>
-                  <a href="https://wa.me/919353957095" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-green-600 hover:underline">Chat with HR</a>
+                  <a href="https://wa.me/919901573323" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-green-600 hover:underline">Chat with HR</a>
                 </div>
               </div>
             </div>

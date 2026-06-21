@@ -89,21 +89,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Accreditations */}
-        <div className="flex flex-wrap justify-center gap-3 mb-4">
-          {[
-            { label: 'NABH Certified', bg: 'bg-blue-600', icon: 'ph-fill ph-certificate' },
-            { label: 'NABL Certified', bg: 'bg-gray-500', icon: 'ph-fill ph-flask' },
-            { label: 'ISO 9001 Certified', bg: 'bg-red-500', icon: 'ph-fill ph-seal-check' },
-          ].map(({ label, bg, icon }) => (
-            <div key={label} className="bg-white/5 border border-white/5 rounded-full px-3 py-1.5 flex items-center gap-1.5 text-[11px] font-semibold text-gray-300">
-              <div className={`w-4 h-4 rounded-full ${bg} flex items-center justify-center shrink-0`}>
-                <i className={`${icon} text-white text-[8px]`}></i>
-              </div>
-              {label}
-            </div>
-          ))}
-        </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-500 pt-3 border-t border-white/5 gap-1">

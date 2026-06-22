@@ -77,10 +77,17 @@ function HeroSlider() {
             className="bg-transparent border-2 border-white text-white hover:bg-white/10 active:bg-white/20 px-8 py-3.5 rounded-full text-sm font-bold transition-colors flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-auto">
             <i className="ph ph-user-circle text-base"></i> {t('hero_find_doctor')}
           </Link>
-          <a href="tel:9353957095"
-            className="bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
-            <i className="ph-fill ph-siren text-base"></i> {t('hero_emergency')}
-          </a>
+          <div className="bg-red-600 text-white rounded-full text-sm font-bold shadow-xl flex items-center w-full sm:w-auto overflow-hidden">
+            <a href="tel:9353957095"
+              className="flex items-center justify-center gap-2 px-5 py-3.5 hover:bg-red-700 active:bg-red-800 transition-colors flex-1 sm:flex-none whitespace-nowrap">
+              <i className="ph-fill ph-siren text-base animate-pulse"></i> 9353957095
+            </a>
+            <span className="w-px h-6 bg-red-400/40 shrink-0"></span>
+            <a href="tel:9187966774"
+              className="flex items-center justify-center gap-2 px-5 py-3.5 hover:bg-red-700 active:bg-red-800 transition-colors flex-1 sm:flex-none whitespace-nowrap">
+              <i className="ph-fill ph-ambulance text-base"></i> 9187966774
+            </a>
+          </div>
         </div>
       </div>
 

@@ -11,26 +11,18 @@ const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_
 const full  = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_1400,f_webp,q_85/${id}.jpg`
 
 const images = [
-  { id: '_KS00761_rdn9d1', caption: 'NK Hospital' },
-  { id: '_KS00760_ckoqg9', caption: 'NK Hospital' },
-  { id: '_KS00759_karoml', caption: 'NK Hospital' },
-  { id: '_KS00758_dyth5a', caption: 'NK Hospital' },
-  { id: '_KS00757_rrt51j', caption: 'NK Hospital' },
-  { id: '_KS00756_hxkbhw', caption: 'NK Hospital' },
-  { id: '_KS00753_crqsce', caption: 'NK Hospital' },
-  { id: '_KS00752_efdcig', caption: 'NK Hospital' },
-  { id: '_KS00750_feo4wy', caption: 'NK Hospital' },
-  { id: '_KS00751_kigpsn', caption: 'NK Hospital' },
-  { id: '_KS00748_ygkquc', caption: 'NK Hospital' },
-  { id: '_KS00747_ckvwyp', caption: 'NK Hospital' },
-  { id: '_KS00746_relhiy', caption: 'NK Hospital' },
-  { id: '_KS00745_cwktcn', caption: 'NK Hospital' },
-  { id: '_KS00744_aaztcx', caption: 'NK Hospital' },
-  { id: '_KS00743_ybd7e2', caption: 'NK Hospital' },
-  { id: '_KS00742_m1uuck', caption: 'NK Hospital' },
-  { id: '_KS00740_idnmi9', caption: 'NK Hospital' },
-  { id: '_KS00741_e4ug1i', caption: 'NK Hospital' },
-  { id: '_KS00735_jjip8s', caption: 'NK Hospital' },
+  { id: '1_m5ebcj',  caption: 'NK Hospital' },
+  { id: '2_uegntc',  caption: 'NK Hospital' },
+  { id: '3_c9k2ur',  caption: 'NK Hospital' },
+  { id: '4_sxu9x7',  caption: 'NK Hospital' },
+  { id: '5_ifqb9f',  caption: 'NK Hospital' },
+  { id: '6_ptwssg',  caption: 'NK Hospital' },
+  { id: '7_ohhgzt',  caption: 'NK Hospital' },
+  { id: '8_lipodh',  caption: 'NK Hospital' },
+  { id: '9_yd4pdd',  caption: 'NK Hospital' },
+  { id: '10_f5hrbs', caption: 'NK Hospital' },
+  { id: '11_n4ry5t', caption: 'NK Hospital' },
+  { id: '12_bu4vad', caption: 'NK Hospital' },
 ]
 
 export default function Gallery() {

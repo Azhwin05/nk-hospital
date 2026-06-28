@@ -77,17 +77,8 @@ export default function Footer() {
                 <i className="ph-fill ph-map-pin text-[#c9a227] shrink-0 mt-0.5"></i>
                 <span className="leading-relaxed">NK Nagar, opposite Shor Gumbad, Jaferabad, Kalaburagi, Karnataka 585103</span>
               </div>
-              <a href="mailto:info@nkhospital.in" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors">
-                <i className="ph-fill ph-envelope text-gray-500 shrink-0"></i> info@nkhospital.in
-              </a>
-              <a href="tel:9353957095" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors font-semibold">
-                <i className="ph-fill ph-phone text-red-500 shrink-0"></i> 9353957095 (Ambulance)
-              </a>
-              <a href="tel:9187966774" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors font-semibold">
-                <i className="ph-fill ph-phone text-red-500 shrink-0"></i> 9187966774 (Ambulance)
-              </a>
-              <a href="tel:9901573323" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors">
-                <i className="ph-fill ph-phone text-gray-500 shrink-0"></i> 9901573323 (Consultation)
+              <a href="mailto:nkhospitalglb@gmail.com" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors">
+                <i className="ph-fill ph-envelope text-gray-500 shrink-0"></i> nkhospitalglb@gmail.com
               </a>
               <a href="https://wa.me/919901573323" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white active:text-white/80 transition-colors">
                 <i className="ph-fill ph-whatsapp-logo text-green-400 shrink-0"></i> WhatsApp Us

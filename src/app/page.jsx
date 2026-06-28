@@ -10,7 +10,7 @@ import { IconRender } from '@/components/SpecialtyIcon'
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
 const expertiseItems = [
-  { icon: 'svg:stomach' },
+  { icon: 'svg:intestine' },
   { icon: 'svg:scalpel' },
   { icon: 'ph ph-heartbeat' },
   { icon: 'ph ph-dna' },
@@ -20,7 +20,7 @@ const expertiseItems = [
   { icon: 'ph ph-ear' },
   { icon: 'ph ph-bone' },
   { icon: 'svg:lungs' },
-  { icon: 'ph ph-drop' },
+  { icon: 'svg:kidney' },
   { icon: 'ph ph-funnel' },
 ]
 

@@ -9,7 +9,7 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const specialities = [
   { icon: 'ph ph-heartbeat', name: 'Cardiology' },
-  { icon: 'svg:stomach', name: 'Medical Gastroenterology' },
+  { icon: 'svg:intestine', name: 'Medical Gastroenterology' },
   { icon: 'svg:scalpel', name: 'Surgical Gastroenterology' },
   { icon: 'ph ph-dna', name: 'Medical Oncology' },
   { icon: 'ph ph-bandaids', name: 'Surgical Oncology' },
@@ -21,7 +21,7 @@ const specialities = [
   { icon: 'ph ph-eye', name: 'Ophthalmology' },
   { icon: 'ph ph-person', name: 'Dermatology' },
   { icon: 'ph ph-funnel', name: 'Urology' },
-  { icon: 'ph ph-drop', name: 'Nephrology' },
+  { icon: 'svg:kidney', name: 'Nephrology' },
   { icon: 'svg:lungs', name: 'Pulmonology' },
   { icon: 'ph ph-thermometer', name: 'Endocrinology' },
   { icon: 'ph ph-hand', name: 'Rheumatology' },

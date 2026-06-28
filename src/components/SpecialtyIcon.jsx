@@ -18,6 +18,23 @@ function ScalpelSVG() {
   )
 }
 
+function KidneySVG() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3 C8 3 4 6 4 12 C4 18 8 21 12 21 C14 21 15.5 19 15.5 17 C15.5 15.5 14 14 14 12 C14 10 15.5 8.5 15.5 7 C15.5 5 14 3 12 3 Z" />
+      <path d="M13 8 C11.5 9 11.5 10 11.5 12 C11.5 14 11.5 15 13 16" />
+    </svg>
+  )
+}
+
+function IntestineSVG() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 5 C3 5 3 10 7 10 C11 10 11 5 15 5 C19 5 19 10 15 10 C11 10 11 15 15 15 C19 15 19 19 15 19 C11 19 11 15 7 15 C4 15 4 19 7 19" />
+    </svg>
+  )
+}
+
 function LungsSVG() {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -33,7 +50,8 @@ function LungsSVG() {
 export function IconRender({ icon, className = '' }) {
   if (icon === 'svg:stomach') return <span className={`inline-flex items-center justify-center ${className}`}><StomachSVG /></span>
   if (icon === 'svg:scalpel') return <span className={`inline-flex items-center justify-center ${className}`}><ScalpelSVG /></span>
+  if (icon === 'svg:kidney') return <span className={`inline-flex items-center justify-center ${className}`}><KidneySVG /></span>
+  if (icon === 'svg:intestine') return <span className={`inline-flex items-center justify-center ${className}`}><IntestineSVG /></span>
   if (icon === 'svg:lungs') return <span className={`inline-flex items-center justify-center ${className}`}><LungsSVG /></span>
-  if (icon === 'svg:neurosurgery') return <span className={`inline-flex items-center justify-center ${className}`}><NeurosurgerySVG /></span>
   return <i className={`${icon} ${className}`}></i>
 }

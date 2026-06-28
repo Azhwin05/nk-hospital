@@ -36,7 +36,7 @@ const jsonLd = {
   image: 'https://nk-hospital.vercel.app/slide1.jpg',
   description: 'NK Hospital is a leading multi super-specialty hospital in Kalaburagi, Karnataka, providing advanced healthcare across 40+ specialties including Gastroenterology, Cardiology, Neurology, Oncology, and Orthopedics.',
   telephone: '+918040123456',
-  email: 'info@nkhospital.in',
+  email: 'nkhospitalglb@gmail.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'NK Nagar, opposite Shor Gumbad, Jaferabad',

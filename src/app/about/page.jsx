@@ -64,8 +64,11 @@ function Overview() {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
             <div className="w-full lg:w-1/2 shrink-0">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[220px] md:h-[420px]">
-                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop"
-                  className="w-full h-full object-cover" alt="NK Hospital" />
+                <video
+                  src="https://res.cloudinary.com/dmhonzqrm/video/upload/compressed_nk_hospital_final_ewtjkd.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay muted loop playsInline
+                />
               </div>
             </div>
             <div className="w-full lg:w-1/2">
@@ -197,7 +200,7 @@ function Chairman() {
           <div className="w-full lg:w-[28%] shrink-0">
             <div className="rounded-2xl overflow-hidden h-[200px] md:h-[400px] shadow-xl mb-5">
               <img
-                src="https://res.cloudinary.com/dmhonzqrm/image/upload/v1781722544/IMG-20260613-WA0041.jpg_tudbmi.jpg"
+                src="https://res.cloudinary.com/dmhonzqrm/image/upload/IMG-20260613-WA0039.jpg_o0mbyn.jpg"
                 className="w-full h-full object-cover object-top"
                 alt="Dr. Arif Raza Ahmed"
               />

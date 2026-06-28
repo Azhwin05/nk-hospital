@@ -25,7 +25,6 @@ export default function Contact() {
         <a key="p3" href="tel:9901573323" className="hover:text-[#1a3a6b] transition-colors">9901573323 (Consultation)</a>,
     ]},
     { icon: 'ph-fill ph-envelope', titleKey: 'contact_email_title', lines: [
-        <a key="e1" href="mailto:info@nkhospital.in" className="hover:text-[#1a3a6b] transition-colors">info@nkhospital.in</a>,
         <a key="e2" href="mailto:hr@nkhospital.com" className="hover:text-[#1a3a6b] transition-colors">hr@nkhospital.com</a>,
         <a key="e3" href="mailto:nkhospitalglb@gmail.com" className="hover:text-[#1a3a6b] transition-colors">nkhospitalglb@gmail.com</a>,
     ]},

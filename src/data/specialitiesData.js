@@ -28,7 +28,7 @@ export const specialitiesData = {
         name: 'Dr. Veeresh Godi',
         qualification: 'MBBS, MD General Medicine',
         experience: '3 years',
-        img: '/doctors/Dr veeresh godi.JPG',
+        img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/Dr_veeresh_godi_awqtsd.jpg',
         expertise: [
           'Management of hypertension and diabetes',
           'Thyroid disorders',
@@ -79,7 +79,7 @@ export const specialitiesData = {
         name: 'Dr. Mahalingam',
         qualification: 'MBBS, MS, DNB, FMISS',
         experience: '5 years',
-        img: '/doctors/Dr Mahaligam.JPG',
+        img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/Dr_Mahaligam_jppgtd.jpg',
         expertise: [
           'Fracture fixations',
           'Arthroplasty (Joint Replacement)',
@@ -185,7 +185,7 @@ export const specialitiesData = {
         name: 'Dr. Zeeshan Ali',
         qualification: 'MBBS, MD (General Medicine), DM (Gastroenterology) – Osmania Hospital, Hyderabad',
         experience: '13 years',
-        img: '/doctors/Dr zeeshan ali.JPG',
+        img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/Dr_zeeshan_ali_vhcdft.jpg',
         expertise: [
           'Inflammatory Bowel Disease (IBD) & IBS',
           'Liver Disease',

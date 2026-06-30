@@ -8,7 +8,7 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const DOCTORS = [
   // ── Consultants ──────────────────────────────────────────────────────────
-  { dept: 'Consultants', name: 'Dr. Arif Raza Ahmed',        qual: 'MBBS, MS, MCh (GI Surgery)',                    specialty: 'Surgical Gastroenterology',    exp: '14+', img: '/doctors/Dr arif raza ahmed.JPG', initials: 'AR', gender: 'male',   filled: true  },
+  { dept: 'Consultants', name: 'Dr. Arif Raza Ahmed',        qual: 'MBBS, MS, MCh (GI Surgery)',                    specialty: 'Surgical Gastroenterology',    exp: '14+', img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/dr_arif_ahmedjpg_o0mbyn.jpg', initials: 'AR', gender: 'male',   filled: true  },
   { dept: 'Consultants', name: 'Dr. Zeeshan Ali',             qual: 'MBBS, MD, DM (Gastroenterology)',               specialty: 'Medical Gastroenterology',     exp: '13+', img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/Dr_zeeshan_ali_vhcdft.jpg',     initials: 'ZA', gender: 'male',   filled: true  },
   { dept: 'Consultants', name: 'Dr. Veeresh Godi',            qual: 'MBBS, MD (Internal Medicine)',                  specialty: 'General Medicine',             exp: '3+',  img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/Dr_veeresh_godi_awqtsd.jpg',    initials: 'VG', gender: 'male',   filled: true  },
   { dept: 'Consultants', name: 'Dr. Mahalingam',              qual: 'MBBS, MS Ortho, FMISS',                        specialty: 'Orthopedics & Spine Surgery',  exp: '5+',  img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/Dr_Mahaligam_jppgtd.jpg',       initials: 'MA', gender: 'male',   filled: true  },

@@ -136,7 +136,7 @@ export const specialitiesData = {
         name: 'Dr. Arif Raza Ahmed',
         qualification: 'MS, MCh Surgical Gastroenterology',
         experience: '14 years',
-        img: '/doctors/Dr arif raza ahmed.JPG',
+        img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/dr_arif_ahmedjpg_o0mbyn.jpg',
         expertise: [
           'Advanced Laparoscopic GI Surgery',
           'GI Oncology Surgery',

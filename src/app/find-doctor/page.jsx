@@ -56,18 +56,22 @@ const DEPT_ORDER = ['Consultants', 'Emergency Department', 'MICU & Critical Care
 function Avatar({ img, initials, gender, name }) {
   if (img) {
     return (
-      <div className="w-20 h-[5.5rem] rounded-xl bg-gray-100 shrink-0 overflow-hidden">
-        <img src={img} className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500" alt={name} loading="lazy" />
+      <div className="w-[4.6rem] h-[5.9rem] shrink-0 bg-white p-0.75 rounded-sm shadow-sm border border-gray-200">
+        <div className="w-full h-full rounded-xs overflow-hidden bg-gray-100">
+          <img src={img} className="w-full h-full object-cover object-top" alt={name} loading="lazy" />
+        </div>
       </div>
     )
   }
   const bg = gender === 'female' ? '#e91e8c' : '#1a3a6b'
   return (
-    <div className="w-20 h-[5.5rem] rounded-xl shrink-0 flex flex-col items-center justify-center gap-1"
-      style={{ backgroundColor: bg + '15', border: `1.5px solid ${bg}30` }}>
-      <span className="text-xl font-extrabold" style={{ color: bg }}>{initials}</span>
-      <i className={`text-lg ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
-        style={{ color: bg, opacity: 0.4 }}></i>
+    <div className="w-[4.6rem] h-[5.9rem] shrink-0 bg-white p-0.75 rounded-sm shadow-sm border border-gray-200">
+      <div className="w-full h-full rounded-xs flex flex-col items-center justify-center gap-1"
+        style={{ backgroundColor: bg + '15', border: `1.5px solid ${bg}30` }}>
+        <span className="text-lg font-extrabold" style={{ color: bg }}>{initials}</span>
+        <i className={`text-base ${gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}`}
+          style={{ color: bg, opacity: 0.4 }}></i>
+      </div>
     </div>
   )
 }

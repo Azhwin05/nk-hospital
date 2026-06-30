@@ -11,10 +11,10 @@ const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_
 const full  = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_1400,f_webp,q_85/${id}.jpg`
 
 const images = [
-  { id: '1_m5ebcj',  caption: 'NK Hospital' },
+  { id: 'IMG_1086.JPG_vrgmrr', caption: 'NK Hospital' },
   { id: '2_uegntc',  caption: 'NK Hospital' },
   { id: '3_c9k2ur',  caption: 'NK Hospital' },
-  { id: '4_sxu9x7',  caption: 'NK Hospital' },
+  { id: 'IMG_0970.JPG_xavp8x', caption: 'NK Hospital' },
   { id: '5_ifqb9f',  caption: 'NK Hospital' },
   { id: '6_ptwssg',  caption: 'NK Hospital' },
   { id: '7_ohhgzt',  caption: 'NK Hospital' },
@@ -23,6 +23,7 @@ const images = [
   { id: '10_f5hrbs', caption: 'NK Hospital' },
   { id: '11_n4ry5t', caption: 'NK Hospital' },
   { id: '12_bu4vad', caption: 'NK Hospital' },
+  { id: 'IMG_0976.JPG_rmnq4y', caption: 'NK Hospital' },
 ]
 
 export default function Gallery() {

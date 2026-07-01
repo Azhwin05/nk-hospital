@@ -48,7 +48,6 @@ const DOCTORS = [
   // ── MICU & Critical Care ─────────────────────────────────────────────────
   { dept: 'MICU & Critical Care', name: 'Dr. Rehman Hyder', qual: 'MBBS, DA, DNB (Anaesthesia & Critical Care)', specialty: 'Critical Care Medicine', exp: '', img: null,                           initials: 'RH', gender: 'male', filled: false, badge: 'Head of Department' },
   { dept: 'MICU & Critical Care', name: 'Dr. Amarnath',     qual: 'MBBS, MD, DM (Critical Care Medicine)',       specialty: 'Critical Care Medicine', exp: '', img: null,                           initials: 'AM', gender: 'male', filled: false },
-  { dept: 'MICU & Critical Care', name: 'Dr. Sohail',       qual: 'MBBS, MD (Anaesthesia & Critical Care)',      specialty: 'Critical Care Medicine', exp: '', img: '/doctors/Dr sohail.JPG', initials: 'SO', gender: 'male', filled: false },
 ]
 
 const DEPT_ORDER = ['Consultants', 'Emergency Department', 'MICU & Critical Care']

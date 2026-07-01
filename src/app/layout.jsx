@@ -8,7 +8,7 @@ export const metadata = {
   keywords: 'NK Hospital Kalaburagi, multi specialty hospital Kalaburagi, best hospital Gulbarga, gastroenterology Kalaburagi, cardiology hospital Karnataka, emergency hospital Kalaburagi',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://nk-hospital.vercel.app/' },
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/logo.png' },
   openGraph: {
     type: 'website',
     url: 'https://nk-hospital.vercel.app/',

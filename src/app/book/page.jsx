@@ -5,6 +5,7 @@ import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { supabase } from '@/lib/supabase'
+import { optimg } from '@/lib/img'
 import { useLanguage } from '@/context/LanguageContext'
 
 const STATUS = { idle: 'idle', loading: 'loading', success: 'success', error: 'error' }
@@ -137,7 +138,7 @@ export default function Book() {
               <div key={doc.id} className="bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-[#1a3a6b] cursor-pointer group transition-all active:scale-95"
                 onClick={() => setSelectedDoctor(doc)}>
                 <div className="w-20 h-20 rounded-full overflow-hidden mb-3 border-2 border-gray-100 group-hover:border-[#1a3a6b] transition-colors shrink-0 bg-gray-100">
-                  <img src={doc.photo_url} className="w-full h-full object-cover object-top" alt={doc.name} loading="lazy" />
+                  <img src={optimg(doc.photo_url, 200)} className="w-full h-full object-cover object-top" alt={doc.name} loading="lazy" width="80" height="80" />
                 </div>
                 <h3 className="text-xs font-bold text-gray-800 leading-snug mb-1 group-hover:text-[#1a3a6b]">{doc.name}</h3>
                 <p className="text-[11px] font-semibold text-blue-500 mb-3">{doc.specialty}</p>
@@ -166,7 +167,7 @@ export default function Book() {
               <>
                 <div className="flex items-center gap-4 mb-5 pb-4 border-b border-gray-100">
                   <div className="w-14 h-14 rounded-full overflow-hidden border border-gray-200 shrink-0 bg-gray-100">
-                    <img src={selectedDoctor.photo_url} className="w-full h-full object-cover object-top" alt={selectedDoctor.name} />
+                    <img src={optimg(selectedDoctor.photo_url, 160)} className="w-full h-full object-cover object-top" alt={selectedDoctor.name} />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-base font-bold leading-tight" style={{ color: '#1a3a6b' }}>{selectedDoctor.name}</h3>

@@ -4,7 +4,18 @@ import Link from 'next/link'
 import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import { supabase } from '@/lib/supabase'
 import { useLanguage } from '@/context/LanguageContext'
+
+const BOOK_STATUS = { idle: 'idle', loading: 'loading', success: 'success', error: 'error' }
+
+// Patient ID like NK-4F9K2A
+function generatePatientId() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+  let code = ''
+  for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)]
+  return `NK-${code}`
+}
 
 const packages = [
   {
@@ -92,7 +103,7 @@ const packages = [
   },
 ]
 
-function PackageCard({ name, icon, color, tiers, bookLabel }) {
+function PackageCard({ name, icon, color, tiers, bookLabel, onBook }) {
   const [active, setActive] = useState(0)
   const tier = tiers[active]
 
@@ -140,9 +151,116 @@ function PackageCard({ name, icon, color, tiers, bookLabel }) {
 
       {/* CTA */}
       <div className="p-5 pt-3">
-        <Link href="/book" className="w-full text-center text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity block" style={{ backgroundColor: '#1a3a6b' }}>
-          {bookLabel}
-        </Link>
+        <button onClick={() => onBook({ packageName: name, tierLabel: tier.label, price: tier.price })}
+          className="w-full text-center text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5"
+          style={{ backgroundColor: '#1a3a6b' }}>
+          <i className="ph ph-calendar-plus"></i> {bookLabel}
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function PackageBookingModal({ booking, onClose }) {
+  const [form, setForm] = useState({ name: '', phone: '', date: '', message: '' })
+  const [status, setStatus] = useState(BOOK_STATUS.idle)
+  const [patientId, setPatientId] = useState('')
+  const today = new Date().toISOString().split('T')[0]
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus(BOOK_STATUS.loading)
+    const newId = generatePatientId()
+    const { error } = await supabase.from('package_bookings').insert({
+      patient_id: newId,
+      patient_name: form.name,
+      phone: form.phone,
+      package_name: booking.packageName,
+      tier_label: booking.tierLabel,
+      price: booking.price || null,
+      preferred_date: form.date || null,
+      message: form.message || null,
+    })
+    if (error) {
+      setStatus(BOOK_STATUS.error)
+      setTimeout(() => setStatus(BOOK_STATUS.idle), 3000)
+    } else {
+      setPatientId(newId)
+      setStatus(BOOK_STATUS.success)
+    }
+  }
+
+  const close = () => { if (status !== BOOK_STATUS.loading) onClose() }
+
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={close}>
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+        {status === BOOK_STATUS.success ? (
+          <div className="text-center py-8">
+            <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500 text-3xl">
+              <i className="ph-fill ph-check-circle"></i>
+            </div>
+            <h4 className="font-bold text-gray-800 text-lg mb-1">Booking Confirmed!</h4>
+            <p className="text-sm text-gray-500 mb-5">Please save your Patient ID and show it at the hospital.</p>
+            <div className="bg-blue-50 border border-blue-100 rounded-xl py-4 mb-5">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1">Your Patient ID</p>
+              <p className="text-2xl font-extrabold tracking-wide" style={{ color: '#1a3a6b' }}>{patientId}</p>
+            </div>
+            <button onClick={onClose} className="w-full text-white py-3 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
+              Done
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="flex items-start justify-between gap-4 mb-5 pb-4 border-b border-gray-100">
+              <div>
+                <h3 className="text-base font-bold leading-tight" style={{ color: '#1a3a6b' }}>{booking.packageName}</h3>
+                <p className="text-[11px] text-blue-500 font-semibold mt-0.5">
+                  {booking.tierLabel}{booking.price ? ` — ${booking.price}` : ''}
+                </p>
+              </div>
+              <button onClick={close} className="text-gray-400 hover:text-gray-700"><i className="ph ph-x text-xl"></i></button>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Full Name</label>
+                <input required type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors"
+                  placeholder="Patient's full name" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Phone Number</label>
+                <input required type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors"
+                  placeholder="10-digit mobile number" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Preferred Date</label>
+                <input required type="date" min={today} value={form.date} onChange={e => setForm({ ...form, date: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Message (optional)</label>
+                <textarea rows={2} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors resize-none"
+                  placeholder="Any notes for the hospital"></textarea>
+              </div>
+
+              {status === BOOK_STATUS.error && (
+                <p className="text-xs text-red-500 text-center">Something went wrong. Please try again.</p>
+              )}
+
+              <button type="submit" disabled={status === BOOK_STATUS.loading}
+                className="w-full text-white py-3 rounded-lg text-sm font-bold transition-all hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2"
+                style={{ backgroundColor: '#1a3a6b' }}>
+                {status === BOOK_STATUS.loading
+                  ? <><i className="ph ph-circle-notch animate-spin"></i> Booking...</>
+                  : <><i className="ph ph-calendar-check"></i> Confirm Booking</>}
+              </button>
+            </form>
+          </>
+        )}
       </div>
     </div>
   )
@@ -150,6 +268,7 @@ function PackageCard({ name, icon, color, tiers, bookLabel }) {
 
 export default function HealthPackages() {
   const { t } = useLanguage()
+  const [booking, setBooking] = useState(null)
 
   return (
     <div className="antialiased bg-slate-50 text-gray-800 min-h-screen flex flex-col">
@@ -183,10 +302,12 @@ export default function HealthPackages() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {packages.map((pkg) => (
-            <PackageCard key={pkg.name} {...pkg} bookLabel={t('hp_book_now')} />
+            <PackageCard key={pkg.name} {...pkg} bookLabel={t('hp_book_now')} onBook={setBooking} />
           ))}
         </div>
       </main>
+
+      {booking && <PackageBookingModal booking={booking} onClose={() => setBooking(null)} />}
 
       <Footer />
     </div>

@@ -2,28 +2,32 @@ import Script from 'next/script'
 import './globals.css'
 import Providers from '@/components/Providers'
 
+const HOME_TITLE = 'Best Multi Super Specialty Hospital in Kalaburagi | NK Hospital'
+const HOME_DESC = 'NK Hospital is a leading multispecialty hospital in Kalaburagi offering advanced healthcare facilities across multiple specialties.'
+
 export const metadata = {
-  title: 'NK Hospital Kalaburagi | Multi Super-Specialty Hospital',
-  description: 'NK Hospital is Kalaburagi\'s leading multi super-specialty hospital with 200+ beds, 40+ specialties including Gastroenterology, Cardiology, Neurology, Oncology, and 24/7 emergency care. Expert doctors. Advanced infrastructure.',
+  metadataBase: new URL('https://nkhospital.com'),
+  title: HOME_TITLE,
+  description: HOME_DESC,
   keywords: 'NK Hospital Kalaburagi, multi specialty hospital Kalaburagi, best hospital Gulbarga, gastroenterology Kalaburagi, cardiology hospital Karnataka, emergency hospital Kalaburagi',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://nk-hospital.vercel.app/' },
+  alternates: { canonical: 'https://nkhospital.com/' },
   icons: { icon: '/logo.png' },
   verification: { google: 'YkmR_53N72r4sh-7JQOIhsRVmvb_afaTPbTnPnA2oA0' },
   openGraph: {
     type: 'website',
-    url: 'https://nk-hospital.vercel.app/',
-    title: 'NK Hospital Kalaburagi | Multi Super-Specialty Hospital',
-    description: 'Kalaburagi\'s trusted multi super-specialty hospital. 200+ beds, 40+ specialties, 24/7 emergency. Advanced infrastructure. Expert specialists.',
-    images: [{ url: 'https://nk-hospital.vercel.app/slide1.jpg', width: 1200, height: 630 }],
+    url: 'https://nkhospital.com/',
+    title: HOME_TITLE,
+    description: HOME_DESC,
+    images: [{ url: 'https://nkhospital.com/slide1.jpg', width: 1200, height: 630 }],
     locale: 'en_IN',
     siteName: 'NK Hospital Kalaburagi',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NK Hospital Kalaburagi | Multi Super-Specialty Hospital',
-    description: 'Kalaburagi\'s trusted multi super-specialty hospital. 200+ beds, 40+ specialties, 24/7 emergency.',
-    images: ['https://nk-hospital.vercel.app/slide1.jpg'],
+    title: HOME_TITLE,
+    description: HOME_DESC,
+    images: ['https://nkhospital.com/slide1.jpg'],
   },
 }
 
@@ -32,9 +36,9 @@ const jsonLd = {
   '@type': 'Hospital',
   name: 'NK Hospital',
   alternateName: 'NK Multi Super-Specialty Hospital',
-  url: 'https://nk-hospital.vercel.app/',
-  logo: 'https://nk-hospital.vercel.app/logo.png',
-  image: 'https://nk-hospital.vercel.app/slide1.jpg',
+  url: 'https://nkhospital.com/',
+  logo: 'https://nkhospital.com/logo.png',
+  image: 'https://nkhospital.com/slide1.jpg',
   description: 'NK Hospital is a leading multi super-specialty hospital in Kalaburagi, Karnataka, providing advanced healthcare across 40+ specialties including Gastroenterology, Cardiology, Neurology, Oncology, and Orthopedics.',
   telephone: '+918040123456',
   email: 'nkhospitalglb@gmail.com',

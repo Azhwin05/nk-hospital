@@ -1,4 +1,5 @@
-import { pageMeta } from '@/lib/seo'
+import { pageMeta, breadcrumbLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
 export const metadata = pageMeta({
   title: 'About NK Hospital | Trusted Multispecialty Hospital in Kalaburagi',
@@ -7,5 +8,13 @@ export const metadata = pageMeta({
 })
 
 export default function AboutLayout({ children }) {
-  return children
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+      ])} />
+      {children}
+    </>
+  )
 }

@@ -1,4 +1,5 @@
-import { pageMeta } from '@/lib/seo'
+import { pageMeta, breadcrumbLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
 export const metadata = pageMeta({
   title: 'Top Specialists in Kalaburagi | Find a Doctor',
@@ -7,5 +8,13 @@ export const metadata = pageMeta({
 })
 
 export default function FindDoctorLayout({ children }) {
-  return children
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: 'Home', path: '/' },
+        { name: 'Find a Doctor', path: '/find-doctor' },
+      ])} />
+      {children}
+    </>
+  )
 }

@@ -1,4 +1,5 @@
-import { pageMeta } from '@/lib/seo'
+import { pageMeta, breadcrumbLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
 export const metadata = pageMeta({
   title: 'Book an Appointment with Our Experts at NK Hospital, Kalaburagi',
@@ -7,5 +8,13 @@ export const metadata = pageMeta({
 })
 
 export default function BookLayout({ children }) {
-  return children
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: 'Home', path: '/' },
+        { name: 'Book Appointment', path: '/book' },
+      ])} />
+      {children}
+    </>
+  )
 }

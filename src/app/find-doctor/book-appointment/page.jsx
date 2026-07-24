@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
-import FindDoctorContent from './FindDoctorContent'
+import FindDoctorContent from '../FindDoctorContent'
 
-export default function FindDoctor() {
+export default function BookAppointment() {
   return (
     <Suspense fallback={null}>
       <FindDoctorContent />

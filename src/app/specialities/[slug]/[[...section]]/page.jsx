@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import TopBarDark from '@/components/layout/TopBarDark'
@@ -10,18 +10,23 @@ import { IconRender } from '@/components/SpecialtyIcon'
 import { useLanguage } from '@/context/LanguageContext'
 
 const TABS = [
-  { key: 'Overview',   labelKey: 'sd_tab_overview' },
-  { key: 'Conditions', labelKey: 'sd_tab_conditions' },
-  { key: 'Treatments', labelKey: 'sd_tab_treatments' },
-  { key: 'Doctors',    labelKey: 'sd_tab_doctors' },
-  { key: 'FAQs',       labelKey: 'sd_tab_faqs' },
+  { key: 'Overview',   seg: 'overview',   labelKey: 'sd_tab_overview' },
+  { key: 'Conditions', seg: 'conditions', labelKey: 'sd_tab_conditions' },
+  { key: 'Treatments', seg: 'treatments', labelKey: 'sd_tab_treatments' },
+  { key: 'Doctors',    seg: 'doctors',    labelKey: 'sd_tab_doctors' },
+  { key: 'FAQs',       seg: 'faqs',       labelKey: 'sd_tab_faqs' },
 ]
 
 export default function SpecialityDetail() {
-  const { slug } = useParams()
-  const [tab, setTab] = useState('Overview')
+  const { slug, section } = useParams()
   const data = specialitiesData[slug]
   const { t } = useLanguage()
+
+  // The active tab is driven by the URL segment (…/[slug]/overview, /conditions …)
+  // so each tab is a real, shareable page rather than in-page state.
+  const seg = Array.isArray(section) ? section[0] : section
+  const matched = TABS.find(tb => tb.seg === seg)
+  const tab = matched ? matched.key : 'Overview'
 
   useEffect(() => {
     const base = 'NK Hospital Kalaburagi | Multi Super-Specialty Hospital'
@@ -38,8 +43,8 @@ export default function SpecialityDetail() {
     )
   }
 
-  const visibleTabs = TABS.filter(tab => {
-    if (tab.key === 'FAQs' && (!data.faqs || data.faqs.length === 0)) return false
+  const visibleTabs = TABS.filter(tabObj => {
+    if (tabObj.key === 'FAQs' && (!data.faqs || data.faqs.length === 0)) return false
     return true
   })
 
@@ -73,10 +78,10 @@ export default function SpecialityDetail() {
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex overflow-x-auto">
           {visibleTabs.map(tabObj => (
-            <button key={tabObj.key} onClick={() => setTab(tabObj.key)}
+            <Link key={tabObj.key} href={`/specialities/${slug}/${tabObj.seg}`}
               className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${tab === tabObj.key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
               {t(tabObj.labelKey)}
-            </button>
+            </Link>
           ))}
         </div>
       </div>

@@ -266,9 +266,122 @@ function PackageBookingModal({ booking, onClose }) {
   )
 }
 
+const PICKUP_SLOTS = ['06:00 - 08:00 AM', '08:00 - 10:00 AM', '10:00 - 12:00 PM', '04:00 - 06:00 PM', '06:00 - 08:00 PM']
+
+function HomePickupModal({ onClose }) {
+  const [form, setForm] = useState({ name: '', phone: '', address: '', date: '', slot: '' })
+  const [status, setStatus] = useState(BOOK_STATUS.idle)
+  const today = new Date().toISOString().split('T')[0]
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus(BOOK_STATUS.loading)
+    const { error } = await supabase.from('home_pickup_requests').insert({
+      patient_name: form.name,
+      phone: form.phone,
+      address: form.address,
+      preferred_date: form.date || null,
+      time_slot: form.slot || null,
+    })
+    if (error) {
+      setStatus(BOOK_STATUS.error)
+      setTimeout(() => setStatus(BOOK_STATUS.idle), 3000)
+    } else {
+      setStatus(BOOK_STATUS.success)
+    }
+  }
+
+  const close = () => { if (status !== BOOK_STATUS.loading) onClose() }
+
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={close}>
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+        {status === BOOK_STATUS.success ? (
+          <div className="text-center py-8">
+            <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500 text-3xl">
+              <i className="ph-fill ph-check-circle"></i>
+            </div>
+            <h4 className="font-bold text-gray-800 text-lg mb-1">Home Pickup Requested!</h4>
+            <p className="text-sm text-gray-500 mb-5">Our phlebotomist team will call you shortly to confirm your home sample collection.</p>
+            <button onClick={onClose} className="w-full text-white py-3 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>
+              Done
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="flex items-start justify-between gap-4 mb-5 pb-4 border-b border-gray-100">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg" style={{ color: '#1a3a6b' }}>
+                  <i className="ph ph-house-line"></i>
+                </div>
+                <div>
+                  <h3 className="text-base font-bold leading-tight" style={{ color: '#1a3a6b' }}>Home Sample Pickup</h3>
+                  <p className="text-[11px] text-gray-500 mt-0.5">We&apos;ll collect your sample from home</p>
+                </div>
+              </div>
+              <button onClick={close} className="text-gray-400 hover:text-gray-700"><i className="ph ph-x text-xl"></i></button>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Full Name</label>
+                <input required type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors"
+                  placeholder="Patient's full name" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Phone Number</label>
+                <input required type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors"
+                  placeholder="10-digit mobile number" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Address</label>
+                <textarea required rows={2} value={form.address} onChange={e => setForm({ ...form, address: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors resize-none"
+                  placeholder="House / flat no, street, area, city, pincode"></textarea>
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-1 block">Preferred Date</label>
+                <input required type="date" min={today} value={form.date} onChange={e => setForm({ ...form, date: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#1a3a6b] transition-colors" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-gray-600 mb-2 block">Preferred Time Slot</label>
+                <div className="grid grid-cols-2 gap-2">
+                  {PICKUP_SLOTS.map(slot => (
+                    <button key={slot} type="button" onClick={() => setForm({ ...form, slot })}
+                      className={`py-2 rounded-lg text-[11px] font-bold border transition-colors ${form.slot === slot ? 'text-white border-[#1a3a6b]' : 'border-gray-200 text-gray-600 hover:border-[#1a3a6b] hover:text-[#1a3a6b]'}`}
+                      style={form.slot === slot ? { backgroundColor: '#1a3a6b' } : {}}>
+                      {slot}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {status === BOOK_STATUS.error && (
+                <p className="text-xs text-red-500 text-center">Something went wrong. Please try again.</p>
+              )}
+
+              <button type="submit" disabled={status === BOOK_STATUS.loading}
+                className="w-full text-white py-3 rounded-lg text-sm font-bold transition-all hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2"
+                style={{ backgroundColor: '#1a3a6b' }}>
+                {status === BOOK_STATUS.loading
+                  ? <><i className="ph ph-circle-notch animate-spin"></i> Requesting...</>
+                  : <><i className="ph ph-house-line"></i> Request Home Pickup</>}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function HealthPackages() {
   const { t } = useLanguage()
   const [booking, setBooking] = useState(null)
+  const [pickupOpen, setPickupOpen] = useState(false)
 
   return (
     <div className="antialiased bg-slate-50 text-gray-800 min-h-screen flex flex-col">
@@ -300,6 +413,24 @@ export default function HealthPackages() {
           <p className="text-sm text-gray-500 mt-3 max-w-xl mx-auto">{t('hp_desc')}</p>
         </div>
 
+        {/* Home sample collection CTA */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="rounded-2xl border border-blue-100 bg-blue-50/60 p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-2xl shrink-0 shadow-sm" style={{ color: '#1a3a6b' }}>
+              <i className="ph ph-house-line"></i>
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="text-base font-bold" style={{ color: '#1a3a6b' }}>Prefer a Home Pickup?</h3>
+              <p className="text-[13px] text-gray-500 mt-0.5">Book a home sample collection — our team visits you at a time that suits you.</p>
+            </div>
+            <button onClick={() => setPickupOpen(true)}
+              className="text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shrink-0 w-full sm:w-auto"
+              style={{ backgroundColor: '#1a3a6b' }}>
+              <i className="ph ph-house-line"></i> Book Home Pickup
+            </button>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {packages.map((pkg) => (
             <PackageCard key={pkg.name} {...pkg} bookLabel={t('hp_book_now')} onBook={setBooking} />
@@ -308,6 +439,7 @@ export default function HealthPackages() {
       </main>
 
       {booking && <PackageBookingModal booking={booking} onClose={() => setBooking(null)} />}
+      {pickupOpen && <HomePickupModal onClose={() => setPickupOpen(false)} />}
 
       <Footer />
     </div>

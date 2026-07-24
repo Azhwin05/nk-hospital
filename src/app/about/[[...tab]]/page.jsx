@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
@@ -330,16 +330,23 @@ function Accreditations() {
   )
 }
 
+const TABS = [
+  { key: 'overview',       seg: '',               labelKey: 'about_tab_overview' },
+  { key: 'chairman',       seg: 'chairman',       labelKey: 'about_tab_chairman' },
+  { key: 'board',          seg: 'board',          labelKey: 'about_tab_board' },
+  { key: 'accreditations', seg: 'accreditations', labelKey: 'about_tab_certifications' },
+]
+
 export default function About() {
-  const [activeTab, setActiveTab] = useState('overview')
+  const { tab } = useParams()
   const { t } = useLanguage()
 
-  const TABS = [
-    { key: 'overview',       labelKey: 'about_tab_overview' },
-    { key: 'chairman',       labelKey: 'about_tab_chairman' },
-    { key: 'board',          labelKey: 'about_tab_board' },
-    { key: 'accreditations', labelKey: 'about_tab_certifications' },
-  ]
+  // Each tab is now a real page (/about, /about/chairman …). Navigating between
+  // them is a route change, so the browser lands at the top of the new section
+  // instead of keeping the previous scroll position.
+  const seg = Array.isArray(tab) ? tab[0] : tab
+  const matched = TABS.find(tb => tb.seg === (seg || ''))
+  const activeTab = matched ? matched.key : 'overview'
 
   return (
     <div className="antialiased text-gray-800 bg-white">
@@ -348,11 +355,11 @@ export default function About() {
 
       <div className="bg-white border-b border-gray-200 shadow-sm sticky top-[72px] md:top-[96px] z-40">
         <div className="max-w-[1920px] mx-auto px-4 lg:px-16 flex gap-1 overflow-x-auto md:justify-center">
-          {TABS.map(({ key, labelKey }) => (
-            <button key={key} onClick={() => setActiveTab(key)}
+          {TABS.map(({ key, seg, labelKey }) => (
+            <Link key={key} href={seg ? `/about/${seg}` : '/about'}
               className={`py-3 px-3 md:py-4 md:px-5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors border-b-2 ${activeTab === key ? 'border-[#1a3a6b] text-[#1a3a6b]' : 'border-transparent text-gray-500 hover:text-[#1a3a6b]'}`}>
               {t(labelKey)}
-            </button>
+            </Link>
           ))}
         </div>
       </div>

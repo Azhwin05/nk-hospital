@@ -1,6 +1,6 @@
 import { blogPosts } from '@/data/blogData'
 
-const BASE = 'https://nkhospital.com'
+const BASE = 'https://www.nkhospital.com'
 
 // Specialty detail pages (keys of specialitiesData)
 const specialtySlugs = [

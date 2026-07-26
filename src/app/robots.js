@@ -1,4 +1,4 @@
-const BASE = 'https://nkhospital.com'
+const BASE = 'https://www.nkhospital.com'
 
 export default function robots() {
   return {

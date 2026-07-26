@@ -6,20 +6,20 @@ const HOME_TITLE = 'Best Multi Super Specialty Hospital in Kalaburagi | NK Hospi
 const HOME_DESC = 'NK Hospital is a leading multispecialty hospital in Kalaburagi offering advanced healthcare facilities across multiple specialties.'
 
 export const metadata = {
-  metadataBase: new URL('https://nkhospital.com'),
+  metadataBase: new URL('https://www.nkhospital.com'),
   title: HOME_TITLE,
   description: HOME_DESC,
   keywords: 'NK Hospital Kalaburagi, multi specialty hospital Kalaburagi, best hospital Gulbarga, gastroenterology Kalaburagi, cardiology hospital Karnataka, emergency hospital Kalaburagi',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://nkhospital.com/' },
+  alternates: { canonical: 'https://www.nkhospital.com/' },
   icons: { icon: '/logo.png' },
   verification: { google: 'YkmR_53N72r4sh-7JQOIhsRVmvb_afaTPbTnPnA2oA0' },
   openGraph: {
     type: 'website',
-    url: 'https://nkhospital.com/',
+    url: 'https://www.nkhospital.com/',
     title: HOME_TITLE,
     description: HOME_DESC,
-    images: [{ url: 'https://nkhospital.com/slide1.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.nkhospital.com/slide1.jpg', width: 1200, height: 630 }],
     locale: 'en_IN',
     siteName: 'NK Hospital Kalaburagi',
   },
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: HOME_TITLE,
     description: HOME_DESC,
-    images: ['https://nkhospital.com/slide1.jpg'],
+    images: ['https://www.nkhospital.com/slide1.jpg'],
   },
 }
 

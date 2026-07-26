@@ -1,4 +1,4 @@
-export const SITE = 'https://nkhospital.com'
+export const SITE = 'https://www.nkhospital.com'
 export const SITE_NAME = 'NK Hospital Kalaburagi'
 
 // BreadcrumbList structured data — lets Google show a breadcrumb trail

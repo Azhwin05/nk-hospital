@@ -79,6 +79,7 @@ function Overview() {
                 <p>{t('about_who_p2')}</p>
                 <p>{t('about_who_p3')}</p>
                 <p>{t('about_who_p4')}</p>
+                <p>{t('about_who_p5')}</p>
               </div>
               <div className="flex gap-3">
                 <Link href="/specialities" className="flex items-center gap-2 text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#1a3a6b' }}>

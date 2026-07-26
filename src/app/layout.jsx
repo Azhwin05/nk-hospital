@@ -31,50 +31,6 @@ export const metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Hospital',
-  name: 'NK Hospital',
-  alternateName: 'NK Multi Super-Specialty Hospital',
-  url: 'https://nkhospital.com/',
-  logo: 'https://nkhospital.com/logo.png',
-  image: 'https://nkhospital.com/slide1.jpg',
-  description: 'NK Hospital is a leading multi super-specialty hospital in Kalaburagi, Karnataka, providing advanced healthcare across 40+ specialties including Gastroenterology, Cardiology, Neurology, Oncology, and Orthopedics.',
-  telephone: '+918040123456',
-  email: 'nkhospitalglb@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'NK Nagar, opposite Shor Gumbad, Jaferabad',
-    addressLocality: 'Kalaburagi',
-    addressRegion: 'Karnataka',
-    postalCode: '585103',
-    addressCountry: 'IN',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 17.329, longitude: 76.819 },
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '20:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday'], opens: '00:00', closes: '23:59', description: 'Emergency services available 24/7' },
-  ],
-  availableService: [
-    { '@type': 'MedicalProcedure', name: 'Emergency Care' },
-    { '@type': 'MedicalSpecialty', name: 'Gastroenterology' },
-    { '@type': 'MedicalSpecialty', name: 'Cardiology' },
-    { '@type': 'MedicalSpecialty', name: 'Neurology' },
-    { '@type': 'MedicalSpecialty', name: 'Oncology' },
-    { '@type': 'MedicalSpecialty', name: 'Orthopedics' },
-    { '@type': 'MedicalSpecialty', name: 'Nephrology' },
-    { '@type': 'MedicalSpecialty', name: 'Hepatology' },
-    { '@type': 'MedicalSpecialty', name: 'Liver Transplant' },
-  ],
-  numberOfBeds: 200,
-  sameAs: [
-    'https://www.facebook.com/NKHospitalKalburagi',
-    'https://www.instagram.com/nk_hospital_/',
-    'https://www.linkedin.com/company/nk-hospital-kalaburagi/',
-    'https://www.youtube.com/@NKhospital_Kalaburagi',
-  ],
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -98,7 +54,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '2033952207470291');
 fbq('track', 'PageView');` }} />
         {/* End Meta Pixel Code */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Kannada:wght@400;500;600;700;800&family=Noto+Serif+Kannada:wght@700;800&display=swap" rel="stylesheet" />

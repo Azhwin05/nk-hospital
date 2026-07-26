@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { IconRender } from '@/components/SpecialtyIcon'
+import JsonLd from '@/components/JsonLd'
 
 const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
 
@@ -423,9 +424,45 @@ function Testimonials() {
   )
 }
 
+const medicalOrgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalOrganization',
+  name: 'NK Hospital',
+  url: 'https://www.nkhospital.com/',
+  logo: 'https://www.nkhospital.com/logo.png',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '9353957095',
+    contactType: 'emergency',
+    areaServed: 'IN',
+    availableLanguage: ['Hindi', 'Kannada', 'en'],
+  },
+  sameAs: [
+    'https://www.facebook.com/NKHospitalKalburagi',
+    'https://x.com/NKhospital_KAL',
+    'https://www.instagram.com/nk_hospital_/',
+    'https://www.youtube.com/@NKhospital_Kalaburagi',
+    'https://www.linkedin.com/company/nk-hospital-kalaburagi/',
+  ],
+}
+
+const webSiteLd = {
+  '@context': 'https://schema.org/',
+  '@type': 'WebSite',
+  name: 'NK Hospital',
+  url: 'https://www.nkhospital.com',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://www.nkhospital.com/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 export default function Home() {
   return (
     <div className="antialiased text-gray-800">
+      <JsonLd data={medicalOrgLd} />
+      <JsonLd data={webSiteLd} />
       <header className="absolute top-0 left-0 w-full z-50">
         <TopBar />
         <Navbar transparent />

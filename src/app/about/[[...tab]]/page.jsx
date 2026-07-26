@@ -28,11 +28,11 @@ function Overview() {
   ]
 
   const milestones = [
-    { year: '2015', icon: 'ph ph-plant',                titleKey: 'about_m1_title', descKey: 'about_m1_desc' },
-    { year: '2017', icon: 'ph ph-buildings',             titleKey: 'about_m2_title', descKey: 'about_m2_desc' },
-    { year: '2019', icon: 'ph ph-microscope',            titleKey: 'about_m3_title', descKey: 'about_m3_desc' },
-    { year: '2021', icon: 'ph ph-certificate',           titleKey: 'about_m4_title', descKey: 'about_m4_desc' },
-    { year: '2023', icon: 'ph ph-globe-hemisphere-east', titleKey: 'about_m5_title', descKey: 'about_m5_desc' },
+    { icon: 'ph ph-first-aid',      titleKey: 'about_m1_title', descKey: 'about_m1_desc' },
+    { icon: 'ph ph-trend-up',       titleKey: 'about_m2_title', descKey: 'about_m2_desc' },
+    { icon: 'ph ph-buildings',      titleKey: 'about_m3_title', descKey: 'about_m3_desc' },
+    { icon: 'ph ph-stethoscope',    titleKey: 'about_m4_title', descKey: 'about_m4_desc' },
+    { icon: 'ph ph-rocket-launch',  titleKey: 'about_m5_title', descKey: 'about_m5_desc' },
   ]
 
   return (
@@ -154,14 +154,13 @@ function Overview() {
           <div className="overflow-x-auto scrollbar-hide">
             <div className="relative flex px-16 min-w-max mx-auto justify-center">
               <div className="absolute top-[38px] left-24 right-24 h-px bg-blue-100"></div>
-              {milestones.map(({ year, icon, titleKey, descKey }) => (
-                <div key={year} className="w-[240px] flex flex-col items-center text-center shrink-0 group px-4">
+              {milestones.map(({ icon, titleKey, descKey }) => (
+                <div key={titleKey} className="w-[240px] flex flex-col items-center text-center shrink-0 group px-4">
                   <div className="relative z-10 w-[52px] h-[52px] rounded-full border border-gray-200 bg-white flex items-center justify-center text-lg mb-1.5 group-hover:border-[#1a3a6b] transition-all shadow-sm" style={{ color: '#93b4d4' }}>
                     <i className={icon}></i>
                   </div>
                   <div className="w-2 h-2 rounded-full mb-5 z-10" style={{ backgroundColor: '#1a3a6b' }}></div>
                   <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm group-hover:shadow-md group-hover:border-blue-100 transition-all text-left w-full">
-                    <span className="text-[10px] font-bold block mb-1.5" style={{ color: '#1a3a6b' }}>{year}</span>
                     <h3 className="text-sm font-bold mb-2" style={{ color: '#1a3a6b' }}>{t(titleKey)}</h3>
                     <p className="text-[11px] text-gray-500 leading-relaxed">{t(descKey)}</p>
                   </div>

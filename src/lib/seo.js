@@ -41,6 +41,31 @@ export function medicalPageLd({ name, description, path, specialty }) {
   }
 }
 
+// BlogPosting structured data — marks a blog article so Google can show it as
+// article content with a headline, image, publish date, and publisher.
+export function articleLd({ title, description, path, image, datePublished }) {
+  const url = `${SITE}${path}`
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    image: image ? [image] : undefined,
+    datePublished,
+    dateModified: datePublished,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+    inLanguage: 'en-IN',
+    author: { '@type': 'Organization', name: SITE_NAME, url: SITE },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/logo.png` },
+    },
+  }
+}
+
 // Builds a full Next.js metadata object (title, description, canonical, OG, Twitter)
 // for a single page. Used by each route's layout.jsx.
 export function pageMeta({ title, description, path = '' }) {

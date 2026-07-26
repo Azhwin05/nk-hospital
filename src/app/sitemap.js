@@ -1,3 +1,5 @@
+import { blogPosts } from '@/data/blogData'
+
 const BASE = 'https://nkhospital.com'
 
 // Specialty detail pages (keys of specialitiesData)
@@ -38,5 +40,12 @@ export default function sitemap() {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...specialtyPages]
+  const blogPages = blogPosts.map((post) => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: new Date(post.isoDate),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...specialtyPages, ...blogPages]
 }

@@ -124,7 +124,7 @@ export default function Contact() {
         <div className="mt-10 rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-72">
           <iframe
             title="NK Hospital Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.4!2d76.819!3d17.329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDE5JzQ0LjQiTiA3NsKwNDknMDguNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+            src="https://maps.google.com/maps?q=NK%20Hospital,%2017.3487858,76.8097717&z=16&hl=en&output=embed"
             width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
           ></iframe>
         </div>

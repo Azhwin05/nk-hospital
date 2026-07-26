@@ -25,8 +25,8 @@ const medicalClinicLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 17.3483033,
-    longitude: 76.8111869,
+    latitude: 17.3487858,
+    longitude: 76.8097717,
   },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',

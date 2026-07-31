@@ -125,8 +125,9 @@ export default function Contact() {
           <div className="h-72">
             <iframe
               title="NK Hospital Location"
-              src="https://maps.google.com/maps?q=17.3492979,76.8096982&z=16&hl=en&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1798.2521889350178!2d76.80955341200288!3d17.348934616833937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc8b90063ca1855%3A0x34b789506ab58a57!2sNK%20HOSPITAL!5e0!3m2!1sen!2sus!4v1785503796280!5m2!1sen!2sus"
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
           <a href="https://maps.app.goo.gl/WDQFoCex1reexUxdA" target="_blank" rel="noopener noreferrer"

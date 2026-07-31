@@ -121,12 +121,19 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-10 rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-72">
-          <iframe
-            title="NK Hospital Location"
-            src="https://maps.google.com/maps?q=NK%20Hospital,%2017.3487858,76.8097717&z=16&hl=en&output=embed"
-            width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
-          ></iframe>
+        <div className="mt-10 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+          <div className="h-72">
+            <iframe
+              title="NK Hospital Location"
+              src="https://maps.google.com/maps?q=NK%20Hospital,%2017.3492979,76.8096982&z=16&hl=en&output=embed"
+              width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+            ></iframe>
+          </div>
+          <a href="https://maps.app.goo.gl/WDQFoCex1reexUxdA" target="_blank" rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 bg-white py-3 text-sm font-bold border-t border-gray-100 hover:bg-slate-50 transition-colors"
+            style={{ color: '#1a3a6b' }}>
+            <i className="ph ph-navigation-arrow"></i> View on Google Maps
+          </a>
         </div>
       </main>
 

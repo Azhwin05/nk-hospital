@@ -24,6 +24,14 @@ const images = [
   { id: '11_n4ry5t', caption: 'NK Hospital' },
   { id: '12_bu4vad', caption: 'NK Hospital' },
   { id: 'IMG_0976.JPG_rmnq4y', caption: 'NK Hospital' },
+  { id: '01_un9ozg', caption: 'NK Hospital' },
+  { id: '02_lxpqeu', caption: 'NK Hospital' },
+  { id: '03_yv4ljz', caption: 'NK Hospital' },
+  { id: '04_eneesx', caption: 'NK Hospital' },
+  { id: '05_lzoghs', caption: 'NK Hospital' },
+  { id: '06_v6wp8z', caption: 'NK Hospital' },
+  { id: '07_meh9dn', caption: 'NK Hospital' },
+  { id: '08_kquaqx', caption: 'NK Hospital' },
 ]
 
 export default function Gallery() {

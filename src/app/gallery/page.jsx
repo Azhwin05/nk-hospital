@@ -11,6 +11,11 @@ const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_
 const full  = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_1400,f_webp,q_85/${id}.jpg`
 
 const images = [
+  // Latest uploads (2026-08-06)
+  { id: '09_bkwb0e',  caption: 'NK Hospital' },
+  { id: '010_nyygfx', caption: 'NK Hospital' },
+  { id: '011_ulrhf8', caption: 'NK Hospital' },
+  { id: '012_tnf1fo', caption: 'NK Hospital' },
   { id: 'IMG_1086.JPG_vrgmrr', caption: 'NK Hospital' },
   { id: '2_uegntc',  caption: 'NK Hospital' },
   { id: '3_c9k2ur',  caption: 'NK Hospital' },

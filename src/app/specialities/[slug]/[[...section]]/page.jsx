@@ -1,12 +1,13 @@
 'use client'
-import { useEffect } from 'react'
-import { useParams } from 'next/navigation'
+import { Suspense, useEffect } from 'react'
+import { useParams, useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { specialitiesData } from '@/data/specialitiesData'
 import { IconRender } from '@/components/SpecialtyIcon'
+import DoctorRequestModal, { initialsOf } from '@/components/DoctorRequestModal'
 import { useLanguage } from '@/context/LanguageContext'
 
 const TABS = [
@@ -17,16 +18,29 @@ const TABS = [
   { key: 'FAQs',       seg: 'faqs',       labelKey: 'sd_tab_faqs' },
 ]
 
-export default function SpecialityDetail() {
+function SpecialityDetailContent() {
   const { slug, section } = useParams()
   const data = specialitiesData[slug]
   const { t } = useLanguage()
+  const searchParams = useSearchParams()
+  const router = useRouter()
 
   // The active tab is driven by the URL segment (…/[slug]/overview, /conditions …)
   // so each tab is a real, shareable page rather than in-page state.
-  const seg = Array.isArray(section) ? section[0] : section
+  const segs = Array.isArray(section) ? section : (section ? [section] : [])
+  const seg = segs[0]
   const matched = TABS.find(tb => tb.seg === seg)
   const tab = matched ? matched.key : 'Overview'
+
+  // …/[slug]/doctors/book-appointment?doctor=<name> opens the request popup in
+  // place, mirroring how /find-doctor/book-appointment works.
+  const doctorsPath = `/specialities/${slug}/doctors`
+  const bookingActive = seg === 'doctors' && segs[1] === 'book-appointment'
+  const doctorName = searchParams.get('doctor')
+  const bookingDoctor = bookingActive && doctorName && data
+    ? data.doctors.find(d => d.name === doctorName)
+    : null
+  const closeBooking = () => router.push(doctorsPath, { scroll: false })
 
   useEffect(() => {
     const base = 'NK Hospital Kalaburagi | Multi Super-Specialty Hospital'
@@ -183,7 +197,8 @@ export default function SpecialityDetail() {
                     {note && (
                       <p className="text-xs md:text-[11px] text-gray-400 italic border-t border-gray-100 pt-3 leading-relaxed">{note}</p>
                     )}
-                    <Link href="/book" className="mt-4 flex items-center justify-center gap-2 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full hover:opacity-90 transition-opacity"
+                    <Link href={`${doctorsPath}/book-appointment?doctor=${encodeURIComponent(name)}`} scroll={false}
+                      className="mt-4 flex items-center justify-center gap-2 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full hover:opacity-90 transition-opacity"
                       style={{ backgroundColor: '#1a3a6b' }}>
                       <i className="ph ph-calendar-plus"></i> {t('sd_book')}
                     </Link>
@@ -212,7 +227,28 @@ export default function SpecialityDetail() {
 
       </main>
 
+      {bookingDoctor && (
+        <DoctorRequestModal
+          doctor={{
+            name: bookingDoctor.name,
+            qual: bookingDoctor.qualification,
+            specialty: data.name,
+            img: bookingDoctor.img,
+            initials: initialsOf(bookingDoctor.name),
+          }}
+          onClose={closeBooking}
+        />
+      )}
+
       <Footer />
     </div>
+  )
+}
+
+export default function SpecialityDetail() {
+  return (
+    <Suspense fallback={null}>
+      <SpecialityDetailContent />
+    </Suspense>
   )
 }

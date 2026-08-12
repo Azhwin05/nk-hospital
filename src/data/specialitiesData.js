@@ -104,7 +104,14 @@ export const specialitiesData = {
         ],
       },
     ],
-    faqs: [],
+    // Keep in sync with SPECIALTY_FAQ_LD.orthopedics in
+    // src/app/specialities/[slug]/layout.jsx (FAQPage structured data).
+    faqs: [
+      { q: 'Is surgery always required?', a: 'No. Many conditions can be treated with medications, physiotherapy, and rehabilitation.' },
+      { q: 'What is arthroscopy?', a: 'A minimally invasive (keyhole) procedure used to diagnose and treat joint problems.' },
+      { q: 'When is joint replacement recommended?', a: 'When severe arthritis causes pain and limits daily activities despite conservative treatment.' },
+      { q: 'How long is recovery after surgery?', a: 'Recovery varies depending on the procedure, but rehabilitation plays a key role in achieving the best results.' },
+    ],
   },
 
   'surgical-gastroenterology': {

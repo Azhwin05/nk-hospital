@@ -115,6 +115,10 @@ export default {
   book_name_ph: 'Your full name',
   book_phone_ph: '+91 XXXXX XXXXX',
   book_symptoms_ph: 'Describe your symptoms...',
+  book_phone_hint: "We'll use this number to confirm your appointment",
+  book_invalid_phone: 'Please enter a valid mobile number',
+  book_booking: 'Booking...',
+  book_success_sms: 'A confirmation SMS has been sent to your phone.',
 
   // About page tabs
   about_tab_overview: 'Overview',

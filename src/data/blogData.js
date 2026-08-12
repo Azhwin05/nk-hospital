@@ -5,6 +5,9 @@
 //   { type: 'h3',    text }              → sub heading
 //   { type: 'ul',    items: [] }         → bullet list
 //   { type: 'steps', items: [{ title, text }] } → numbered list with a bold lead-in
+//
+// Any `text` (and any `ul` item) may also be an array of segments so the copy can
+// carry inline links:  ['plain text ', { text: 'anchor', href: '/some-page' }, ' more']
 
 export const blogPosts = [
   {
@@ -27,7 +30,7 @@ export const blogPosts = [
         { title: 'Overeating', text: 'Large meals put extra pressure on your stomach and digestive system. When the stomach becomes overly full, digestion slows down, making you feel bloated and uncomfortable. Eating smaller, balanced meals throughout the day is often a better approach.' },
         { title: 'Gas-Producing Foods', text: 'Certain foods naturally produce more gas during digestion. Common examples include beans, lentils, cabbage, broccoli, cauliflower, onions, carbonated drinks, and artificial sweeteners. These foods may cause temporary bloating in some individuals.' },
         { title: 'Food Intolerances', text: 'People with lactose intolerance, gluten sensitivity, or other food intolerances may experience bloating shortly after eating trigger foods. Unlike food allergies, intolerances mainly affect digestion and often cause symptoms such as abdominal discomfort, gas, and diarrhea.' },
-        { title: 'Digestive Disorders', text: 'Persistent bloating may be associated with conditions such as Irritable Bowel Syndrome (IBS), gastritis, acid reflux, constipation, or Small Intestinal Bacterial Overgrowth (SIBO). These conditions require proper medical evaluation and personalized treatment.' },
+        { title: 'Digestive Disorders', text: ['Persistent bloating may be associated with conditions such as Irritable Bowel Syndrome (IBS), gastritis, acid reflux, constipation, or Small Intestinal Bacterial Overgrowth (SIBO). These conditions require ', { text: 'proper medical evaluation', href: '/find-doctor' }, ' and personalized treatment.'] },
       ] },
       { type: 'h2', text: 'Simple Tips to Prevent Bloating' },
       { type: 'p', text: 'You can often reduce bloating by making a few healthy lifestyle changes:' },
@@ -40,7 +43,7 @@ export const blogPosts = [
         'Keep note of foods that trigger your symptoms.',
       ] },
       { type: 'h2', text: 'When Should You See a Doctor?' },
-      { type: 'p', text: 'Occasional bloating is common, but you should consult a gastroenterologist if bloating is frequent, severe, or accompanied by warning signs such as persistent abdominal pain, vomiting, unexplained weight loss, blood in stools, difficulty swallowing, or changes in bowel habits. Timely evaluation can help determine the underlying cause and prevent complications.' },
+      { type: 'p', text: ['Occasional bloating is common, but you should ', { text: 'consult a gastroenterologist', href: '/specialities/medical-gastroenterology' }, ' if bloating is frequent, severe, or accompanied by warning signs such as persistent abdominal pain, vomiting, unexplained weight loss, blood in stools, difficulty swallowing, or changes in bowel habits. Timely evaluation can help determine the underlying cause and prevent complications.'] },
       { type: 'h2', text: 'Take Care of Your Digestive Health' },
       { type: 'p', text: 'Bloating is often linked to eating habits or certain foods, but persistent symptoms should never be ignored. Identifying the cause early can help you find the right treatment and improve your overall digestive well-being.' },
     ],
@@ -57,7 +60,7 @@ export const blogPosts = [
     metaTitle: 'High Blood Pressure: Early Warning Signs You Should Never Ignore',
     metaDescription: 'Learn the early warning signs of high blood pressure, common risk factors, prevention tips, and when to consult a specialist.',
     content: [
-      { type: 'p', text: "High blood pressure doesn't always announce its presence with obvious symptoms. Many people continue with their daily routine, unaware that their blood pressure has been rising over months or even years. This is why routine health check-ups play such an important role in detecting hypertension before it begins to affect vital organs." },
+      { type: 'p', text: ["High blood pressure doesn't always announce its presence with obvious symptoms. Many people continue with their daily routine, unaware that their blood pressure has been rising over months or even years. This is why ", { text: 'routine health check-ups', href: '/health-packages' }, ' play such an important role in detecting hypertension before it begins to affect vital organs.'] },
       { type: 'p', text: 'Although it may seem harmless in the early stages, untreated high blood pressure can gradually increase the risk of heart disease, stroke, kidney damage, and vision problems. Knowing the early warning signs can help you seek timely medical care and protect your long-term health.' },
       { type: 'h2', text: 'Could Your Body Be Sending You Signals?' },
       { type: 'p', text: "Not everyone with high blood pressure experiences symptoms. However, some individuals notice subtle changes that shouldn't be overlooked, especially if they occur repeatedly." },
@@ -97,7 +100,7 @@ export const blogPosts = [
       { type: 'h2', text: 'When Should You Consult a Doctor?' },
       { type: 'p', text: 'If your blood pressure readings remain consistently high or you experience the above mentioned symptoms it is important to seek medical evaluation. A timely evaluation can help identify the underlying cause and ensure appropriate treatment before complications develop.' },
       { type: 'p', text: 'High blood pressure often develops quietly, but its impact on the body can be significant if left unmanaged. Regular health check-ups, healthy lifestyle choices, and appropriate medical care can greatly reduce the risk of long-term complications.' },
-      { type: 'p', text: 'At NK Hospital, our experienced specialists provide comprehensive evaluation, diagnosis, and personalized treatment for hypertension and other medical conditions. Through regular health screenings and expert guidance, we are committed to helping you maintain better health and overall well-being.' },
+      { type: 'p', text: ['At NK Hospital, our experienced ', { text: 'General Medicine specialists', href: '/specialities/general-medicine' }, ' provide comprehensive evaluation, diagnosis, and personalized treatment for hypertension and other medical conditions. Through regular health screenings and expert guidance, we are committed to helping you maintain better health and overall well-being.'] },
     ],
   },
 ]

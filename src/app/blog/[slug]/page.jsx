@@ -22,6 +22,17 @@ export async function generateMetadata({ params }) {
   })
 }
 
+// Blog text is either a plain string or a list of segments, where a segment
+// with an `href` becomes an inline link: ['plain ', { text: 'anchor', href: '/x' }]
+function RichText({ value }) {
+  if (!Array.isArray(value)) return value
+  return value.map((part, i) =>
+    typeof part === 'string'
+      ? part
+      : <Link key={i} href={part.href} className="font-semibold underline underline-offset-2 hover:opacity-80" style={{ color: '#1a3a6b' }}>{part.text}</Link>
+  )
+}
+
 function Block({ block }) {
   switch (block.type) {
     case 'h2':
@@ -34,7 +45,7 @@ function Block({ block }) {
           {block.items.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-[15px] text-gray-600 leading-relaxed">
               <i className="ph-bold ph-check-circle text-lg mt-0.5 shrink-0" style={{ color: '#1a3a6b' }}></i>
-              <span>{item}</span>
+              <span><RichText value={item} /></span>
             </li>
           ))}
         </ul>
@@ -46,14 +57,14 @@ function Block({ block }) {
             <li key={i} className="flex items-start gap-4">
               <span className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5" style={{ backgroundColor: '#1a3a6b' }}>{i + 1}</span>
               <p className="text-[15px] text-gray-600 leading-relaxed">
-                <span className="font-bold text-gray-800">{item.title}</span> — {item.text}
+                <span className="font-bold text-gray-800">{item.title}</span> — <RichText value={item.text} />
               </p>
             </li>
           ))}
         </ol>
       )
     default:
-      return <p className="text-[15px] text-gray-600 leading-relaxed my-4">{block.text}</p>
+      return <p className="text-[15px] text-gray-600 leading-relaxed my-4"><RichText value={block.text} /></p>
   }
 }
 

@@ -151,6 +151,10 @@ export default {
   book_name_ph: 'ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು',
   book_phone_ph: '+91 XXXXX XXXXX',
   book_symptoms_ph: 'ನಿಮ್ಮ ಲಕ್ಷಣಗಳನ್ನು ವಿವರಿಸಿ...',
+  book_phone_hint: 'ನಿಮ್ಮ ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ದೃಢೀಕರಿಸಲು ಈ ಸಂಖ್ಯೆಯನ್ನು ಬಳಸುತ್ತೇವೆ',
+  book_invalid_phone: 'ದಯವಿಟ್ಟು ಸರಿಯಾದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ',
+  book_booking: 'ಬುಕ್ ಮಾಡಲಾಗುತ್ತಿದೆ...',
+  book_success_sms: 'ದೃಢೀಕರಣ SMS ನಿಮ್ಮ ಫೋನ್‌ಗೆ ಕಳುಹಿಸಲಾಗಿದೆ.',
 
   // About page tabs
   about_tab_overview: 'ಅವಲೋಕನ',

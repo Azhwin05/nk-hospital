@@ -6,10 +6,10 @@ import { useLanguage } from '@/context/LanguageContext'
 export default function FloatingBookButton() {
   const pathname = usePathname()
   const { t } = useLanguage()
-  if (pathname === '/book') return null
+  if (pathname === '/book-an-appointment') return null
 
   return (
-    <Link href="/book"
+    <Link href="/book-an-appointment"
       className="fixed right-4 sm:right-6 z-50 flex items-center gap-2 text-white text-xs font-bold px-3 sm:px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
       style={{
         backgroundColor: '#1a3a6b',

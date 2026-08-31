@@ -45,7 +45,7 @@ export default function Blog() {
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-600">{category}</span>
                   <span className="text-[10px] text-gray-400">{date}</span>
                 </div>
-                <h3 className="text-sm font-bold leading-snug mb-2" style={{ color: '#1a3a6b' }}>{title}</h3>
+                <h2 className="text-sm font-bold leading-snug mb-2" style={{ color: '#1a3a6b' }}>{title}</h2>
                 <p className="text-[12px] text-gray-500 leading-relaxed flex-1">{excerpt}</p>
                 <span className="mt-4 text-[11px] font-bold flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: '#1a3a6b' }}>
                   {t('blog_read_more')} <i className="ph ph-arrow-right text-xs"></i>

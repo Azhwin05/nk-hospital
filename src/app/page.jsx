@@ -70,7 +70,7 @@ function HeroSlider() {
           {t('hero_subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto">
-          <Link href="/book"
+          <Link href="/book-an-appointment"
             className="bg-white text-[#1a3a6b] hover:bg-blue-50 active:bg-blue-100 px-8 py-3.5 rounded-full text-sm font-bold shadow-xl transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
             <i className="ph ph-calendar-plus text-base"></i> {t('hero_book')}
           </Link>
@@ -329,7 +329,7 @@ function TestimonialsCard({ item }) {
           <i className={item.gender === 'female' ? 'ph-fill ph-gender-female' : 'ph-fill ph-gender-male'}></i>
         </div>
         <div>
-          <h5 className="text-sm font-bold" style={{ color: '#1a3a6b' }}>{item.name}</h5>
+          <h3 className="text-sm font-bold" style={{ color: '#1a3a6b' }}>{item.name}</h3>
           <div className="flex gap-0.5 mt-0.5">
             {[...Array(5)].map((_, s) => <i key={s} className="ph-fill ph-star text-amber-400 text-xs"></i>)}
           </div>

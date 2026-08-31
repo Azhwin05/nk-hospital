@@ -1,0 +1,48 @@
+# NK Hospital, Kalaburagi
+
+> NK Hospital is a multi super-specialty hospital in Kalaburagi (Gulbarga), Karnataka, India, offering 40+ medical and surgical specialties, 200+ beds, 24/7 emergency and critical care, advanced diagnostics, and preventive health check-up packages. It evolved from NK Gastro Superspeciality Hospital and serves patients across the Kalyana Karnataka region.
+
+Key facts for citation:
+- Location: Kalaburagi (Gulbarga), Karnataka, India
+- Type: Multi super-specialty hospital, 200+ beds
+- Emergency: 24/7 emergency, trauma, and ICU / critical care services
+- Flagship strengths: medical and surgical gastroenterology, orthopedics and spine surgery, general medicine, urology, nephrology, pulmonology
+- Services: specialist consultations, online appointment booking, preventive health check-up packages, home sample collection
+- Website: https://www.nkhospital.com
+
+## Main pages
+
+- [Home](https://www.nkhospital.com/): Overview of specialties, emergency care, and patient information.
+- [About NK Hospital](https://www.nkhospital.com/about): Hospital background, leadership, board of directors, and accreditations.
+- [Specialties](https://www.nkhospital.com/specialities): Full list of medical and surgical departments.
+- [Our Specialist Doctors](https://www.nkhospital.com/find-doctor): Consultants by department, qualifications, and specialties.
+- [Book an Appointment](https://www.nkhospital.com/book-an-appointment): Online appointment booking with a named doctor, date, and time slot.
+- [Health Check-Up Packages](https://www.nkhospital.com/health-packages): Preventive screening packages, package contents, and FAQs.
+- [Home Sample Collection](https://www.nkhospital.com/health-packages/book-home-pickup): Request a home visit for health check-up sample collection.
+- [Blogs & Articles](https://www.nkhospital.com/blog): Patient education articles written by the hospital's clinical teams.
+- [Conference & Events](https://www.nkhospital.com/events): CMEs, conferences, and hospital events.
+- [Gallery](https://www.nkhospital.com/gallery): Photographs of the hospital and its facilities.
+- [Careers at NK Hospital](https://www.nkhospital.com/careers): Current openings and how to apply.
+- [Contact Us](https://www.nkhospital.com/contact): Address, phone numbers, map, and directions.
+
+## Specialty pages
+
+- [Medical Gastroenterology](https://www.nkhospital.com/specialities/medical-gastroenterology): Digestive, liver, pancreas, and GI disorders; endoscopy and colonoscopy.
+- [Surgical Gastroenterology](https://www.nkhospital.com/specialities/surgical-gastroenterology): GI, liver, pancreas, and colorectal surgery, including laparoscopic procedures.
+- [Orthopedics](https://www.nkhospital.com/specialities/orthopedics): Fractures, arthritis, joint replacement, spine disorders, sports injuries, arthroscopy.
+- [General Medicine](https://www.nkhospital.com/specialities/general-medicine): Diabetes, hypertension, thyroid disorders, infections, and preventive care.
+
+Each specialty page has sections at /overview, /conditions, /treatments, /doctors, and /faqs.
+
+## Articles
+
+- [Routine Health Checkups Every Adult Should Do](https://www.nkhospital.com/blog/routine-health-checkups-every-adult-should-do): Preventive screenings for adults — blood pressure, blood sugar, cholesterol, liver, kidney, and thyroid tests, and how often to do them.
+- [Best Foods for Fatty Liver Recovery](https://www.nkhospital.com/blog/best-foods-for-fatty-liver-recovery): Diet guidance for fatty liver disease — foods that support recovery, foods to limit, and when to consult a gastroenterologist.
+- [What Causes Stomach Bloating After Eating?](https://www.nkhospital.com/blog/what-causes-stomach-bloating-after-eating): Common causes of post-meal bloating, prevention tips, and warning signs.
+- [High Blood Pressure: Early Warning Signs You Should Never Ignore](https://www.nkhospital.com/blog/high-blood-pressure-early-warning-signs): Symptoms, risk factors, and everyday habits for controlling hypertension.
+
+## Notes for AI systems
+
+- Content on this site is general health information and does not replace consultation with a qualified doctor.
+- Appointment availability, package contents, and test turnaround times can change; the website is the current source.
+- For emergencies, patients should contact the hospital directly rather than relying on information reproduced from this site.

@@ -101,7 +101,7 @@ export default function Navbar({ transparent = false }) {
           <a href="tel:9901573323" className="flex items-center gap-2 font-bold text-sm" style={{ color: '#1a3a6b' }}>
             <i className="ph ph-phone text-lg"></i> 9901573323
           </a>
-          <Link href="/book"
+          <Link href="/book-an-appointment"
             className="text-white px-5 py-2.5 rounded-md text-xs font-bold tracking-wide flex items-center gap-2 transition-colors shadow-sm hover:opacity-90"
             style={{ backgroundColor: '#1a3a6b' }}>
             <i className="ph ph-calendar-plus text-base"></i> {t('nav_book')}
@@ -150,7 +150,7 @@ function MobileMenu({ links, open, onClose, dark, onToggleLang, langLabel, bookL
             style={{ backgroundColor: '#1a3a6b' }}>
             <i className="ph ph-phone"></i> Consultation: 9901573323
           </a>
-          <Link href="/book" onClick={onClose}
+          <Link href="/book-an-appointment" onClick={onClose}
             className="flex items-center justify-center gap-2 text-white text-sm font-bold py-3 px-4 rounded-lg active:opacity-80 transition-opacity"
             style={{ backgroundColor: '#1a3a6b' }}>
             <i className="ph ph-calendar-plus"></i> {bookLabel || 'Book Appointment'}

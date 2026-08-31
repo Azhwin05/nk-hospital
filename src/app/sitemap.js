@@ -20,7 +20,7 @@ export default function sitemap() {
     { path: '/find-doctor',     changeFrequency: 'weekly',  priority: 0.9 },
     { path: '/specialities',    changeFrequency: 'monthly', priority: 0.9 },
     { path: '/health-packages', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/book',            changeFrequency: 'monthly', priority: 0.9 },
+    { path: '/book-an-appointment',            changeFrequency: 'monthly', priority: 0.9 },
     { path: '/gallery',         changeFrequency: 'monthly', priority: 0.6 },
     { path: '/events',          changeFrequency: 'weekly',  priority: 0.6 },
     { path: '/blog',            changeFrequency: 'weekly',  priority: 0.7 },

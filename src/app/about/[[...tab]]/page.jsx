@@ -178,7 +178,7 @@ function Overview() {
           <h2 className="text-3xl font-extrabold mb-3 tracking-tight">{t('about_cta_heading')}</h2>
           <p className="text-sm text-blue-100/90 max-w-xl mx-auto mb-8 leading-relaxed">{t('about_cta_sub')}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/book" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
+            <Link href="/book-an-appointment" className="bg-white text-[#1a3a6b] font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-blue-50 transition-colors shadow">
               <i className="ph ph-calendar-plus"></i> {t('about_cta_book')}
             </Link>
             <a href="tel:9901573323" className="border border-white/30 text-white font-bold px-8 py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">

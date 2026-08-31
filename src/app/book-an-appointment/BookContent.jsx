@@ -55,9 +55,9 @@ export default function BookContent() {
 
   const today = new Date().toISOString().split('T')[0]
 
-  // The /book/book-appointment route drives the popup and the ?doctor query
+  // The /book-an-appointment/book route drives the popup and the ?doctor query
   // picks which doctor it's for, so the open form has its own shareable URL.
-  const bookingActive = pathname === '/book/book-appointment'
+  const bookingActive = pathname === '/book-an-appointment/book'
   const doctorName = searchParams.get('doctor')
   const selectedDoctor = bookingActive && doctorName
     ? doctors.find(d => d.name === doctorName) || null
@@ -103,7 +103,7 @@ export default function BookContent() {
   }
 
   const resetModal = () => {
-    router.push('/book', { scroll: false })
+    router.push('/book-an-appointment', { scroll: false })
     setSubmitStatus(STATUS.idle)
     setForm({ name: '', phone: '', date: '', slot: '', message: '' })
     setErrorMsg('')
@@ -172,7 +172,7 @@ export default function BookContent() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             {filtered.map(doc => (
-              <Link key={doc.id} href={`/book/book-appointment?doctor=${encodeURIComponent(doc.name)}`} scroll={false}
+              <Link key={doc.id} href={`/book-an-appointment/book?doctor=${encodeURIComponent(doc.name)}`} scroll={false}
                 className="bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-[#1a3a6b] cursor-pointer group transition-all active:scale-95">
                 <div className="w-20 h-20 rounded-full overflow-hidden mb-3 border-2 border-gray-100 group-hover:border-[#1a3a6b] transition-colors shrink-0 bg-gray-100">
                   <img src={optimg(doc.photo_url, 200)} className="w-full h-full object-cover object-top" alt={doc.name} loading="lazy" width="80" height="80" />

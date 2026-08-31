@@ -118,7 +118,7 @@ export default async function BlogArticle({ params }) {
               <h3 className="text-base font-bold" style={{ color: '#1a3a6b' }}>Need expert medical advice?</h3>
               <p className="text-[13px] text-gray-500 mt-0.5">Consult our specialists at NK Hospital, Kalaburagi.</p>
             </div>
-            <Link href="/book"
+            <Link href="/book-an-appointment"
               className="text-white text-sm font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shrink-0 w-full sm:w-auto"
               style={{ backgroundColor: '#1a3a6b' }}>
               <i className="ph ph-calendar-plus"></i> Book Appointment

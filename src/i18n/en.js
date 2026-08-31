@@ -12,8 +12,8 @@ export default {
 
   // Hero
   hero_badge: 'Multi Super-Specialty Hospital · Kalaburagi',
-  hero_title_1: 'Expert Care for Every Condition,',
-  hero_title_2: 'Right Here in Kalaburagi',
+  hero_title_1: 'Advanced Multi Super-Specialty',
+  hero_title_2: 'Hospital in Kalaburagi',
   hero_subtitle: '40+ specialties. 200+ beds. 24/7 emergency. Advanced infrastructure under one roof.',
   hero_book: 'Book Appointment',
   hero_find_doctor: 'Find a Doctor',
@@ -85,7 +85,7 @@ export default {
   spec_names: {},
 
   // Find Doctor
-  finddr_heading: 'Doctors',
+  finddr_heading: 'Our Specialist Doctors',
   finddr_sub: 'Find the right specialist for your care',
   finddr_select: 'Select Speciality',
   finddr_search: 'Search Doctor or Specialty',
@@ -117,7 +117,6 @@ export default {
   book_symptoms_ph: 'Describe your symptoms...',
   book_phone_hint: "We'll use this number to confirm your appointment",
   book_invalid_phone: 'Please enter a valid mobile number',
-  book_booking: 'Booking...',
   book_success_sms: 'A confirmation SMS has been sent to your phone.',
 
   // About page tabs

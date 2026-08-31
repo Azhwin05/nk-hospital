@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 
 export default function WhatsAppButton() {
   const pathname = usePathname()
-  if (pathname === '/book') return null
+  if (pathname === '/book-an-appointment') return null
   return (
     <a
       href="https://wa.me/919901573323"

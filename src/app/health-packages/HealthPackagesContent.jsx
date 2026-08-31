@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import TopBarDark from '@/components/layout/TopBarDark'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import { healthPackageFaqs, HEALTH_PACKAGE_FAQ_HEADING } from '@/data/healthPackageFaqs'
 import { supabase } from '@/lib/supabase'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -442,6 +443,23 @@ export default function HealthPackagesContent() {
             <PackageCard key={pkg.name} {...pkg} bookLabel={t('hp_book_now')} onBook={setBooking} />
           ))}
         </div>
+
+        {/* FAQs — mirrored as FAQPage structured data in layout.jsx */}
+        <section className="mt-16 pt-12 border-t border-gray-100">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-extrabold mb-8 text-center" style={{ color: '#1a3a6b' }}>
+              {HEALTH_PACKAGE_FAQ_HEADING}
+            </h2>
+            <div className="space-y-4">
+              {healthPackageFaqs.map(({ q, a }, i) => (
+                <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                  <h3 className="text-sm font-bold mb-2" style={{ color: '#1a3a6b' }}>Q{i + 1}. {q}</h3>
+                  <p className="text-[13px] text-gray-600 leading-relaxed">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       {booking && <PackageBookingModal booking={booking} onClose={() => setBooking(null)} />}

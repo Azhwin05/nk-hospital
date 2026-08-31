@@ -27,7 +27,7 @@ export default function Events() {
       <div className="text-white py-14 text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, #1a3a6b, #1a3054)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Conferences &amp; Events</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Conference &amp; Events</h1>
           <p className="text-xs md:text-sm text-blue-200/90 font-medium">Stay updated with NK Hospital's latest medical conferences, health camps, and community events.</p>
         </div>
       </div>

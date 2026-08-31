@@ -21,7 +21,7 @@ export default function Footer() {
               className="bg-white/5 hover:bg-white/10 active:bg-white/15 px-4 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 border border-white/10 transition-colors whitespace-nowrap">
               <i className="ph-fill ph-ambulance text-red-500 text-sm"></i> 9187966774 (Ambulance)
             </a>
-            <Link href="/book"
+            <Link href="/book-an-appointment"
               className="px-5 py-2.5 rounded-full text-xs font-bold transition-colors text-center shadow-sm flex items-center justify-center whitespace-nowrap text-[#002247] active:opacity-80"
               style={{ backgroundColor: '#c9a227' }}>
               {t('footer_book')}
@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-gray-400 text-xs">
               <li><Link href="/find-doctor" className="hover:text-white active:text-white/80 transition-colors">{t('footer_find_doctor')}</Link></li>
               <li><Link href="/specialities" className="hover:text-white active:text-white/80 transition-colors">{t('footer_specialties')}</Link></li>
-              <li><Link href="/book" className="hover:text-white active:text-white/80 transition-colors">{t('footer_book')}</Link></li>
+              <li><Link href="/book-an-appointment" className="hover:text-white active:text-white/80 transition-colors">{t('footer_book')}</Link></li>
               <li><Link href="/health-packages" className="hover:text-white active:text-white/80 transition-colors">{t('footer_health_packages')}</Link></li>
             </ul>
           </div>

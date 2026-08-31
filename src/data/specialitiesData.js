@@ -93,7 +93,7 @@ export const specialitiesData = {
         name: 'Dr. Syed Zafar',
         qualification: 'MBBS, MS Orthopaedics, FIASM (Fellowship in Arthroscopy & Sports Medicine), FIJR (Fellowship in Joint Replacement), FIFA Diploma in Football Medicine',
         experience: 'Orthopedic Surgeon with expertise in Sports Medicine, Arthroscopy, Trauma, and Joint Replacement',
-        img: null,
+        img: 'https://res.cloudinary.com/dmhonzqrm/image/upload/v1788179694/Dr_Zafar_obmvfd.jpg',
         note: 'On-call consultant',
         expertise: [
           'Arthroscopy & Sports Medicine',

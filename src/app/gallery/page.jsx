@@ -11,32 +11,31 @@ const thumb = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_800,f_
 const full  = (id) => `https://res.cloudinary.com/${CLOUD}/image/upload/w_1400,f_webp,q_85/${id}.jpg`
 
 const images = [
-  // Latest uploads (2026-08-06)
-  { id: '09_bkwb0e',  caption: 'NK Hospital' },
-  { id: '010_nyygfx', caption: 'NK Hospital' },
-  { id: '011_ulrhf8', caption: 'NK Hospital' },
-  { id: '012_tnf1fo', caption: 'NK Hospital' },
-  { id: 'IMG_1086.JPG_vrgmrr', caption: 'NK Hospital' },
-  { id: '2_uegntc',  caption: 'NK Hospital' },
-  { id: '3_c9k2ur',  caption: 'NK Hospital' },
-  { id: 'IMG_0970.JPG_xavp8x', caption: 'NK Hospital' },
-  { id: '5_ifqb9f',  caption: 'NK Hospital' },
-  { id: '6_ptwssg',  caption: 'NK Hospital' },
-  { id: '7_ohhgzt',  caption: 'NK Hospital' },
-  { id: '8_lipodh',  caption: 'NK Hospital' },
-  { id: '9_yd4pdd',  caption: 'NK Hospital' },
-  { id: '10_f5hrbs', caption: 'NK Hospital' },
-  { id: '11_n4ry5t', caption: 'NK Hospital' },
-  { id: '12_bu4vad', caption: 'NK Hospital' },
-  { id: 'IMG_0976.JPG_rmnq4y', caption: 'NK Hospital' },
-  { id: '01_un9ozg', caption: 'NK Hospital' },
-  { id: '02_lxpqeu', caption: 'NK Hospital' },
-  { id: '03_yv4ljz', caption: 'NK Hospital' },
-  { id: '04_eneesx', caption: 'NK Hospital' },
-  { id: '05_lzoghs', caption: 'NK Hospital' },
-  { id: '06_v6wp8z', caption: 'NK Hospital' },
-  { id: '07_meh9dn', caption: 'NK Hospital' },
-  { id: '08_kquaqx', caption: 'NK Hospital' },
+  { id: '09_bkwb0e', alt: 'Patient room with seating area' },
+  { id: '010_nyygfx', alt: 'Digital X-ray imaging equipment' },
+  { id: '011_ulrhf8', alt: 'Patient registration counters' },
+  { id: '012_tnf1fo', alt: 'NK Hospital reception area' },
+  { id: 'IMG_1086.JPG_vrgmrr', alt: 'Modern patient ward with hospital beds' },
+  { id: '2_uegntc', alt: 'Healthcare professional attending to a patient' },
+  { id: '3_c9k2ur', alt: 'Modern hospital ward with beds' },
+  { id: 'IMG_0970.JPG_xavp8x', alt: 'Private patient ward with single bed' },
+  { id: '5_ifqb9f', alt: 'Blood testing analyzer in a laboratory' },
+  { id: '6_ptwssg', alt: 'Hospital corridor' },
+  { id: '7_ohhgzt', alt: 'CT scanner in the radiology department' },
+  { id: '8_lipodh', alt: 'General patient ward with beds' },
+  { id: '9_yd4pdd', alt: 'Surgical team performing a procedure in an operating room' },
+  { id: '10_f5hrbs', alt: 'Doctor reviewing a medical scan with a patient' },
+  { id: '11_n4ry5t', alt: 'Healthcare staff at a nursing station' },
+  { id: '12_bu4vad', alt: 'Modern patient ward with two beds' },
+  { id: 'IMG_0976.JPG_rmnq4y', alt: 'Comfortable private patient room' },
+  { id: '01_un9ozg', alt: 'General hospital ward with patient care facilities' },
+  { id: '02_lxpqeu', alt: 'Medical equipment sterilization area' },
+  { id: '03_yv4ljz', alt: 'Modern operating theatre at NK Hospital' },
+  { id: '04_eneesx', alt: 'Modern patient room with hospital bed' },
+  { id: '05_lzoghs', alt: 'CT scanner in a hospital radiology department' },
+  { id: '06_v6wp8z', alt: 'Modern private patient room with hospital bed' },
+  { id: '07_meh9dn', alt: 'Critical care unit with patient monitoring equipment' },
+  { id: '08_kquaqx', alt: 'Spacious critical care unit with patient monitoring equipment' },
 ]
 
 export default function Gallery() {
@@ -68,7 +67,7 @@ export default function Gallery() {
 
       <main className="max-w-[1920px] mx-auto px-4 lg:px-16 py-12 w-full flex-1">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map(({ id, caption }, i) => (
+          {images.map(({ id, alt }, i) => (
             <div key={id}
               className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer aspect-video bg-gray-100"
               onClick={() => setLightbox(i)}>
@@ -76,7 +75,7 @@ export default function Gallery() {
                 src={thumb(id)}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                alt={caption}
+                alt={alt}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end">
                 <span className="text-white text-xs font-bold px-4 py-3 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -102,7 +101,7 @@ export default function Gallery() {
           <img
             src={full(images[lightbox].id)}
             className="max-h-[88vh] max-w-[90vw] rounded-xl shadow-2xl object-contain"
-            alt={images[lightbox].caption}
+            alt={images[lightbox].alt}
             onClick={e => e.stopPropagation()}
           />
           <button

@@ -8,7 +8,11 @@ import { useLanguage } from '@/context/LanguageContext'
 import { IconRender } from '@/components/SpecialtyIcon'
 import JsonLd from '@/components/JsonLd'
 
-const slides = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg']
+const slides = [
+  { src: '/slide1.jpg', alt: 'Exterior view of NK Hospital building in Kalaburagi' },
+  { src: '/slide2.jpg', alt: 'Aerial view of NK Hospital in Kalaburagi' },
+  { src: '/slide3.jpg', alt: 'Front view of NK Hospital multi super-specialty hospital in Kalaburagi' },
+]
 
 const expertiseItems = [
   { icon: 'svg:intestine' },
@@ -47,12 +51,12 @@ function HeroSlider() {
 
   return (
     <div className="min-h-screen relative flex flex-col justify-center overflow-hidden">
-      {slides.map((src, i) => (
+      {slides.map(({ src, alt }, i) => (
         <img
           key={i}
           src={src}
           className={`hero-slide${i === current ? ' active' : ''}`}
-          alt=""
+          alt={alt}
           loading={i === 0 ? 'eager' : 'lazy'}
           fetchpriority={i === 0 ? 'high' : 'low'}
         />

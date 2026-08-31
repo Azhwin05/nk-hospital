@@ -12,7 +12,18 @@ export const metadata = {
   keywords: 'NK Hospital Kalaburagi, multi specialty hospital Kalaburagi, best hospital Gulbarga, gastroenterology Kalaburagi, cardiology hospital Karnataka, emergency hospital Kalaburagi',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.nkhospital.com/' },
-  icons: { icon: '/logo.png' },
+  // Google fetches /favicon.ico first and needs a square icon that is a
+  // multiple of 48px; the old /logo.png was 2000x2001 and white-on-transparent,
+  // so it was skipped in search results and shown as the generic globe.
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180' }],
+    shortcut: ['/favicon.ico'],
+  },
   verification: { google: 'YkmR_53N72r4sh-7JQOIhsRVmvb_afaTPbTnPnA2oA0' },
   openGraph: {
     type: 'website',
